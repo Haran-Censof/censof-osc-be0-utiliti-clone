@@ -1,0 +1,3715 @@
+-- Start of DDL Script for Table OSCL.OSC_ADN_AGIHAN
+-- Generated 3/12/2025 3:53:48 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_adn_agihan
+    (agh_idpbt                      VARCHAR2(10 BYTE) NOT NULL,
+    agh_noaduan                    VARCHAR2(20 BYTE) NOT NULL,
+    agh_ptjpk                      VARCHAR2(6 BYTE),
+    agh_ulasan                     VARCHAR2(2000 BYTE),
+    agh_pegawai                    VARCHAR2(100 BYTE),
+    agh_statadn                    VARCHAR2(1 BYTE),
+    agh_gambar                     LONG RAW,
+    agh_tkhulasan                  DATE,
+    agh_idate                      DATE,
+    agh_udate                      DATE,
+    agh_iuser                      VARCHAR2(20 BYTE),
+    agh_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_ADN_AGIHAN
+
+COMMENT ON TABLE osc_adn_agihan IS 'AGIHAN ADUAN DAN ULASAN JABATAN/BHGN/UNIT'
+/
+COMMENT ON COLUMN osc_adn_agihan.agh_gambar IS 'GAMBAR (SEKIRANYA ADA)'
+/
+COMMENT ON COLUMN osc_adn_agihan.agh_idate IS 'TARIKH KEMASUKAN'
+/
+COMMENT ON COLUMN osc_adn_agihan.agh_idpbt IS 'ID PBT'
+/
+COMMENT ON COLUMN osc_adn_agihan.agh_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_adn_agihan.agh_noaduan IS 'NO ADUAN'
+/
+COMMENT ON COLUMN osc_adn_agihan.agh_pegawai IS 'NAMA PEGAWAI PEMERIKSA'
+/
+COMMENT ON COLUMN osc_adn_agihan.agh_ptjpk IS 'JABATAN/BAHAGIAN/UNIT'
+/
+COMMENT ON COLUMN osc_adn_agihan.agh_statadn IS 'STATUS ULASAN [P]-BARU [S]-SELESAI'
+/
+COMMENT ON COLUMN osc_adn_agihan.agh_tkhulasan IS 'TARIKH ULASAN DIBERI'
+/
+COMMENT ON COLUMN osc_adn_agihan.agh_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_adn_agihan.agh_ulasan IS 'ULASAN DARI JBTN/BHGN/UNIT'
+/
+COMMENT ON COLUMN osc_adn_agihan.agh_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_ADN_AGIHAN
+
+-- Start of DDL Script for Table OSCL.OSC_ADN_GBRADUAN
+-- Generated 3/12/2025 3:53:50 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_adn_gbraduan
+    (img_idpbt                      VARCHAR2(10 BYTE),
+    img_noaduan                    VARCHAR2(16 BYTE),
+    img_imgsiri                    NUMBER(5,0),
+    img_imgnama                    VARCHAR2(100 BYTE),
+    img_imgimge                    LONG RAW,
+    img_idate                      DATE,
+    img_udate                      DATE,
+    img_iuser                      VARCHAR2(20 BYTE),
+    img_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     2097152
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_ADN_GBRADUAN
+
+COMMENT ON COLUMN osc_adn_gbraduan.img_idate IS 'TARIKH KEMASUKAN'
+/
+COMMENT ON COLUMN osc_adn_gbraduan.img_idpbt IS 'ID PBT'
+/
+COMMENT ON COLUMN osc_adn_gbraduan.img_imgimge IS 'GAMBAR'
+/
+COMMENT ON COLUMN osc_adn_gbraduan.img_imgnama IS 'CATATAN PADA GAMBAR'
+/
+COMMENT ON COLUMN osc_adn_gbraduan.img_imgsiri IS 'SIRI GAMBAR'
+/
+COMMENT ON COLUMN osc_adn_gbraduan.img_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_adn_gbraduan.img_noaduan IS 'NO ADUAN/PERTANYAAN'
+/
+COMMENT ON COLUMN osc_adn_gbraduan.img_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_adn_gbraduan.img_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_ADN_GBRADUAN
+
+-- Start of DDL Script for Table OSCL.OSC_ADN_INDADUAN
+-- Generated 3/12/2025 3:53:50 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_adn_indaduan
+    (adn_idpbt                      VARCHAR2(10 BYTE),
+    adn_noaduan                    VARCHAR2(16 BYTE),
+    adn_idpelanggan                VARCHAR2(15 BYTE),
+    adn_namaplgn                   VARCHAR2(100 BYTE),
+    adn_alamat1                    VARCHAR2(50 BYTE),
+    adn_alamat2                    VARCHAR2(50 BYTE),
+    adn_alamat3                    VARCHAR2(50 BYTE),
+    adn_poskod                     VARCHAR2(5 BYTE),
+    adn_notelefon                  VARCHAR2(20 BYTE),
+    adn_email                      VARCHAR2(50 BYTE),
+    adn_jantina                    VARCHAR2(1 BYTE),
+    adn_bangsa                     VARCHAR2(1 BYTE),
+    adn_jnadn                      VARCHAR2(2 BYTE),
+    adn_kodjenisaduan              VARCHAR2(3 BYTE),
+    adn_catatan                    VARCHAR2(2000 BYTE),
+    adn_lokasi                     VARCHAR2(500 BYTE),
+    adn_tkhterima                  DATE,
+    adn_stataduan                  VARCHAR2(1 BYTE),
+    adn_idate                      DATE,
+    adn_udate                      DATE,
+    adn_iuser                      VARCHAR2(20 BYTE),
+    adn_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_ADN_INDADUAN
+
+COMMENT ON TABLE osc_adn_indaduan IS 'MAKLUMAT INDUK ADUAN'
+/
+COMMENT ON COLUMN osc_adn_indaduan.adn_alamat1 IS 'ALAMAT PENGADU1'
+/
+COMMENT ON COLUMN osc_adn_indaduan.adn_alamat2 IS 'ALAMAT PENGADU2'
+/
+COMMENT ON COLUMN osc_adn_indaduan.adn_alamat3 IS 'ALAMAT PENGADU3'
+/
+COMMENT ON COLUMN osc_adn_indaduan.adn_bangsa IS 'BANGSA'
+/
+COMMENT ON COLUMN osc_adn_indaduan.adn_catatan IS 'CATATAN'
+/
+COMMENT ON COLUMN osc_adn_indaduan.adn_email IS 'EMAIL'
+/
+COMMENT ON COLUMN osc_adn_indaduan.adn_idate IS 'TARIKH INPUT'
+/
+COMMENT ON COLUMN osc_adn_indaduan.adn_idpbt IS 'KOD ID PBT'
+/
+COMMENT ON COLUMN osc_adn_indaduan.adn_idpelanggan IS 'NO KP PENGADU'
+/
+COMMENT ON COLUMN osc_adn_indaduan.adn_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_adn_indaduan.adn_jantina IS 'JANTINA'
+/
+COMMENT ON COLUMN osc_adn_indaduan.adn_jnadn IS '[A]-ADUAN  [P]-PERTANYAAN'
+/
+COMMENT ON COLUMN osc_adn_indaduan.adn_kodjenisaduan IS 'KOD JENIS ADUAN'
+/
+COMMENT ON COLUMN osc_adn_indaduan.adn_lokasi IS 'LOKASI ADUAN'
+/
+COMMENT ON COLUMN osc_adn_indaduan.adn_namaplgn IS 'NAMA PENGADU'
+/
+COMMENT ON COLUMN osc_adn_indaduan.adn_noaduan IS 'NO SIRI ADUAN/PERTANYAAN'
+/
+COMMENT ON COLUMN osc_adn_indaduan.adn_notelefon IS 'NO TELEFON'
+/
+COMMENT ON COLUMN osc_adn_indaduan.adn_poskod IS 'POSKOD'
+/
+COMMENT ON COLUMN osc_adn_indaduan.adn_stataduan IS 'STATUS ADUAN [P]-PERMOHONAN [S]-SELESAI'
+/
+COMMENT ON COLUMN osc_adn_indaduan.adn_tkhterima IS 'TARIKH TERIMA ADUAN'
+/
+COMMENT ON COLUMN osc_adn_indaduan.adn_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_adn_indaduan.adn_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_ADN_INDADUAN
+
+-- Start of DDL Script for Table OSCL.OSC_BIL_TMPHLESEN
+-- Generated 3/12/2025 3:53:51 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_bil_tmphlesen
+    (bl1_idpbt                      VARCHAR2(10 BYTE),
+    bl1_noakaun                    NUMBER(7,0),
+    bl1_nombil                     VARCHAR2(15 BYTE),
+    bl1_tkhbil                     DATE,
+    bl1_tempoh                     DATE,
+    bl1_statf                      VARCHAR2(1 BYTE),
+    bl1_idate                      DATE,
+    bl1_udate                      DATE,
+    bl1_iuser                      VARCHAR2(20 BYTE),
+    bl1_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_BIL_TMPHLESEN
+
+COMMENT ON TABLE osc_bil_tmphlesen IS 'MAKLUMAT BIL LESEN'
+/
+COMMENT ON COLUMN osc_bil_tmphlesen.bl1_idate IS 'TARIKH KEMASUKAN'
+/
+COMMENT ON COLUMN osc_bil_tmphlesen.bl1_idpbt IS 'KOD ID PBT'
+/
+COMMENT ON COLUMN osc_bil_tmphlesen.bl1_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_bil_tmphlesen.bl1_noakaun IS 'NO AKAUN LESEN'
+/
+COMMENT ON COLUMN osc_bil_tmphlesen.bl1_nombil IS 'NO BIL LESEN'
+/
+COMMENT ON COLUMN osc_bil_tmphlesen.bl1_statf IS 'STATUS BIL [N]-BARU [P]-CETAKAN SEMULA'
+/
+COMMENT ON COLUMN osc_bil_tmphlesen.bl1_tempoh IS 'TEMPOH BIL'
+/
+COMMENT ON COLUMN osc_bil_tmphlesen.bl1_tkhbil IS 'TARIKH BIL'
+/
+COMMENT ON COLUMN osc_bil_tmphlesen.bl1_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_bil_tmphlesen.bl1_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_BIL_TMPHLESEN
+
+-- Start of DDL Script for Table OSCL.OSC_BIL_TRANSLESEN
+-- Generated 3/12/2025 3:53:52 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_bil_translesen
+    (bl2_idpbt                      VARCHAR2(10 BYTE),
+    bl2_noakaun                    NUMBER(7,0),
+    bl2_transaksi                  VARCHAR2(5 BYTE),
+    bl2_nombil                     VARCHAR2(15 BYTE),
+    bl2_amaun                      NUMBER(11,2),
+    bl2_statf                      VARCHAR2(1 BYTE),
+    bl2_idate                      DATE,
+    bl2_udate                      DATE,
+    bl2_iuser                      VARCHAR2(20 BYTE),
+    bl2_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_BIL_TRANSLESEN
+
+COMMENT ON TABLE osc_bil_translesen IS 'MAKLUMAT TRANSAKSI BIL'
+/
+COMMENT ON COLUMN osc_bil_translesen.bl2_amaun IS 'AMAUN BIL'
+/
+COMMENT ON COLUMN osc_bil_translesen.bl2_idate IS 'TARIKH KEMASUKAN'
+/
+COMMENT ON COLUMN osc_bil_translesen.bl2_idpbt IS 'KOD ID PBT'
+/
+COMMENT ON COLUMN osc_bil_translesen.bl2_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_bil_translesen.bl2_noakaun IS 'NO AKAUN'
+/
+COMMENT ON COLUMN osc_bil_translesen.bl2_nombil IS 'NO BIL LESEN'
+/
+COMMENT ON COLUMN osc_bil_translesen.bl2_statf IS 'STATUS BIL [N]-BARU [P]-CETAKAN SEMULA'
+/
+COMMENT ON COLUMN osc_bil_translesen.bl2_transaksi IS 'KOD TRANSAKSI/HASIL'
+/
+COMMENT ON COLUMN osc_bil_translesen.bl2_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_bil_translesen.bl2_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_BIL_TRANSLESEN
+
+-- Start of DDL Script for Table OSCL.OSC_CGR_CAGARAN
+-- Generated 3/12/2025 3:53:53 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_cgr_cagaran
+    (cag_idpbt                      VARCHAR2(10 BYTE) NOT NULL,
+    cag_cagakaun                   NUMBER(7,0) NOT NULL,
+    cag_lsnakaun                   NUMBER(7,0) NOT NULL,
+    cag_kodniaga1                  VARCHAR2(2 BYTE) NOT NULL,
+    cag_kodniaga2                  VARCHAR2(3 BYTE) NOT NULL,
+    cag_kodniaga3                  VARCHAR2(2 BYTE) NOT NULL,
+    cag_transaksi                  VARCHAR2(6 BYTE),
+    cag_norujukan                  VARCHAR2(20 BYTE),
+    cag_tkhtrans                   DATE,
+    cag_trnamaun                   NUMBER(13,2),
+    cag_statf                      VARCHAR2(1 BYTE),
+    cag_idate                      DATE,
+    cag_udate                      DATE,
+    cag_iuser                      VARCHAR2(20 BYTE),
+    cag_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_CGR_CAGARAN
+
+COMMENT ON TABLE osc_cgr_cagaran IS 'MAKLUMAT TRANSAKSI CAGARAN'
+/
+COMMENT ON COLUMN osc_cgr_cagaran.cag_cagakaun IS 'NO AKAUN CAGARAN'
+/
+COMMENT ON COLUMN osc_cgr_cagaran.cag_idate IS 'TARIKH INPUT'
+/
+COMMENT ON COLUMN osc_cgr_cagaran.cag_idpbt IS 'ID PBT'
+/
+COMMENT ON COLUMN osc_cgr_cagaran.cag_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_cgr_cagaran.cag_kodniaga1 IS 'KOD PERNIAGAAN1'
+/
+COMMENT ON COLUMN osc_cgr_cagaran.cag_kodniaga2 IS 'KOD PERNIAGAAN2'
+/
+COMMENT ON COLUMN osc_cgr_cagaran.cag_kodniaga3 IS 'KOD PERNIAGAAN3'
+/
+COMMENT ON COLUMN osc_cgr_cagaran.cag_lsnakaun IS 'NO AKAUN LESEN'
+/
+COMMENT ON COLUMN osc_cgr_cagaran.cag_norujukan IS 'NO RUJUKAN RESIT/BIL/JERNAL'
+/
+COMMENT ON COLUMN osc_cgr_cagaran.cag_statf IS 'STATUS TRANSAKSI'
+/
+COMMENT ON COLUMN osc_cgr_cagaran.cag_tkhtrans IS 'TARIKH TRANSAKSI'
+/
+COMMENT ON COLUMN osc_cgr_cagaran.cag_transaksi IS 'KOD TRANSAKSI/KOD HASIL'
+/
+COMMENT ON COLUMN osc_cgr_cagaran.cag_trnamaun IS 'AMAUN TRANSAKSI'
+/
+COMMENT ON COLUMN osc_cgr_cagaran.cag_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_cgr_cagaran.cag_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_CGR_CAGARAN
+
+-- Start of DDL Script for Table OSCL.OSC_DA_ALAMAT
+-- Generated 3/12/2025 3:53:54 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_da_alamat
+    (almt_idpbt                     VARCHAR2(10 BYTE),
+    almt_pelangganid               VARCHAR2(15 BYTE),
+    almt_alamatid                  NUMBER(3,0),
+    almt_alamat01                  VARCHAR2(100 BYTE),
+    almt_alamat02                  VARCHAR2(100 BYTE),
+    almt_alamat03                  VARCHAR2(100 BYTE),
+    almt_poskod                    VARCHAR2(5 BYTE),
+    almt_alamat04                  VARCHAR2(100 BYTE),
+    almt_alamat05                  VARCHAR2(100 BYTE),
+    almt_notelefon                 VARCHAR2(20 BYTE),
+    almt_nomborhp                  VARCHAR2(20 BYTE),
+    almt_nomborfax                 VARCHAR2(20 BYTE),
+    almt_email                     VARCHAR2(50 BYTE),
+    almt_stoversea                 VARCHAR2(1 BYTE),
+    almt_idate                     DATE,
+    almt_udate                     DATE,
+    almt_iuser                     VARCHAR2(20 BYTE),
+    almt_uuser                     VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_DA_ALAMAT
+
+COMMENT ON TABLE osc_da_alamat IS 'MAKLUMAT ALAMAT PELANGGAN'
+/
+COMMENT ON COLUMN osc_da_alamat.almt_alamat01 IS 'ALAMAT 1'
+/
+COMMENT ON COLUMN osc_da_alamat.almt_alamat02 IS 'ALAMAT 2'
+/
+COMMENT ON COLUMN osc_da_alamat.almt_alamat03 IS 'ALAMAT 3'
+/
+COMMENT ON COLUMN osc_da_alamat.almt_alamat04 IS 'ALAMAT 4'
+/
+COMMENT ON COLUMN osc_da_alamat.almt_alamat05 IS 'ALAMAT 5'
+/
+COMMENT ON COLUMN osc_da_alamat.almt_alamatid IS 'ALAMAT ID'
+/
+COMMENT ON COLUMN osc_da_alamat.almt_email IS 'ALAMAT EMAIL'
+/
+COMMENT ON COLUMN osc_da_alamat.almt_idate IS 'TARIKH KEMASUKAN'
+/
+COMMENT ON COLUMN osc_da_alamat.almt_idpbt IS 'KOD ID PBT'
+/
+COMMENT ON COLUMN osc_da_alamat.almt_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_da_alamat.almt_nomborfax IS 'NO FAKS'
+/
+COMMENT ON COLUMN osc_da_alamat.almt_nomborhp IS 'NO TELEFON BIMBIT'
+/
+COMMENT ON COLUMN osc_da_alamat.almt_notelefon IS 'NO TELEFON'
+/
+COMMENT ON COLUMN osc_da_alamat.almt_pelangganid IS 'NO KP / NO SSM / NO PASPORT'
+/
+COMMENT ON COLUMN osc_da_alamat.almt_poskod IS 'POSKOD'
+/
+COMMENT ON COLUMN osc_da_alamat.almt_stoversea IS 'ALAMAT LUAR NEGARA [Y]-YA  [T]-TIDAK'
+/
+COMMENT ON COLUMN osc_da_alamat.almt_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_da_alamat.almt_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_DA_ALAMAT
+
+-- Start of DDL Script for Table OSCL.OSC_DA_INDIVIDU
+-- Generated 3/12/2025 3:53:55 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_da_individu
+    (indv_idpbt                     VARCHAR2(10 BYTE),
+    indv_pelangganid               VARCHAR2(15 BYTE) NOT NULL,
+    indv_jenisid                   VARCHAR2(1 BYTE),
+    indv_lhdntinid                 VARCHAR2(14 BYTE),
+    indv_passpot                   VARCHAR2(10 BYTE),
+    indv_gelar                     VARCHAR2(1 BYTE),
+    indv_jantina                   VARCHAR2(1 BYTE),
+    indv_bangsa                    VARCHAR2(1 BYTE),
+    indv_warganegara               VARCHAR2(1 BYTE),
+    indv_tarikhlahir               DATE,
+    indv_pekerjaan                 VARCHAR2(4 BYTE),
+    indv_stperkahwinan             VARCHAR2(1 BYTE),
+    indv_pendapatan                NUMBER(12,2),
+    indv_agama                     VARCHAR2(1 BYTE),
+    indv_okustatus                 VARCHAR2(1 BYTE),
+    indv_idoku                     VARCHAR2(20 BYTE),
+    indv_idate                     DATE,
+    indv_udate                     DATE,
+    indv_iuser                     VARCHAR2(20 BYTE),
+    indv_uuser                     VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_DA_INDIVIDU
+
+COMMENT ON TABLE osc_da_individu IS 'MAKLUMAT PELANGGAN NDIVIDU'
+/
+COMMENT ON COLUMN osc_da_individu.indv_agama IS 'AGAMA - REFER OSC_CONTROLTABLE'
+/
+COMMENT ON COLUMN osc_da_individu.indv_bangsa IS 'BANGSA - REFER OSC_CONTROLTABLE'
+/
+COMMENT ON COLUMN osc_da_individu.indv_gelar IS 'GELARAN - REFER OSC_CONTROLTABLE'
+/
+COMMENT ON COLUMN osc_da_individu.indv_idate IS 'TARIKH KEMASUKAN'
+/
+COMMENT ON COLUMN osc_da_individu.indv_idoku IS 'ID OKU'
+/
+COMMENT ON COLUMN osc_da_individu.indv_idpbt IS 'ID PBT'
+/
+COMMENT ON COLUMN osc_da_individu.indv_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_da_individu.indv_jantina IS 'JANTINA - REFER OSC_CONTROLTABLE'
+/
+COMMENT ON COLUMN osc_da_individu.indv_jenisid IS 'JENIS PENGENALAN [A]-AWAM  [T]-TENTERA  [P]-POLIS'
+/
+COMMENT ON COLUMN osc_da_individu.indv_lhdntinid IS 'NO PENGENALAN CUKAI LHDN / TIN'
+/
+COMMENT ON COLUMN osc_da_individu.indv_okustatus IS 'STATUS OKU [Y]-YA  [T]-TIDAK'
+/
+COMMENT ON COLUMN osc_da_individu.indv_passpot IS 'NO PASPORT'
+/
+COMMENT ON COLUMN osc_da_individu.indv_pekerjaan IS 'PEKERJAAN'
+/
+COMMENT ON COLUMN osc_da_individu.indv_pelangganid IS 'NO KAD PENGENALAN'
+/
+COMMENT ON COLUMN osc_da_individu.indv_pendapatan IS 'PENDAPATAN - REFER OSC_CONTROLTABLE'
+/
+COMMENT ON COLUMN osc_da_individu.indv_stperkahwinan IS 'STATUS PERKAHWINAN - REFER OSC_CONTROLTABLE'
+/
+COMMENT ON COLUMN osc_da_individu.indv_tarikhlahir IS 'TARIKH LAHIR'
+/
+COMMENT ON COLUMN osc_da_individu.indv_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_da_individu.indv_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+COMMENT ON COLUMN osc_da_individu.indv_warganegara IS 'WARGANEGARA [Y]-YA   [T]-TIDAK'
+/
+
+-- End of DDL Script for Table OSCL.OSC_DA_INDIVIDU
+
+-- Start of DDL Script for Table OSCL.OSC_DA_KEMUDAHAN
+-- Generated 3/12/2025 3:53:56 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_da_kemudahan
+    (kmdh_idpbt                     VARCHAR2(10 BYTE) NOT NULL,
+    kmdh_idpelanggan               VARCHAR2(15 BYTE) NOT NULL,
+    kmdh_alamatid                  NUMBER(3,0) NOT NULL,
+    kmdh_modakaun                  VARCHAR2(1 BYTE) NOT NULL,
+    kmdh_noakaun                   VARCHAR2(15 BYTE) NOT NULL,
+    kmdh_stathitam                 VARCHAR2(1 BYTE),
+    kmdh_idate                     DATE,
+    kmdh_udate                     DATE,
+    kmdh_iuser                     VARCHAR2(20 BYTE),
+    kmdh_uuser                     VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_DA_KEMUDAHAN
+
+COMMENT ON TABLE osc_da_kemudahan IS 'MAKLUMAT KEMUDAHAN PELANGGAN'
+/
+COMMENT ON COLUMN osc_da_kemudahan.kmdh_alamatid IS 'ALAMAT ID'
+/
+COMMENT ON COLUMN osc_da_kemudahan.kmdh_idate IS 'TARIKH KEMASUKAN'
+/
+COMMENT ON COLUMN osc_da_kemudahan.kmdh_idpbt IS 'KOD ID PBT'
+/
+COMMENT ON COLUMN osc_da_kemudahan.kmdh_idpelanggan IS 'NO KP / NO SSM / NO PASPORT'
+/
+COMMENT ON COLUMN osc_da_kemudahan.kmdh_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_da_kemudahan.kmdh_modakaun IS 'MODIN [L]-LESEN'
+/
+COMMENT ON COLUMN osc_da_kemudahan.kmdh_noakaun IS 'NO AKAUN LESEN'
+/
+COMMENT ON COLUMN osc_da_kemudahan.kmdh_stathitam IS 'STATUS DI SENARAI HITAM [Y]- YA   [T]-TIDAK'
+/
+COMMENT ON COLUMN osc_da_kemudahan.kmdh_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_da_kemudahan.kmdh_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_DA_KEMUDAHAN
+
+-- Start of DDL Script for Table OSCL.OSC_DA_LISTHITAM
+-- Generated 3/12/2025 3:53:57 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_da_listhitam
+    (htm_idpelanggan                VARCHAR2(15 BYTE) NOT NULL,
+    htm_nosiri                     NUMBER(7,0),
+    htm_kodkategori                VARCHAR2(4 BYTE),
+    htm_catatan                    VARCHAR2(200 BYTE),
+    htm_tarikh                     DATE,
+    htm_status                     VARCHAR2(2 BYTE),
+    htm_idpbt                      VARCHAR2(10 BYTE),
+    htm_idate                      DATE,
+    htm_udate                      DATE,
+    htm_iuser                      VARCHAR2(20 BYTE),
+    htm_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_DA_LISTHITAM
+
+COMMENT ON TABLE osc_da_listhitam IS 'PELANGGAN YANG DISENARAI HITAM'
+/
+COMMENT ON COLUMN osc_da_listhitam.htm_catatan IS 'CATATAN/ULASAN'
+/
+COMMENT ON COLUMN osc_da_listhitam.htm_idate IS 'TARIKH KEMASUKAN'
+/
+COMMENT ON COLUMN osc_da_listhitam.htm_idpbt IS 'KOD ID PBT'
+/
+COMMENT ON COLUMN osc_da_listhitam.htm_idpelanggan IS 'ID PELANGGAN'
+/
+COMMENT ON COLUMN osc_da_listhitam.htm_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_da_listhitam.htm_kodkategori IS 'KOD KATEGORI SENARAI HITAM'
+/
+COMMENT ON COLUMN osc_da_listhitam.htm_nosiri IS 'NO SIRI SENARAI HITAM'
+/
+COMMENT ON COLUMN osc_da_listhitam.htm_status IS 'STATUS DISENARAI HITAM [B]-TERBATAL [A]-AKTIF'
+/
+COMMENT ON COLUMN osc_da_listhitam.htm_tarikh IS 'TARIKH DIREKOD'
+/
+COMMENT ON COLUMN osc_da_listhitam.htm_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_da_listhitam.htm_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_DA_LISTHITAM
+
+-- Start of DDL Script for Table OSCL.OSC_DA_PELANGGAN
+-- Generated 3/12/2025 3:53:58 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_da_pelanggan
+    (plgn_idpbt                     VARCHAR2(10 BYTE),
+    plgn_idpelanggan               VARCHAR2(15 BYTE) NOT NULL,
+    plgn_pelanggannama             VARCHAR2(100 BYTE) NOT NULL,
+    plgn_pelangganjenis            VARCHAR2(1 BYTE) NOT NULL,
+    plgn_tinid                     VARCHAR2(15 BYTE),
+    plgn_sstid                     VARCHAR2(20 BYTE),
+    plgn_catat                     VARCHAR2(250 BYTE),
+    plgn_idate                     DATE,
+    plgn_udate                     DATE,
+    plgn_iuser                     VARCHAR2(20 BYTE),
+    plgn_uuser                     VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_DA_PELANGGAN
+
+COMMENT ON TABLE osc_da_pelanggan IS 'MAKLUMAT PELANGGAN'
+/
+COMMENT ON COLUMN osc_da_pelanggan.plgn_catat IS 'CATATAN'
+/
+COMMENT ON COLUMN osc_da_pelanggan.plgn_idate IS 'TARIKH KEMASUKAN'
+/
+COMMENT ON COLUMN osc_da_pelanggan.plgn_idpbt IS 'KOD ID PBT'
+/
+COMMENT ON COLUMN osc_da_pelanggan.plgn_idpelanggan IS 'NO KP / NO SSM / NO PASPORT'
+/
+COMMENT ON COLUMN osc_da_pelanggan.plgn_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_da_pelanggan.plgn_pelangganjenis IS '[I]-INDIVIDU   [S]-SYARIKAT'
+/
+COMMENT ON COLUMN osc_da_pelanggan.plgn_pelanggannama IS 'NAMA PELANGGAN'
+/
+COMMENT ON COLUMN osc_da_pelanggan.plgn_sstid IS 'NO CUKAI DAN PERKHIDMATAN LHDN'
+/
+COMMENT ON COLUMN osc_da_pelanggan.plgn_tinid IS 'NO PENGENALAN CUKAI LHDN / TIN'
+/
+COMMENT ON COLUMN osc_da_pelanggan.plgn_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_da_pelanggan.plgn_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_DA_PELANGGAN
+
+-- Start of DDL Script for Table OSCL.OSC_DA_SYARIKAT
+-- Generated 3/12/2025 3:53:59 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_da_syarikat
+    (sykt_idpbt                     VARCHAR2(10 BYTE),
+    sykt_idpelanggan               VARCHAR2(15 BYTE) NOT NULL,
+    sykt_lhdnsstid                 VARCHAR2(20 BYTE),
+    sykt_nodaftarkew               VARCHAR2(15 BYTE),
+    sykt_nodaftarcidb              VARCHAR2(20 BYTE),
+    sykt_nodaftarpkk               VARCHAR2(20 BYTE),
+    sykt_statusbumi                VARCHAR2(1 BYTE),
+    sykt_tkhmulaniaga              DATE,
+    sykt_tkhtmtniaga               DATE,
+    sykt_idplgcontact              VARCHAR2(15 BYTE),
+    sykt_contactnama               VARCHAR2(100 BYTE),
+    sykt_idate                     DATE,
+    sykt_udate                     DATE,
+    sykt_iuser                     VARCHAR2(20 BYTE),
+    sykt_uuser                     VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_DA_SYARIKAT
+
+COMMENT ON TABLE osc_da_syarikat IS 'MAKLUMAT SYARIKAT'
+/
+COMMENT ON COLUMN osc_da_syarikat.sykt_contactnama IS 'NAMA PEGAWAI DIHUBUNGI'
+/
+COMMENT ON COLUMN osc_da_syarikat.sykt_idate IS 'TARIKH KEMASUKAN'
+/
+COMMENT ON COLUMN osc_da_syarikat.sykt_idpbt IS 'KOD ID PBT'
+/
+COMMENT ON COLUMN osc_da_syarikat.sykt_idpelanggan IS 'NO SSM'
+/
+COMMENT ON COLUMN osc_da_syarikat.sykt_idplgcontact IS 'NO TELEFON PEGAWAI DIHUBUNGI'
+/
+COMMENT ON COLUMN osc_da_syarikat.sykt_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_da_syarikat.sykt_lhdnsstid IS 'ID SST LHDN'
+/
+COMMENT ON COLUMN osc_da_syarikat.sykt_nodaftarcidb IS 'NO DAFTAR CIDB'
+/
+COMMENT ON COLUMN osc_da_syarikat.sykt_nodaftarkew IS 'NO DAFTAR KEMENTERIAN KEWANGAN'
+/
+COMMENT ON COLUMN osc_da_syarikat.sykt_nodaftarpkk IS 'NO DAFTAR PERTUBUHAN KONTRAKTOR'
+/
+COMMENT ON COLUMN osc_da_syarikat.sykt_statusbumi IS 'STATUS BUMIPUTRA [Y]-YA   [T]-TIDAK'
+/
+COMMENT ON COLUMN osc_da_syarikat.sykt_tkhmulaniaga IS 'TARIKH MULA NIAGA'
+/
+COMMENT ON COLUMN osc_da_syarikat.sykt_tkhtmtniaga IS 'TARIKH TAMAT NIAGA'
+/
+COMMENT ON COLUMN osc_da_syarikat.sykt_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_da_syarikat.sykt_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_DA_SYARIKAT
+
+-- Start of DDL Script for Table OSCL.OSC_IND_DOKUMENLESEN
+-- Generated 3/12/2025 3:54:00 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_ind_dokumenlesen
+    (doc_idpbt                      VARCHAR2(10 BYTE),
+    doc_akaun                      NUMBER(7,0),
+    doc_dcsiri                     NUMBER(3,0),
+    doc_dokumen                    LONG RAW,
+    doc_catatan                    VARCHAR2(250 BYTE),
+    doc_idate                      DATE,
+    doc_udate                      DATE,
+    doc_iuser                      VARCHAR2(20 BYTE),
+    doc_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_IND_DOKUMENLESEN
+
+COMMENT ON TABLE osc_ind_dokumenlesen IS 'MAKLUMAT  DOKUMEN INDUK PELESEN '
+/
+COMMENT ON COLUMN osc_ind_dokumenlesen.doc_akaun IS 'NO AKAUN'
+/
+COMMENT ON COLUMN osc_ind_dokumenlesen.doc_catatan IS 'CATATAN KEPADA DOKUMEN'
+/
+COMMENT ON COLUMN osc_ind_dokumenlesen.doc_dcsiri IS 'NO SIRI DOKUMEN'
+/
+COMMENT ON COLUMN osc_ind_dokumenlesen.doc_dokumen IS 'IMAGE DOKUMEN'
+/
+COMMENT ON COLUMN osc_ind_dokumenlesen.doc_idate IS 'TARIKH INPUT'
+/
+COMMENT ON COLUMN osc_ind_dokumenlesen.doc_idpbt IS 'KOD ID PBT'
+/
+COMMENT ON COLUMN osc_ind_dokumenlesen.doc_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_ind_dokumenlesen.doc_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_ind_dokumenlesen.doc_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_IND_DOKUMENLESEN
+
+-- Start of DDL Script for Table OSCL.OSC_IND_GAMBARLESEN
+-- Generated 3/12/2025 3:54:01 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_ind_gambarlesen
+    (gbr_idpbt                      VARCHAR2(10 BYTE),
+    gbr_akaun                      NUMBER(7,0),
+    gbr_imsiri                     NUMBER(3,0),
+    gbr_namafail                   VARCHAR2(100 BYTE),
+    gbr_pathfile                   VARCHAR2(100 BYTE),
+    gbr_idate                      DATE,
+    gbr_udate                      DATE,
+    gbr_iuser                      VARCHAR2(20 BYTE),
+    gbr_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_IND_GAMBARLESEN
+
+COMMENT ON COLUMN osc_ind_gambarlesen.gbr_akaun IS 'NO AKAUN : LEPAS KELULUSAN'
+/
+COMMENT ON COLUMN osc_ind_gambarlesen.gbr_idate IS 'TARIKH INPUT'
+/
+COMMENT ON COLUMN osc_ind_gambarlesen.gbr_idpbt IS 'KOD ID PBT'
+/
+COMMENT ON COLUMN osc_ind_gambarlesen.gbr_imsiri IS 'NO SIRI IMAGE'
+/
+COMMENT ON COLUMN osc_ind_gambarlesen.gbr_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_ind_gambarlesen.gbr_namafail IS 'NAMA FAIL IMAGE'
+/
+COMMENT ON COLUMN osc_ind_gambarlesen.gbr_pathfile IS 'LOKASI FAIL'
+/
+COMMENT ON COLUMN osc_ind_gambarlesen.gbr_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_ind_gambarlesen.gbr_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_IND_GAMBARLESEN
+
+-- Start of DDL Script for Table OSCL.OSC_IND_IKLANLESEN
+-- Generated 3/12/2025 3:54:02 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_ind_iklanlesen
+    (lan_idpbt                      VARCHAR2(10 BYTE),
+    lan_akaun                      NUMBER(7,0),
+    lan_rujukan                    VARCHAR2(20 BYTE),
+    lan_tkhmula                    DATE,
+    lan_tkhtmt                     DATE,
+    lan_amaun                      NUMBER(11,2),
+    lan_lentang                    VARCHAR2(1 BYTE),
+    lan_berlampu                   VARCHAR2(1 BYTE),
+    lan_stataktif                  VARCHAR2(1 BYTE),
+    lan_panjang                    NUMBER(6,2),
+    lan_lebar                      NUMBER(6,2),
+    lan_tempat                     VARCHAR2(100 BYTE),
+    lan_keterangan                 VARCHAR2(40 BYTE),
+    lan_tkhbatal                   DATE,
+    lan_statf                      VARCHAR2(1 BYTE),
+    lan_idate                      DATE,
+    lan_udate                      DATE,
+    lan_iuser                      VARCHAR2(20 BYTE),
+    lan_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_IND_IKLANLESEN
+
+COMMENT ON TABLE osc_ind_iklanlesen IS 'MAKLUMAT IKLAN PELESEN'
+/
+COMMENT ON COLUMN osc_ind_iklanlesen.lan_akaun IS 'NO AKAUN PELESEN'
+/
+COMMENT ON COLUMN osc_ind_iklanlesen.lan_amaun IS 'AMAUN'
+/
+COMMENT ON COLUMN osc_ind_iklanlesen.lan_berlampu IS 'BERLAMPU'
+/
+COMMENT ON COLUMN osc_ind_iklanlesen.lan_idate IS 'TARIKH INPUT'
+/
+COMMENT ON COLUMN osc_ind_iklanlesen.lan_idpbt IS 'KOD SIRI PBT'
+/
+COMMENT ON COLUMN osc_ind_iklanlesen.lan_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_ind_iklanlesen.lan_keterangan IS 'KETERANGAN'
+/
+COMMENT ON COLUMN osc_ind_iklanlesen.lan_lebar IS 'LEBAR'
+/
+COMMENT ON COLUMN osc_ind_iklanlesen.lan_lentang IS 'MELINTANG'
+/
+COMMENT ON COLUMN osc_ind_iklanlesen.lan_panjang IS 'PANJANG'
+/
+COMMENT ON COLUMN osc_ind_iklanlesen.lan_rujukan IS 'NO RUJUKAN IKLAN'
+/
+COMMENT ON COLUMN osc_ind_iklanlesen.lan_stataktif IS 'AKTIF'
+/
+COMMENT ON COLUMN osc_ind_iklanlesen.lan_statf IS 'STATUS IKLAN'
+/
+COMMENT ON COLUMN osc_ind_iklanlesen.lan_tempat IS 'TEMPAT'
+/
+COMMENT ON COLUMN osc_ind_iklanlesen.lan_tkhbatal IS 'TARIKH BATAL'
+/
+COMMENT ON COLUMN osc_ind_iklanlesen.lan_tkhmula IS 'TARIKH MULA'
+/
+COMMENT ON COLUMN osc_ind_iklanlesen.lan_tkhtmt IS 'TARIKH TAMAT'
+/
+COMMENT ON COLUMN osc_ind_iklanlesen.lan_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_ind_iklanlesen.lan_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_IND_IKLANLESEN
+
+-- Start of DDL Script for Table OSCL.OSC_IND_INDUKLESEN
+-- Generated 3/12/2025 3:54:03 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_ind_induklesen
+    (ind_idpbt                      VARCHAR2(10 BYTE),
+    ind_noakaun                    NUMBER(7,0),
+    ind_idpelanggan                VARCHAR2(15 BYTE),
+    ind_nosiri                     NUMBER(9,0),
+    ind_jenisplg                   VARCHAR2(1 BYTE),
+    ind_tkhmsyuarat                DATE,
+    ind_ptjpk                      VARCHAR2(6 BYTE),
+    ind_kodlokasi                  NUMBER(5,0),
+    ind_namaperniagaan             VARCHAR2(100 BYTE),
+    ind_almtperniagaan             VARCHAR2(100 BYTE),
+    ind_norujukan                  VARCHAR2(40 BYTE),
+    ind_tkmohon                    DATE,
+    ind_tarikhlulus                DATE,
+    ind_katniaga                   NUMBER(1,0),
+    ind_statl                      VARCHAR2(1 BYTE),
+    ind_tkmula                     DATE,
+    ind_tktamat                    DATE,
+    ind_tempoh                     NUMBER(5,0),
+    ind_notelefon                  VARCHAR2(10 BYTE),
+    ind_msmula                     VARCHAR2(10 BYTE),
+    ind_mstamat                    VARCHAR2(10 BYTE),
+    ind_idate                      DATE,
+    ind_udate                      DATE,
+    ind_iuser                      VARCHAR2(20 BYTE),
+    ind_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_IND_INDUKLESEN
+
+COMMENT ON COLUMN osc_ind_induklesen.ind_almtperniagaan IS 'ALAMAT PERNIAGA'
+/
+COMMENT ON COLUMN osc_ind_induklesen.ind_idate IS 'TARIKH KEMASUKAN MAKLUMAT'
+/
+COMMENT ON COLUMN osc_ind_induklesen.ind_idpbt IS 'KOD ID PBT'
+/
+COMMENT ON COLUMN osc_ind_induklesen.ind_idpelanggan IS 'ID PELANGGAN'
+/
+COMMENT ON COLUMN osc_ind_induklesen.ind_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_ind_induklesen.ind_jenisplg IS 'JENIS PELANGGAN [JENIS_PLG]'
+/
+COMMENT ON COLUMN osc_ind_induklesen.ind_katniaga IS 'KATEGORI PERNIAGAAN [KAT_NOAGA]'
+/
+COMMENT ON COLUMN osc_ind_induklesen.ind_kodlokasi IS 'KOD LOKASI'
+/
+COMMENT ON COLUMN osc_ind_induklesen.ind_msmula IS 'MASA MULA MENIAGA'
+/
+COMMENT ON COLUMN osc_ind_induklesen.ind_mstamat IS 'MASA TAMAN MENIAGA'
+/
+COMMENT ON COLUMN osc_ind_induklesen.ind_namaperniagaan IS 'NAMA PERNIAGAAN'
+/
+COMMENT ON COLUMN osc_ind_induklesen.ind_noakaun IS 'NO AKAUN LESEN - BILA KELULUSAN'
+/
+COMMENT ON COLUMN osc_ind_induklesen.ind_norujukan IS 'RUJUKAN FAIL - BILA KELULUSAN'
+/
+COMMENT ON COLUMN osc_ind_induklesen.ind_nosiri IS 'NO SIRI PERMOHONAN'
+/
+COMMENT ON COLUMN osc_ind_induklesen.ind_notelefon IS 'NO TELEFON SYARIKAT'
+/
+COMMENT ON COLUMN osc_ind_induklesen.ind_ptjpk IS 'KOD PTJPK [KELAS_PTJ]'
+/
+COMMENT ON COLUMN osc_ind_induklesen.ind_statl IS 'STATUS KELULUSAN PERMOHONAN'
+/
+COMMENT ON COLUMN osc_ind_induklesen.ind_tarikhlulus IS 'TARKH LULUS'
+/
+COMMENT ON COLUMN osc_ind_induklesen.ind_tempoh IS 'TEMPOH [12] [24] [36] BULAN'
+/
+COMMENT ON COLUMN osc_ind_induklesen.ind_tkhmsyuarat IS 'TARIKH MESYUARAT'
+/
+COMMENT ON COLUMN osc_ind_induklesen.ind_tkmohon IS 'TARIKH MOHON'
+/
+COMMENT ON COLUMN osc_ind_induklesen.ind_tkmula IS 'TARIKH MULA'
+/
+COMMENT ON COLUMN osc_ind_induklesen.ind_tktamat IS 'TARIKH TAMAT'
+/
+COMMENT ON COLUMN osc_ind_induklesen.ind_udate IS 'TARIKH KEMASKINI MAKLUMAT'
+/
+COMMENT ON COLUMN osc_ind_induklesen.ind_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_IND_INDUKLESEN
+
+-- Start of DDL Script for Table OSCL.OSC_IND_KOMPAUN
+-- Generated 3/12/2025 3:54:03 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_ind_kompaun
+    (kom_idpbt                      VARCHAR2(10 BYTE),
+    kom_nokompaun                  VARCHAR2(15 BYTE),
+    kom_idpelanggan                VARCHAR2(25 BYTE),
+    kom_transaksi                  VARCHAR2(5 BYTE),
+    kom_jlkod                      NUMBER(5,0),
+    kom_kdpeg                      VARCHAR2(10 BYTE),
+    kom_trikhmasa                  DATE,
+    kom_trikhnotis                 DATE,
+    kom_trikhmhkmh                 DATE,
+    kom_trikhbayar                 DATE,
+    kom_rujukan                    VARCHAR2(50 BYTE),
+    kom_noresit                    VARCHAR2(16 BYTE),
+    kom_amnkompaun                 NUMBER(11,2),
+    kom_amnbayar                   NUMBER(11,2),
+    kom_keter                      VARCHAR2(400 BYTE),
+    kom_statf                      VARCHAR2(1 BYTE),
+    kom_tmpat                      VARCHAR2(500 BYTE),
+    kom_noaknlesen                 VARCHAR2(15 BYTE),
+    kom_catat                      VARCHAR2(500 BYTE),
+    kom_iuser                      VARCHAR2(20 BYTE),
+    kom_idate                      DATE,
+    kom_uuser                      VARCHAR2(20 BYTE),
+    kom_udate                      DATE)
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- End of DDL Script for Table OSCL.OSC_IND_KOMPAUN
+
+-- Start of DDL Script for Table OSCL.OSC_IND_TRANSLESEN
+-- Generated 3/12/2025 3:54:04 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_ind_translesen
+    (trn_idpbt                      VARCHAR2(10 BYTE),
+    trn_akaun                      NUMBER(7,0),
+    trn_sequtama                   NUMBER(2,0),
+    trn_kodniaga1                  VARCHAR2(2 BYTE),
+    trn_kodniaga2                  VARCHAR2(3 BYTE),
+    trn_kodniaga3                  VARCHAR2(2 BYTE),
+    trn_tmbhkurng                  NUMBER(11,2),
+    trn_statcagar                  VARCHAR2(1 BYTE),
+    trn_akauncagar                 VARCHAR2(10 BYTE),
+    trn_stattrans                  VARCHAR2(1 BYTE),
+    trn_idate                      DATE,
+    trn_udate                      DATE,
+    trn_iuser                      VARCHAR2(20 BYTE),
+    trn_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_IND_TRANSLESEN
+
+COMMENT ON TABLE osc_ind_translesen IS 'MAKLUMAT INDUK TRANSAKSI PELESEN'
+/
+COMMENT ON COLUMN osc_ind_translesen.trn_akaun IS 'NO AKAUN - LEPAS KELULUSAN'
+/
+COMMENT ON COLUMN osc_ind_translesen.trn_akauncagar IS 'NO AKAUN CAGARAN'
+/
+COMMENT ON COLUMN osc_ind_translesen.trn_idate IS 'TARIKH KEMASUKAN'
+/
+COMMENT ON COLUMN osc_ind_translesen.trn_idpbt IS 'KOD ID PBT'
+/
+COMMENT ON COLUMN osc_ind_translesen.trn_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_ind_translesen.trn_kodniaga1 IS 'KOD PERNAGAAN'
+/
+COMMENT ON COLUMN osc_ind_translesen.trn_kodniaga2 IS 'KOD PERNIAGAAN'
+/
+COMMENT ON COLUMN osc_ind_translesen.trn_kodniaga3 IS 'KOD PERNIAGAAN'
+/
+COMMENT ON COLUMN osc_ind_translesen.trn_sequtama IS 'KEUTAMAAN TRANSAKSI'
+/
+COMMENT ON COLUMN osc_ind_translesen.trn_statcagar IS 'STATUS DIKENAKAN CAGARAN [Y]-Ya [T]-Tidak'
+/
+COMMENT ON COLUMN osc_ind_translesen.trn_stattrans IS 'STATUS TRANSAKSI'
+/
+COMMENT ON COLUMN osc_ind_translesen.trn_tmbhkurng IS 'AMAUN TAMBAHAN'
+/
+COMMENT ON COLUMN osc_ind_translesen.trn_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_ind_translesen.trn_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_IND_TRANSLESEN
+
+-- Start of DDL Script for Table OSCL.OSC_IND_ULASANLESEN
+-- Generated 3/12/2025 3:54:05 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_ind_ulasanlesen
+    (uls_idpbt                      VARCHAR2(10 BYTE),
+    uls_akaun                      NUMBER(7,0),
+    uls_ulsiri                     VARCHAR2(8 BYTE),
+    uls_ulasan                     VARCHAR2(250 BYTE),
+    uls_pegawai                    VARCHAR2(100 BYTE),
+    uls_tkhulas                    DATE,
+    uls_idate                      DATE,
+    uls_udate                      DATE,
+    uls_iuser                      VARCHAR2(20 BYTE),
+    uls_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_IND_ULASANLESEN
+
+COMMENT ON TABLE osc_ind_ulasanlesen IS 'MAKLUMAT ULASAN PELESEN'
+/
+COMMENT ON COLUMN osc_ind_ulasanlesen.uls_akaun IS 'NO AKAUN LESEN'
+/
+COMMENT ON COLUMN osc_ind_ulasanlesen.uls_idate IS 'TARIKH INPUT'
+/
+COMMENT ON COLUMN osc_ind_ulasanlesen.uls_idpbt IS 'KOD ID PBT'
+/
+COMMENT ON COLUMN osc_ind_ulasanlesen.uls_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_ind_ulasanlesen.uls_pegawai IS 'PENGAWAI MENGULAS'
+/
+COMMENT ON COLUMN osc_ind_ulasanlesen.uls_tkhulas IS 'TARIKH ULASAN DIBUAT'
+/
+COMMENT ON COLUMN osc_ind_ulasanlesen.uls_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_ind_ulasanlesen.uls_ulasan IS 'ULASAN'
+/
+COMMENT ON COLUMN osc_ind_ulasanlesen.uls_ulsiri IS 'NO SIRI ULASAN'
+/
+COMMENT ON COLUMN osc_ind_ulasanlesen.uls_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_IND_ULASANLESEN
+
+-- Start of DDL Script for Table OSCL.OSC_KOD_AGENSI
+-- Generated 3/12/2025 3:54:06 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_kod_agensi
+    (agn_idpbt                      VARCHAR2(10 BYTE),
+    agn_kdagnsi                    VARCHAR2(2 BYTE),
+    agn_nmagnsi                    VARCHAR2(100 BYTE),
+    agn_namrgks                    VARCHAR2(40 BYTE),
+    agn_areazon                    VARCHAR2(5 BYTE),
+    agn_katgori                    VARCHAR2(3 BYTE),
+    agn_statf                      VARCHAR2(1 BYTE),
+    agn_idate                      DATE,
+    agn_udate                      DATE,
+    agn_iuser                      VARCHAR2(20 BYTE),
+    agn_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_KOD_AGENSI
+
+COMMENT ON TABLE osc_kod_agensi IS 'KOD AGENSI TEKNIKAL DALAM DAN LUAR'
+/
+COMMENT ON COLUMN osc_kod_agensi.agn_areazon IS 'KOD ZON AGENSI - yg didaftarkan di lookup table'
+/
+COMMENT ON COLUMN osc_kod_agensi.agn_idate IS 'TARIKH KEMASUKAN'
+/
+COMMENT ON COLUMN osc_kod_agensi.agn_idpbt IS 'KOD ID PBT'
+/
+COMMENT ON COLUMN osc_kod_agensi.agn_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_kod_agensi.agn_katgori IS '[ATK] - [BTD]'
+/
+COMMENT ON COLUMN osc_kod_agensi.agn_kdagnsi IS 'KOD AGENSI'
+/
+COMMENT ON COLUMN osc_kod_agensi.agn_namrgks IS 'NAMA RINGKAS AGENSI'
+/
+COMMENT ON COLUMN osc_kod_agensi.agn_nmagnsi IS 'NAMA AGENSI'
+/
+COMMENT ON COLUMN osc_kod_agensi.agn_statf IS 'STATUS AKTIF [Y]-YA [T]-TIDAK'
+/
+COMMENT ON COLUMN osc_kod_agensi.agn_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_kod_agensi.agn_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_KOD_AGENSI
+
+-- Start of DDL Script for Table OSCL.OSC_KOD_AKTAKOMPAUN
+-- Generated 3/12/2025 3:54:07 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_kod_aktakompaun
+    (akt_idpbt                      VARCHAR2(10 BYTE),
+    akt_kodakta                    VARCHAR2(10 BYTE),
+    akt_trikhlulus                 DATE,
+    akt_keterangn                  VARCHAR2(500 BYTE),
+    akt_idate                      DATE,
+    akt_udate                      DATE,
+    akt_iuser                      VARCHAR2(20 BYTE),
+    akt_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_KOD_AKTAKOMPAUN
+
+COMMENT ON TABLE osc_kod_aktakompaun IS 'KOD AKTA KESALAHAN KOMPAUN PBT'
+/
+COMMENT ON COLUMN osc_kod_aktakompaun.akt_idate IS 'TARIKH KEMASUKAN'
+/
+COMMENT ON COLUMN osc_kod_aktakompaun.akt_idpbt IS 'ID PBT'
+/
+COMMENT ON COLUMN osc_kod_aktakompaun.akt_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_kod_aktakompaun.akt_keterangn IS 'KETERANGAN AKTA'
+/
+COMMENT ON COLUMN osc_kod_aktakompaun.akt_kodakta IS 'KOD AKTA'
+/
+COMMENT ON COLUMN osc_kod_aktakompaun.akt_trikhlulus IS 'TARIKH LULUS AKTA'
+/
+COMMENT ON COLUMN osc_kod_aktakompaun.akt_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_kod_aktakompaun.akt_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_KOD_AKTAKOMPAUN
+
+-- Start of DDL Script for Table OSCL.OSC_KOD_AKTIVITI
+-- Generated 3/12/2025 3:54:07 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_kod_aktiviti
+    (tvt_idpbt                      VARCHAR2(10 BYTE),
+    tvt_kdktvti                    VARCHAR2(5 BYTE),
+    tvt_tvtnama                    VARCHAR2(200 BYTE),
+    tvt_kodsektr                   VARCHAR2(5 BYTE),
+    tvt_idate                      DATE,
+    tvt_udate                      DATE,
+    tvt_iuser                      VARCHAR2(20 BYTE),
+    tvt_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_KOD_AKTIVITI
+
+COMMENT ON TABLE osc_kod_aktiviti IS 'KOD AKTIVITI'
+/
+COMMENT ON COLUMN osc_kod_aktiviti.tvt_idate IS 'TARIKH KEMASUKAN'
+/
+COMMENT ON COLUMN osc_kod_aktiviti.tvt_idpbt IS 'KOD ID PBT'
+/
+COMMENT ON COLUMN osc_kod_aktiviti.tvt_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_kod_aktiviti.tvt_kdktvti IS 'KOD AKTIVITI LESEN'
+/
+COMMENT ON COLUMN osc_kod_aktiviti.tvt_kodsektr IS 'KOD SEKTOR'
+/
+COMMENT ON COLUMN osc_kod_aktiviti.tvt_tvtnama IS 'KETERANGAN'
+/
+COMMENT ON COLUMN osc_kod_aktiviti.tvt_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_kod_aktiviti.tvt_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_KOD_AKTIVITI
+
+-- Start of DDL Script for Table OSCL.OSC_KOD_DOKUMEN
+-- Generated 3/12/2025 3:54:08 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_kod_dokumen
+    (osc_idpbt                      VARCHAR2(10 BYTE),
+    osc_ktegori                    VARCHAR2(1 BYTE),
+    osc_kddocmt                    VARCHAR2(5 BYTE),
+    osc_docdesc                    VARCHAR2(250 BYTE),
+    osc_catatan                    VARCHAR2(500 BYTE),
+    osc_statusd                    VARCHAR2(1 BYTE),
+    osc_jenismhn                   VARCHAR2(1 BYTE),
+    osc_idate                      DATE,
+    osc_udate                      DATE,
+    osc_iuser                      VARCHAR2(20 BYTE),
+    osc_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_KOD_DOKUMEN
+
+COMMENT ON TABLE osc_kod_dokumen IS 'MAKLUMAT DOKUMEN'
+/
+COMMENT ON COLUMN osc_kod_dokumen.osc_catatan IS 'catatan'
+/
+COMMENT ON COLUMN osc_kod_dokumen.osc_docdesc IS 'keterangan dokumen'
+/
+COMMENT ON COLUMN osc_kod_dokumen.osc_idate IS 'tarikh kemasukan'
+/
+COMMENT ON COLUMN osc_kod_dokumen.osc_idpbt IS 'kod id pbt'
+/
+COMMENT ON COLUMN osc_kod_dokumen.osc_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_kod_dokumen.osc_jenismhn IS 'jenis permohonan [JENIS MHN]'
+/
+COMMENT ON COLUMN osc_kod_dokumen.osc_kddocmt IS 'kod dokumen'
+/
+COMMENT ON COLUMN osc_kod_dokumen.osc_ktegori IS 'kategori risiko [RISIKO]'
+/
+COMMENT ON COLUMN osc_kod_dokumen.osc_statusd IS 'status document [M]-Mandatori [P]-Pilihan'
+/
+COMMENT ON COLUMN osc_kod_dokumen.osc_udate IS 'tarikh kemaskini'
+/
+COMMENT ON COLUMN osc_kod_dokumen.osc_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_KOD_DOKUMEN
+
+-- Start of DDL Script for Table OSCL.OSC_KOD_IMAGE
+-- Generated 3/12/2025 3:54:08 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_kod_image
+    (img_idpbt                      VARCHAR2(10 BYTE),
+    img_imgsiri                    NUMBER(5,0) NOT NULL,
+    img_imgnama                    VARCHAR2(60 BYTE),
+    img_imgimge                    LONG RAW,
+    img_idate                      DATE,
+    img_udate                      DATE,
+    img_iuser                      VARCHAR2(20 BYTE),
+    img_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     2097152
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_KOD_IMAGE
+
+COMMENT ON TABLE osc_kod_image IS 'KOD IMAGE'
+/
+COMMENT ON COLUMN osc_kod_image.img_idate IS 'tarikh kemasukan'
+/
+COMMENT ON COLUMN osc_kod_image.img_idpbt IS 'id pbt'
+/
+COMMENT ON COLUMN osc_kod_image.img_imgimge IS 'image'
+/
+COMMENT ON COLUMN osc_kod_image.img_imgnama IS 'keterangan'
+/
+COMMENT ON COLUMN osc_kod_image.img_imgsiri IS 'no siri image'
+/
+COMMENT ON COLUMN osc_kod_image.img_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_kod_image.img_udate IS 'tarikh kemaskini'
+/
+COMMENT ON COLUMN osc_kod_image.img_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_KOD_IMAGE
+
+-- Start of DDL Script for Table OSCL.OSC_KOD_JENIS
+-- Generated 3/12/2025 3:54:09 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_kod_jenis
+    (jns_idpbt                      VARCHAR2(10 BYTE),
+    jns_kodundg                    VARCHAR2(4 BYTE),
+    jns_kodjenis                   VARCHAR2(2 BYTE),
+    jns_jnsnama                    VARCHAR2(100 BYTE),
+    jns_jnsrgks                    VARCHAR2(40 BYTE),
+    jns_idate                      DATE,
+    jns_udate                      DATE,
+    jns_iuser                      VARCHAR2(20 BYTE),
+    jns_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_KOD_JENIS
+
+COMMENT ON TABLE osc_kod_jenis IS 'KOD JENIS'
+/
+COMMENT ON COLUMN osc_kod_jenis.jns_idate IS 'tarikh kemasukan'
+/
+COMMENT ON COLUMN osc_kod_jenis.jns_idpbt IS 'kod id pbt'
+/
+COMMENT ON COLUMN osc_kod_jenis.jns_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_kod_jenis.jns_jnsnama IS 'keterangan'
+/
+COMMENT ON COLUMN osc_kod_jenis.jns_jnsrgks IS 'keterangan ringkas'
+/
+COMMENT ON COLUMN osc_kod_jenis.jns_kodjenis IS 'kod jenis'
+/
+COMMENT ON COLUMN osc_kod_jenis.jns_kodundg IS 'kod undang-undang kecil pelesenan'
+/
+COMMENT ON COLUMN osc_kod_jenis.jns_udate IS 'tarikh kemaskini'
+/
+COMMENT ON COLUMN osc_kod_jenis.jns_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_KOD_JENIS
+
+-- Start of DDL Script for Table OSCL.OSC_KOD_JENISADUAN
+-- Generated 3/12/2025 3:54:10 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_kod_jenisaduan
+    (kat_idpbt                      VARCHAR2(10 BYTE),
+    kat_kodjenisaduan              VARCHAR2(3 BYTE),
+    kat_keterangan                 VARCHAR2(500 BYTE),
+    kat_kataduan                   VARCHAR2(1 BYTE),
+    kat_ptjpk                      VARCHAR2(6 BYTE),
+    kat_piagam                     NUMBER(3,0),
+    kat_idate                      DATE,
+    kat_udate                      DATE,
+    kat_iuser                      VARCHAR2(20 BYTE),
+    kat_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_KOD_JENISADUAN
+
+COMMENT ON TABLE osc_kod_jenisaduan IS 'KOD KATEGORI ADUAN'
+/
+COMMENT ON COLUMN osc_kod_jenisaduan.kat_idate IS 'TARIKH KEMASUKAN'
+/
+COMMENT ON COLUMN osc_kod_jenisaduan.kat_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_kod_jenisaduan.kat_kataduan IS 'KOD KATEGORI ADUAN [KAT_ADUAN]'
+/
+COMMENT ON COLUMN osc_kod_jenisaduan.kat_keterangan IS 'KETERANGAN KATEGORI'
+/
+COMMENT ON COLUMN osc_kod_jenisaduan.kat_kodjenisaduan IS 'KOD JENIS ADUAN'
+/
+COMMENT ON COLUMN osc_kod_jenisaduan.kat_piagam IS 'PIAGAM ADUAN PELANGGAN (BIL HARI)'
+/
+COMMENT ON COLUMN osc_kod_jenisaduan.kat_ptjpk IS 'KOD PTJPK'
+/
+COMMENT ON COLUMN osc_kod_jenisaduan.kat_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_kod_jenisaduan.kat_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_KOD_JENISADUAN
+
+-- Start of DDL Script for Table OSCL.OSC_KOD_KESALAHAN
+-- Generated 3/12/2025 3:54:11 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_kod_kesalahan
+    (sal_akkod                      VARCHAR2(4 BYTE),
+    sal_slkod                      VARCHAR2(10 BYTE),
+    sal_sketr                      VARCHAR2(40 BYTE),
+    sal_snama                      VARCHAR2(1000 BYTE),
+    sal_transaksi                  VARCHAR2(6 BYTE),
+    sal_ptjpk                      VARCHAR2(4 BYTE),
+    sal_amaun                      NUMBER(11,2),
+    sal_statt                      VARCHAR2(1 BYTE),
+    sal_tnots                      NUMBER(4,0),
+    sal_tmkmh                      NUMBER(4,0),
+    sal_amnts                      NUMBER(11,2),
+    sal_ammkh                      NUMBER(11,2),
+    sal_tmpoh1                     NUMBER(4,0),
+    sal_amaun1                     NUMBER(11,2),
+    sal_tmpoh2                     NUMBER(4,0),
+    sal_amaun2                     NUMBER(11,2),
+    sal_tmpoh3                     NUMBER(4,0),
+    sal_amaun3                     NUMBER(11,2),
+    sal_tnots1                     NUMBER(4,0),
+    sal_amnts1                     NUMBER(11,2),
+    sal_tnots2                     NUMBER(4,0),
+    sal_amnts2                     NUMBER(11,2),
+    sal_idate                      DATE,
+    sal_udate                      DATE,
+    sal_iuser                      VARCHAR2(20 BYTE),
+    sal_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_KOD_KESALAHAN
+
+COMMENT ON TABLE osc_kod_kesalahan IS 'MAKLUMAT KOD KESALAHAN.'
+/
+COMMENT ON COLUMN osc_kod_kesalahan.sal_akkod IS 'KOD AKTA KESALAHAN'
+/
+COMMENT ON COLUMN osc_kod_kesalahan.sal_amaun IS 'AMAUN KESALAHAN'
+/
+COMMENT ON COLUMN osc_kod_kesalahan.sal_amaun1 IS 'KADAR KENAIKAN PERTAMA'
+/
+COMMENT ON COLUMN osc_kod_kesalahan.sal_amaun2 IS 'KADAR KENAIKAN KEDUA'
+/
+COMMENT ON COLUMN osc_kod_kesalahan.sal_amaun3 IS 'KADAR KENAIKAN KETIGA'
+/
+COMMENT ON COLUMN osc_kod_kesalahan.sal_ammkh IS 'AMAUN MAHKAMAH'
+/
+COMMENT ON COLUMN osc_kod_kesalahan.sal_amnts IS 'AMAUN NOTIS'
+/
+COMMENT ON COLUMN osc_kod_kesalahan.sal_amnts1 IS 'KADAR NOTIS PERTAMA'
+/
+COMMENT ON COLUMN osc_kod_kesalahan.sal_amnts2 IS 'AMAUN NOTIS KEDUA'
+/
+COMMENT ON COLUMN osc_kod_kesalahan.sal_idate IS 'TARIK KEMASUKAN'
+/
+COMMENT ON COLUMN osc_kod_kesalahan.sal_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_kod_kesalahan.sal_ptjpk IS 'KOD PTJPK'
+/
+COMMENT ON COLUMN osc_kod_kesalahan.sal_sketr IS 'SINGKATAN KETERANGAN'
+/
+COMMENT ON COLUMN osc_kod_kesalahan.sal_slkod IS 'KOD KESALAHAN'
+/
+COMMENT ON COLUMN osc_kod_kesalahan.sal_snama IS 'KETERANGAN'
+/
+COMMENT ON COLUMN osc_kod_kesalahan.sal_statt IS 'STATUS AKTIF [Y]-Ya [T]-Tidak'
+/
+COMMENT ON COLUMN osc_kod_kesalahan.sal_tmkmh IS 'TEMPOH DIKENAKAN TINDAKAN MAHKAMAH'
+/
+COMMENT ON COLUMN osc_kod_kesalahan.sal_tmpoh1 IS 'TEMPOH PERTAMA'
+/
+COMMENT ON COLUMN osc_kod_kesalahan.sal_tmpoh2 IS 'TEMPOH KEDUA'
+/
+COMMENT ON COLUMN osc_kod_kesalahan.sal_tmpoh3 IS 'TEMPOH KETIGA'
+/
+COMMENT ON COLUMN osc_kod_kesalahan.sal_tnots IS 'TEMPOH DIKENAKAN NOTIS'
+/
+COMMENT ON COLUMN osc_kod_kesalahan.sal_tnots1 IS 'TEMPOH NOTIS PERTAMA'
+/
+COMMENT ON COLUMN osc_kod_kesalahan.sal_tnots2 IS 'TEMPOH NOTIS KEDUA'
+/
+COMMENT ON COLUMN osc_kod_kesalahan.sal_transaksi IS 'KOD TRANSAKSI / KOD HASIL'
+/
+COMMENT ON COLUMN osc_kod_kesalahan.sal_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_kod_kesalahan.sal_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_KOD_KESALAHAN
+
+-- Start of DDL Script for Table OSCL.OSC_KOD_LISTHITAM
+-- Generated 3/12/2025 3:54:13 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_kod_listhitam
+    (htm_kdsrpbt                    VARCHAR2(10 BYTE) NOT NULL,
+    htm_kodkategori                VARCHAR2(4 BYTE) NOT NULL,
+    htm_keterangan                 VARCHAR2(150 BYTE) NOT NULL,
+    htm_idate                      DATE,
+    htm_udate                      DATE,
+    htm_iuser                      VARCHAR2(20 BYTE),
+    htm_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_KOD_LISTHITAM
+
+COMMENT ON TABLE osc_kod_listhitam IS 'KOD KATEGORI DISENARAI HITAM'
+/
+COMMENT ON COLUMN osc_kod_listhitam.htm_idate IS 'TARIKH KEMASUKAN'
+/
+COMMENT ON COLUMN osc_kod_listhitam.htm_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_kod_listhitam.htm_kdsrpbt IS 'KOD ID PBT'
+/
+COMMENT ON COLUMN osc_kod_listhitam.htm_keterangan IS 'KETERANGAN'
+/
+COMMENT ON COLUMN osc_kod_listhitam.htm_kodkategori IS 'KOD KATEGORI SENARAI HITAM'
+/
+COMMENT ON COLUMN osc_kod_listhitam.htm_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_kod_listhitam.htm_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_KOD_LISTHITAM
+
+-- Start of DDL Script for Table OSCL.OSC_KOD_LOKASI
+-- Generated 3/12/2025 3:54:14 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_kod_lokasi
+    (lok_kodlokasi                  VARCHAR2(6 BYTE),
+    lok_namalokasi                 VARCHAR2(100 BYTE),
+    lok_namajalan                  VARCHAR2(100 BYTE),
+    lok_poskod                     VARCHAR2(5 BYTE),
+    lok_idate                      DATE,
+    lok_udate                      DATE,
+    lok_iuser                      VARCHAR2(20 BYTE),
+    lok_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_KOD_LOKASI
+
+COMMENT ON TABLE osc_kod_lokasi IS 'KOD LOKASI'
+/
+COMMENT ON COLUMN osc_kod_lokasi.lok_idate IS 'tarikh kemasukan'
+/
+COMMENT ON COLUMN osc_kod_lokasi.lok_iuser IS 'no kp pegawai kemasukan'
+/
+COMMENT ON COLUMN osc_kod_lokasi.lok_kodlokasi IS 'kod lokasi'
+/
+COMMENT ON COLUMN osc_kod_lokasi.lok_namajalan IS 'nama jalan/taman/kampung'
+/
+COMMENT ON COLUMN osc_kod_lokasi.lok_namalokasi IS 'nama lokasi'
+/
+COMMENT ON COLUMN osc_kod_lokasi.lok_poskod IS 'poskod'
+/
+COMMENT ON COLUMN osc_kod_lokasi.lok_udate IS 'tarikh kemaskini'
+/
+COMMENT ON COLUMN osc_kod_lokasi.lok_uuser IS 'no kp pegawai kemaskini'
+/
+
+-- End of DDL Script for Table OSCL.OSC_KOD_LOKASI
+
+-- Start of DDL Script for Table OSCL.OSC_KOD_MAJLIS
+-- Generated 3/12/2025 3:54:15 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_kod_majlis
+    (maj_kdnegri                    VARCHAR2(2 BYTE),
+    maj_nmnegri                    VARCHAR2(50 BYTE),
+    maj_idpbt                      VARCHAR2(10 BYTE),
+    maj_namapbt                    VARCHAR2(100 BYTE),
+    maj_kodpbt                     VARCHAR2(40 BYTE),
+    maj_alamat1                    VARCHAR2(100 BYTE),
+    maj_alamat2                    VARCHAR2(100 BYTE),
+    maj_alamat3                    VARCHAR2(100 BYTE),
+    maj_alamat4                    VARCHAR2(100 BYTE),
+    maj_telefon                    VARCHAR2(10 BYTE),
+    maj_amtemel                    VARCHAR2(20 BYTE),
+    maj_nombfax                    VARCHAR2(10 BYTE),
+    maj_kdsstid                    VARCHAR2(30 BYTE),
+    maj_kdtinid                    VARCHAR2(30 BYTE),
+    maj_stpinmlk                   VARCHAR2(1 BYTE),
+    maj_dinamik                    VARCHAR2(1 BYTE),
+    maj_prorate                    VARCHAR2(1 BYTE),
+    maj_idate                      DATE,
+    maj_udate                      DATE,
+    maj_iuser                      VARCHAR2(20 BYTE),
+    maj_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_KOD_MAJLIS
+
+COMMENT ON TABLE osc_kod_majlis IS 'KOD ID MAJLIS DAN MALUMAT MAJLIS'
+/
+COMMENT ON COLUMN osc_kod_majlis.maj_alamat1 IS 'alamat1'
+/
+COMMENT ON COLUMN osc_kod_majlis.maj_alamat2 IS 'alamat2'
+/
+COMMENT ON COLUMN osc_kod_majlis.maj_alamat3 IS 'alamat3'
+/
+COMMENT ON COLUMN osc_kod_majlis.maj_alamat4 IS 'alamat4'
+/
+COMMENT ON COLUMN osc_kod_majlis.maj_amtemel IS 'alamat emel'
+/
+COMMENT ON COLUMN osc_kod_majlis.maj_dinamik IS 'status lesen dinamik   [Y]-Ya  [T]-Tidak   [A]- Semua'
+/
+COMMENT ON COLUMN osc_kod_majlis.maj_idate IS 'tarikh kemasukan'
+/
+COMMENT ON COLUMN osc_kod_majlis.maj_idpbt IS 'id pbt'
+/
+COMMENT ON COLUMN osc_kod_majlis.maj_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_kod_majlis.maj_kdnegri IS 'kod negeri'
+/
+COMMENT ON COLUMN osc_kod_majlis.maj_kdsstid IS 'kod id sst'
+/
+COMMENT ON COLUMN osc_kod_majlis.maj_kdtinid IS 'kod TIN'
+/
+COMMENT ON COLUMN osc_kod_majlis.maj_kodpbt IS 'kod pbt'
+/
+COMMENT ON COLUMN osc_kod_majlis.maj_namapbt IS 'nama pbt'
+/
+COMMENT ON COLUMN osc_kod_majlis.maj_nmnegri IS 'nama negeri'
+/
+COMMENT ON COLUMN osc_kod_majlis.maj_nombfax IS 'nombor fax'
+/
+COMMENT ON COLUMN osc_kod_majlis.maj_prorate IS 'status prorate dibenarkan [Y]-Ya  [T]-Tidak'
+/
+COMMENT ON COLUMN osc_kod_majlis.maj_stpinmlk IS 'status pindah milik  [Y]-Ya  [T]-Tidak'
+/
+COMMENT ON COLUMN osc_kod_majlis.maj_telefon IS 'no telefon'
+/
+COMMENT ON COLUMN osc_kod_majlis.maj_udate IS 'tarikh kemaskini'
+/
+COMMENT ON COLUMN osc_kod_majlis.maj_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_KOD_MAJLIS
+
+-- Start of DDL Script for Table OSCL.OSC_KOD_NIAGA
+-- Generated 3/12/2025 3:54:16 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_kod_niaga
+    (nia_idpbt                      VARCHAR2(10 BYTE),
+    nia_kodundg                    VARCHAR2(4 BYTE),
+    nia_kodjenis                   VARCHAR2(2 BYTE),
+    nia_kodsektor                  VARCHAR2(5 BYTE),
+    nia_kodaktvti                  VARCHAR2(5 BYTE),
+    nia_kodniaga1                  VARCHAR2(2 BYTE) NOT NULL,
+    nia_kodniaga2                  VARCHAR2(3 BYTE) NOT NULL,
+    nia_kodniaga3                  VARCHAR2(2 BYTE) NOT NULL,
+    nia_transaksi                  VARCHAR2(6 BYTE) NOT NULL,
+    nia_keterngn                   VARCHAR2(100 BYTE),
+    nia_ringkas                    VARCHAR2(70 BYTE),
+    nia_kdrbndr                    NUMBER(9,2),
+    nia_kdrluar                    NUMBER(9,2),
+    nia_kdrlain                    NUMBER(9,2),
+    nia_stbyrblk                   VARCHAR2(1 BYTE),
+    nia_stdiscnt                   VARCHAR2(1 BYTE),
+    nia_discount                   VARCHAR2(3 BYTE),
+    nia_risiko                     VARCHAR2(1 BYTE),
+    nia_statcgrn                   VARCHAR2(1 BYTE),
+    nia_halal                      VARCHAR2(1 BYTE),
+    nia_tmpoh                      NUMBER(2,0),
+    nia_gldebit                    VARCHAR2(30 BYTE),
+    nia_glkredit                   VARCHAR2(30 BYTE),
+    nia_idate                      DATE,
+    nia_udate                      DATE,
+    nia_iuser                      VARCHAR2(20 BYTE),
+    nia_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_KOD_NIAGA
+
+COMMENT ON TABLE osc_kod_niaga IS 'KOD PERNIAGAAAN'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_discount IS 'KADAR DISCOUNT DEFAULT=100%'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_gldebit IS 'KOD GL DEBIT'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_glkredit IS 'KOD GL KREDIT'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_halal IS 'STATUS HALAL [Y]-YA  [T]-TIDAK'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_idate IS 'TARIKH KEMASUKAN'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_idpbt IS 'KOD ID  PBT'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_kdrbndr IS 'KADAR LESEN JIKA DIBANDAR'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_kdrlain IS 'KADAR LESEN LAIN-LAIN'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_kdrluar IS 'KADAR LESEN JIKA LUAR BANDAR'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_keterngn IS 'KETERANGAN PERNIAGAAN'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_kodaktvti IS 'KOD AKTIVITI'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_kodjenis IS 'KOD JENIS'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_kodniaga1 IS 'KOD NIAGA1'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_kodniaga2 IS 'KOD NIAGA2'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_kodniaga3 IS 'KOD NIAGA3'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_kodsektor IS 'KOD SEKTOR'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_kodundg IS 'KOD UNDANG-UNDANG KECIL'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_ringkas IS 'KETERANGAN RINGKAS PERNIAGAAN'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_risiko IS 'KATEGORI RISIKO PERNIAGAAN : REFER CTRL : RISIKO'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_statcgrn IS 'STATUS DIKENAKAN CAGARAN'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_stbyrblk IS 'STATUS BAYARAN BALIK'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_stdiscnt IS 'STATUS DISCOUNT : REFER CTRL - DISCOUNT'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_tmpoh IS 'TEMPOH DIAMBIL UNTUK SELESAI SATU PERMOHONAN RISKO,TIDAK RISIO DAN KRITIKAL'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_transaksi IS 'KOD TRANSAKSI / KOD HASIL'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_kod_niaga.nia_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_KOD_NIAGA
+
+-- Start of DDL Script for Table OSCL.OSC_KOD_POSKOD
+-- Generated 3/12/2025 3:54:17 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_kod_poskod
+    (pos_poskd                      VARCHAR2(5 BYTE) NOT NULL,
+    pos_bndar                      VARCHAR2(50 BYTE),
+    pos_negri                      VARCHAR2(2 BYTE) NOT NULL,
+    pos_idate                      DATE,
+    pos_udate                      DATE,
+    pos_iuser                      VARCHAR2(20 BYTE),
+    pos_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_KOD_POSKOD
+
+COMMENT ON TABLE osc_kod_poskod IS 'KOD POSKOD'
+/
+COMMENT ON COLUMN osc_kod_poskod.pos_bndar IS 'BANDAR'
+/
+COMMENT ON COLUMN osc_kod_poskod.pos_idate IS 'TARIKH KEMASUKAN'
+/
+COMMENT ON COLUMN osc_kod_poskod.pos_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_kod_poskod.pos_negri IS 'KOD NEGERI'
+/
+COMMENT ON COLUMN osc_kod_poskod.pos_poskd IS 'KOD POSKOD'
+/
+COMMENT ON COLUMN osc_kod_poskod.pos_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_kod_poskod.pos_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_KOD_POSKOD
+
+-- Start of DDL Script for Table OSCL.OSC_KOD_PTJPK
+-- Generated 3/12/2025 3:54:18 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_kod_ptjpk
+    (ptj_idpbt                      VARCHAR2(10 BYTE),
+    ptj_ptjpkcode                  VARCHAR2(6 BYTE) NOT NULL,
+    ptj_ptjpkkelas                 VARCHAR2(1 BYTE),
+    ptj_ptjpknama                  VARCHAR2(80 BYTE),
+    ptj_namarngks                  VARCHAR2(20 BYTE),
+    ptj_nopegawai                  VARCHAR2(15 BYTE),
+    ptj_idate                      DATE,
+    ptj_udate                      DATE,
+    ptj_iuser                      VARCHAR2(20 BYTE),
+    ptj_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_KOD_PTJPK
+
+COMMENT ON TABLE osc_kod_ptjpk IS 'KOD PUSAT TANGGUNGJAWAB / PUSAT KOS'
+/
+COMMENT ON COLUMN osc_kod_ptjpk.ptj_idate IS 'TARIKH KEMASUKAN'
+/
+COMMENT ON COLUMN osc_kod_ptjpk.ptj_idpbt IS 'ID PBT'
+/
+COMMENT ON COLUMN osc_kod_ptjpk.ptj_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_kod_ptjpk.ptj_namarngks IS 'NAMA RINGKAS'
+/
+COMMENT ON COLUMN osc_kod_ptjpk.ptj_nopegawai IS 'KETUA PTJPK'
+/
+COMMENT ON COLUMN osc_kod_ptjpk.ptj_ptjpkcode IS 'KOD PTJPK'
+/
+COMMENT ON COLUMN osc_kod_ptjpk.ptj_ptjpkkelas IS 'KELAS PTJPK [KELAS_PTJ]'
+/
+COMMENT ON COLUMN osc_kod_ptjpk.ptj_ptjpknama IS 'KETERANGAN PTJPK'
+/
+COMMENT ON COLUMN osc_kod_ptjpk.ptj_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_kod_ptjpk.ptj_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_KOD_PTJPK
+
+-- Start of DDL Script for Table OSCL.OSC_KOD_SEKTOR
+-- Generated 3/12/2025 3:54:19 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_kod_sektor
+    (skt_idpbt                      VARCHAR2(10 BYTE),
+    skt_kodsektr                   VARCHAR2(5 BYTE),
+    skt_sktrnama                   VARCHAR2(100 BYTE),
+    skt_kdjenis                    VARCHAR2(2 BYTE),
+    skt_idate                      DATE,
+    skt_udate                      DATE,
+    skt_iuser                      VARCHAR2(20 BYTE),
+    skt_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_KOD_SEKTOR
+
+COMMENT ON TABLE osc_kod_sektor IS 'KOD SEKTOR'
+/
+COMMENT ON COLUMN osc_kod_sektor.skt_idate IS 'tarikh kemasukan'
+/
+COMMENT ON COLUMN osc_kod_sektor.skt_idpbt IS 'id pbt'
+/
+COMMENT ON COLUMN osc_kod_sektor.skt_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_kod_sektor.skt_kdjenis IS 'kod jenis'
+/
+COMMENT ON COLUMN osc_kod_sektor.skt_kodsektr IS 'kod sektor'
+/
+COMMENT ON COLUMN osc_kod_sektor.skt_sktrnama IS 'keterangan'
+/
+COMMENT ON COLUMN osc_kod_sektor.skt_udate IS 'tarikh kemaskini'
+/
+COMMENT ON COLUMN osc_kod_sektor.skt_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_KOD_SEKTOR
+
+-- Start of DDL Script for Table OSCL.OSC_KOD_UNDANG
+-- Generated 3/12/2025 3:54:20 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_kod_undang
+    (und_idpbt                      VARCHAR2(10 BYTE),
+    und_kodundg                    VARCHAR2(4 BYTE),
+    und_ketrng1                    VARCHAR2(100 BYTE),
+    und_ketrng2                    VARCHAR2(100 BYTE),
+    und_ketrng3                    VARCHAR2(100 BYTE),
+    und_idate                      DATE,
+    und_udate                      DATE,
+    und_iuser                      VARCHAR2(20 BYTE),
+    und_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_KOD_UNDANG
+
+COMMENT ON TABLE osc_kod_undang IS 'KOD UNDANG-UNDANG-KECIL'
+/
+COMMENT ON COLUMN osc_kod_undang.und_idpbt IS 'kod id pbt'
+/
+COMMENT ON COLUMN osc_kod_undang.und_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_kod_undang.und_ketrng1 IS 'keterangan1'
+/
+COMMENT ON COLUMN osc_kod_undang.und_ketrng2 IS 'keterangan2'
+/
+COMMENT ON COLUMN osc_kod_undang.und_ketrng3 IS 'keterangan3'
+/
+COMMENT ON COLUMN osc_kod_undang.und_kodundg IS 'kod undang2 kecil'
+/
+COMMENT ON COLUMN osc_kod_undang.und_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_KOD_UNDANG
+
+-- Start of DDL Script for Table OSCL.OSC_KTP_TRANSAKSI
+-- Generated 3/12/2025 3:54:21 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_ktp_transaksi
+    (ktp_idpbt                      VARCHAR2(10 BYTE),
+    ktp_notransaksi                NUMBER(5,0) NOT NULL,
+    ktp_jebil                      VARCHAR2(1 BYTE) DEFAULT 'L' NOT NULL,
+    ktp_noakaun                    NUMBER(7,0) NOT NULL,
+    ktp_amaunresit                 NUMBER(11,2) NOT NULL,
+    ktp_noresit                    VARCHAR2(15 BYTE) NOT NULL,
+    ktp_carabayar                  VARCHAR2(10 BYTE),
+    ktp_tkhmasa                    DATE,
+    ktp_nobil                      VARCHAR2(15 BYTE),
+    ktp_pnama                      VARCHAR2(100 BYTE),
+    ktp_statk                      VARCHAR2(1 BYTE),
+    ktp_idate                      DATE,
+    ktp_udate                      DATE,
+    ktp_iuser                      VARCHAR2(20 BYTE),
+    ktp_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_KTP_TRANSAKSI
+
+COMMENT ON TABLE osc_ktp_transaksi IS 'MAKLUMAT TRANSAKSI  KUTIPAN'
+/
+COMMENT ON COLUMN osc_ktp_transaksi.ktp_amaunresit IS 'AMAUN RESIT'
+/
+COMMENT ON COLUMN osc_ktp_transaksi.ktp_carabayar IS 'CARA BAYARAN'
+/
+COMMENT ON COLUMN osc_ktp_transaksi.ktp_idate IS 'TARIKH KEMASUKAN'
+/
+COMMENT ON COLUMN osc_ktp_transaksi.ktp_idpbt IS 'ID PBT'
+/
+COMMENT ON COLUMN osc_ktp_transaksi.ktp_iuser IS 'NO KP TARIKH KEMASUKAN'
+/
+COMMENT ON COLUMN osc_ktp_transaksi.ktp_jebil IS 'JENIS BIL'
+/
+COMMENT ON COLUMN osc_ktp_transaksi.ktp_noakaun IS 'NO AKAUN LESEN'
+/
+COMMENT ON COLUMN osc_ktp_transaksi.ktp_nobil IS 'NO BIL'
+/
+COMMENT ON COLUMN osc_ktp_transaksi.ktp_noresit IS 'NO RESIT TRANSAKSI'
+/
+COMMENT ON COLUMN osc_ktp_transaksi.ktp_notransaksi IS 'MAKLUMAT TRANSAKSI TERIMAAN'
+/
+COMMENT ON COLUMN osc_ktp_transaksi.ktp_pnama IS 'NAMA PEMBAYAR'
+/
+COMMENT ON COLUMN osc_ktp_transaksi.ktp_statk IS 'STATUS KEMSKINI [S]-SELESAI'
+/
+COMMENT ON COLUMN osc_ktp_transaksi.ktp_tkhmasa IS 'TARIKHMASA TRANSAKSI'
+/
+COMMENT ON COLUMN osc_ktp_transaksi.ktp_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_ktp_transaksi.ktp_uuser IS 'NO KP TARIKH KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_KTP_TRANSAKSI
+
+-- Start of DDL Script for Table OSCL.OSC_MHN_DOKUMEN
+-- Generated 3/12/2025 3:54:23 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_mhn_dokumen
+    (doc_idpbt                      VARCHAR2(10 BYTE),
+    doc_nosiri                     NUMBER(9,0),
+    doc_akaun                      NUMBER(7,0),
+    doc_dcsiri                     NUMBER(3,0),
+    doc_dokumen                    LONG RAW,
+    doc_catatan                    VARCHAR2(250 BYTE),
+    doc_idate                      DATE,
+    doc_udate                      DATE,
+    doc_iuser                      VARCHAR2(20 BYTE),
+    doc_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_MHN_DOKUMEN
+
+COMMENT ON TABLE osc_mhn_dokumen IS 'MAKLUMAT DOKUMEN PEMOHON'
+/
+COMMENT ON COLUMN osc_mhn_dokumen.doc_akaun IS 'NO AKAUN : SELEPAS KELULUSAN'
+/
+COMMENT ON COLUMN osc_mhn_dokumen.doc_catatan IS 'CATATAN KEPADA DOKUMEN'
+/
+COMMENT ON COLUMN osc_mhn_dokumen.doc_dcsiri IS 'NO SIRI DOKUMEN'
+/
+COMMENT ON COLUMN osc_mhn_dokumen.doc_dokumen IS 'IMAGE DOKUMEN'
+/
+COMMENT ON COLUMN osc_mhn_dokumen.doc_idate IS 'TARIKH INPUT'
+/
+COMMENT ON COLUMN osc_mhn_dokumen.doc_idpbt IS 'KOD ID PBT'
+/
+COMMENT ON COLUMN osc_mhn_dokumen.doc_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_mhn_dokumen.doc_nosiri IS 'NO SIRI PERMOHONAN'
+/
+COMMENT ON COLUMN osc_mhn_dokumen.doc_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_mhn_dokumen.doc_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_MHN_DOKUMEN
+
+-- Start of DDL Script for Table OSCL.OSC_MHN_GAMBAR
+-- Generated 3/12/2025 3:54:24 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_mhn_gambar
+    (gbr_idpbt                      VARCHAR2(10 BYTE),
+    gbr_nosiri                     NUMBER(9,0),
+    gbr_akaun                      NUMBER(7,0),
+    gbr_imsiri                     NUMBER(3,0),
+    gbr_namafail                   VARCHAR2(100 BYTE),
+    gbr_pathfile                   VARCHAR2(100 BYTE),
+    gbr_idate                      DATE,
+    gbr_udate                      DATE,
+    gbr_iuser                      VARCHAR2(20 BYTE),
+    gbr_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_MHN_GAMBAR
+
+COMMENT ON COLUMN osc_mhn_gambar.gbr_akaun IS 'NO AKAUN : LEPAS KELULUSAN'
+/
+COMMENT ON COLUMN osc_mhn_gambar.gbr_idate IS 'TARIKH INPUT'
+/
+COMMENT ON COLUMN osc_mhn_gambar.gbr_idpbt IS 'KOD ID PBT'
+/
+COMMENT ON COLUMN osc_mhn_gambar.gbr_imsiri IS 'NO SIRI IMAGE'
+/
+COMMENT ON COLUMN osc_mhn_gambar.gbr_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_mhn_gambar.gbr_namafail IS 'NAMA FAIL IMAGE'
+/
+COMMENT ON COLUMN osc_mhn_gambar.gbr_nosiri IS 'NO SIRI PERMOHONAN'
+/
+COMMENT ON COLUMN osc_mhn_gambar.gbr_pathfile IS 'LOKASI FAIL'
+/
+COMMENT ON COLUMN osc_mhn_gambar.gbr_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_mhn_gambar.gbr_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_MHN_GAMBAR
+
+-- Start of DDL Script for Table OSCL.OSC_MHN_IKLAN
+-- Generated 3/12/2025 3:54:24 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_mhn_iklan
+    (lan_idpbt                      VARCHAR2(10 BYTE),
+    lan_nosiri                     NUMBER(9,0),
+    lan_akaun                      NUMBER(7,0),
+    lan_rujuk                      VARCHAR2(20 BYTE),
+    lan_mulai                      DATE,
+    lan_tamti                      DATE,
+    lan_amaun                      NUMBER(11,2),
+    lan_stajn                      VARCHAR2(1 BYTE),
+    lan_keadn                      VARCHAR2(1 BYTE),
+    lan_stalp                      VARCHAR2(1 BYTE),
+    lan_aktif                      VARCHAR2(1 BYTE),
+    lan_panjg                      NUMBER(6,2),
+    lan_lebar                      NUMBER(6,2),
+    lan_tempt                      VARCHAR2(100 BYTE),
+    lan_keter                      VARCHAR2(40 BYTE),
+    lan_batal                      DATE,
+    lan_statf                      VARCHAR2(1 BYTE),
+    lan_onama                      VARCHAR2(10 BYTE),
+    lan_idate                      DATE,
+    lan_udate                      DATE,
+    lan_iuser                      VARCHAR2(20 BYTE),
+    lan_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_MHN_IKLAN
+
+COMMENT ON TABLE osc_mhn_iklan IS 'MAKLUMAT IKLAN PEMOHON'
+/
+COMMENT ON COLUMN osc_mhn_iklan.lan_akaun IS 'NO AKAUN LESEN - LEPAS LULUS'
+/
+COMMENT ON COLUMN osc_mhn_iklan.lan_aktif IS 'AKTIF'
+/
+COMMENT ON COLUMN osc_mhn_iklan.lan_amaun IS 'AMAUN'
+/
+COMMENT ON COLUMN osc_mhn_iklan.lan_batal IS 'BATAL'
+/
+COMMENT ON COLUMN osc_mhn_iklan.lan_idate IS 'TARIKH INPUT'
+/
+COMMENT ON COLUMN osc_mhn_iklan.lan_idpbt IS 'KOD SIRI PBT'
+/
+COMMENT ON COLUMN osc_mhn_iklan.lan_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_mhn_iklan.lan_keadn IS 'MELINTANG'
+/
+COMMENT ON COLUMN osc_mhn_iklan.lan_keter IS 'KETERANGAN'
+/
+COMMENT ON COLUMN osc_mhn_iklan.lan_lebar IS 'LEBAR'
+/
+COMMENT ON COLUMN osc_mhn_iklan.lan_mulai IS 'TARIKH MULA'
+/
+COMMENT ON COLUMN osc_mhn_iklan.lan_nosiri IS 'NO SIRI PERMOHONAN'
+/
+COMMENT ON COLUMN osc_mhn_iklan.lan_onama IS 'NAMA'
+/
+COMMENT ON COLUMN osc_mhn_iklan.lan_panjg IS 'PANJANG'
+/
+COMMENT ON COLUMN osc_mhn_iklan.lan_rujuk IS 'RUJUKAN'
+/
+COMMENT ON COLUMN osc_mhn_iklan.lan_stajn IS 'TANAH KOSONG'
+/
+COMMENT ON COLUMN osc_mhn_iklan.lan_stalp IS 'BERLAMPU'
+/
+COMMENT ON COLUMN osc_mhn_iklan.lan_statf IS 'STATUS'
+/
+COMMENT ON COLUMN osc_mhn_iklan.lan_tamti IS 'TARIKH TAMAT'
+/
+COMMENT ON COLUMN osc_mhn_iklan.lan_tempt IS 'TEMPAT'
+/
+COMMENT ON COLUMN osc_mhn_iklan.lan_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_mhn_iklan.lan_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_MHN_IKLAN
+
+-- Start of DDL Script for Table OSCL.OSC_MHN_PERMOHONAN
+-- Generated 3/12/2025 3:54:25 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_mhn_permohonan
+    (mhn_idpbt                      VARCHAR2(10 BYTE),
+    mhn_jenismhn                   VARCHAR2(1 BYTE),
+    mhn_jenis                      VARCHAR2(1 BYTE),
+    mhn_idpelanggan                VARCHAR2(15 BYTE),
+    mhn_nama                       VARCHAR2(100 BYTE),
+    mhn_alamatpos1                 VARCHAR2(100 BYTE),
+    mhn_alamatpos2                 VARCHAR2(100 BYTE),
+    mhn_alamatpos3                 VARCHAR2(100 BYTE),
+    mhn_alamatpos4                 VARCHAR2(100 BYTE),
+    mhn_poskod                     VARCHAR2(10 BYTE),
+    mhn_emel                       VARCHAR2(50 BYTE),
+    mhn_nomhp                      VARCHAR2(50 BYTE),
+    mhn_nofax                      VARCHAR2(50 BYTE),
+    mhn_notel                      VARCHAR2(50 BYTE),
+    mhn_kodlokasi                  NUMBER(5,0),
+    mhn_namaperniagaan             VARCHAR2(100 BYTE),
+    mhn_almtniaga1                 VARCHAR2(100 BYTE),
+    mhn_almtniaga2                 VARCHAR2(100 BYTE),
+    mhn_almtniaga3                 VARCHAR2(100 BYTE),
+    mhn_almtniaga4                 VARCHAR2(100 BYTE),
+    mhn_poskod2                    VARCHAR2(10 BYTE),
+    mhn_tkmohon                    DATE,
+    mhn_tarikhlulus                DATE,
+    mhn_statl                      VARCHAR2(1 BYTE),
+    mhn_tkmula                     DATE,
+    mhn_tktamat                    DATE,
+    mhn_tempoh                     NUMBER(5,0),
+    mhn_msmula                     VARCHAR2(10 BYTE),
+    mhn_mstamat                    VARCHAR2(10 BYTE),
+    mhn_jenisplg                   VARCHAR2(1 BYTE),
+    mhn_nosiri                     NUMBER(9,0),
+    mhn_norujukan                  VARCHAR2(40 BYTE),
+    mhn_tkhmsyuarat                DATE,
+    mhn_noakaun                    NUMBER(7,0),
+    mhn_ptjpk                      VARCHAR2(2 BYTE),
+    mhn_idate                      DATE,
+    mhn_udate                      DATE,
+    mhn_iuser                      VARCHAR2(20 BYTE),
+    mhn_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_MHN_PERMOHONAN
+
+COMMENT ON TABLE osc_mhn_permohonan IS 'MAKLUMAT PERMOHONAN LESEN'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_alamatpos1 IS 'ALAMAT POS 1'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_alamatpos2 IS 'ALAMAT POS 2'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_alamatpos3 IS 'ALAMAT POS 3'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_alamatpos4 IS 'ALAMAT POS 4'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_almtniaga1 IS 'ALAMAT PERNIAGAAN 1'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_almtniaga2 IS 'ALAMAT PERNIAGAAN 2'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_almtniaga3 IS 'ALAMAT PERNIAGAAN 3'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_almtniaga4 IS 'ALAMAT PERNIAGAAN 4'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_emel IS 'EMEL'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_idate IS 'TARIKH KEMASUKAN'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_idpbt IS 'KOD ID PBT'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_idpelanggan IS 'ID PELANGGAN'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_jenis IS 'KATEGORI PERMOHONAN [KAT_NIAGA]'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_jenismhn IS 'JENIS PERMOHONAN [JENIS_MOHON]'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_jenisplg IS 'JENIS PELANGGAN [JENIS_PLG]'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_kodlokasi IS 'KOD LOKASI'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_msmula IS 'MASA MULA MENIAGA'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_mstamat IS 'MASA TAMAN MENIAGA'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_nama IS 'NAMA'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_namaperniagaan IS 'NAMA PERNIAGAAN'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_noakaun IS 'NO AKAUN LESEN - BILA KELULUSAN'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_nofax IS 'NO FAX'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_nomhp IS 'NO HANDPHONE'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_norujukan IS 'RUJUKAN FAIL - BILA KELULUSAN'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_nosiri IS 'NO SIRI PERMOHONAN ONLINE'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_notel IS 'NO TELEFON SYARIKAT'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_poskod IS 'POSKOD ALAMAT POS'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_poskod2 IS 'POSKOD LOKASI PERNIAGAAN'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_ptjpk IS 'KOD UNIT'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_statl IS 'STATUS KELULUSAN PERMOHONAN'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_tarikhlulus IS 'TARKH LULUS'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_tempoh IS 'TEMPOH [12] [24] [36] BULAN'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_tkhmsyuarat IS 'TARIKH MESYUARAT'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_tkmohon IS 'TARIKH MOHON'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_tkmula IS 'TARIKH MULA'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_tktamat IS 'TARIKH TAMAT'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_mhn_permohonan.mhn_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_MHN_PERMOHONAN
+
+-- Start of DDL Script for Table OSCL.OSC_MHN_TRANSAKSI
+-- Generated 3/12/2025 3:54:26 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_mhn_transaksi
+    (trn_idpbt                      VARCHAR2(10 BYTE),
+    trn_nosiri                     NUMBER(9,0),
+    trn_akaun                      NUMBER(7,0),
+    trn_utama                      NUMBER(2,0),
+    trn_kodp1                      VARCHAR2(2 BYTE),
+    trn_kodp2                      VARCHAR2(3 BYTE),
+    trn_kodp3                      VARCHAR2(2 BYTE),
+    trn_tambh                      NUMBER(11,2),
+    trn_scagr                      VARCHAR2(1 BYTE),
+    trn_ckaun                      VARCHAR2(10 BYTE),
+    trn_statt                      VARCHAR2(1 BYTE),
+    trn_idate                      DATE,
+    trn_udate                      DATE,
+    trn_iuser                      VARCHAR2(20 BYTE),
+    trn_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_MHN_TRANSAKSI
+
+COMMENT ON TABLE osc_mhn_transaksi IS 'MAKLUMAT TRANSAKSI PEMOHON'
+/
+COMMENT ON COLUMN osc_mhn_transaksi.trn_akaun IS 'NO AKAUN - LEPAS KELULUSAN'
+/
+COMMENT ON COLUMN osc_mhn_transaksi.trn_ckaun IS 'NO AKAUN CAGARAN'
+/
+COMMENT ON COLUMN osc_mhn_transaksi.trn_idate IS 'TARIKH KEMASUKAN'
+/
+COMMENT ON COLUMN osc_mhn_transaksi.trn_idpbt IS 'KOD ID PBT'
+/
+COMMENT ON COLUMN osc_mhn_transaksi.trn_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_mhn_transaksi.trn_kodp1 IS 'KOD PERNAGAAN'
+/
+COMMENT ON COLUMN osc_mhn_transaksi.trn_kodp2 IS 'KOD PERNIAGAAN'
+/
+COMMENT ON COLUMN osc_mhn_transaksi.trn_kodp3 IS 'KOD PERNIAGAAN'
+/
+COMMENT ON COLUMN osc_mhn_transaksi.trn_nosiri IS 'NO SIRI PERMOHONAN'
+/
+COMMENT ON COLUMN osc_mhn_transaksi.trn_scagr IS 'STATUS DIKENAKAN CAGARAN'
+/
+COMMENT ON COLUMN osc_mhn_transaksi.trn_statt IS 'STATUS TRANSAKSI'
+/
+COMMENT ON COLUMN osc_mhn_transaksi.trn_tambh IS 'AMAUN TAMBAHAN'
+/
+COMMENT ON COLUMN osc_mhn_transaksi.trn_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_mhn_transaksi.trn_utama IS 'KEUTAMAAN TRANSAKSI'
+/
+COMMENT ON COLUMN osc_mhn_transaksi.trn_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_MHN_TRANSAKSI
+
+-- Start of DDL Script for Table OSCL.OSC_MHN_ULASAN
+-- Generated 3/12/2025 3:54:27 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_mhn_ulasan
+    (uls_idpbt                      VARCHAR2(10 BYTE),
+    uls_nosiri                     NUMBER(9,0),
+    uls_akaun                      NUMBER(7,0),
+    uls_ulsiri                     VARCHAR2(8 BYTE),
+    uls_ulasan                     VARCHAR2(250 BYTE),
+    uls_pegawai                    VARCHAR2(100 BYTE),
+    uls_tkhulas                    DATE,
+    uls_idate                      DATE,
+    uls_udate                      DATE,
+    uls_iuser                      VARCHAR2(20 BYTE),
+    uls_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_MHN_ULASAN
+
+COMMENT ON TABLE osc_mhn_ulasan IS 'MAKLUMAT ULASAN PERMOHONAN'
+/
+COMMENT ON COLUMN osc_mhn_ulasan.uls_akaun IS 'NO AKAUN : LEPAS KELULUSAN'
+/
+COMMENT ON COLUMN osc_mhn_ulasan.uls_idate IS 'TARIKH INPUT'
+/
+COMMENT ON COLUMN osc_mhn_ulasan.uls_idpbt IS 'KOD ID PBT'
+/
+COMMENT ON COLUMN osc_mhn_ulasan.uls_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_mhn_ulasan.uls_nosiri IS 'NO SIRI PERMOHONAN'
+/
+COMMENT ON COLUMN osc_mhn_ulasan.uls_pegawai IS 'PENGAWAI MENGULAS'
+/
+COMMENT ON COLUMN osc_mhn_ulasan.uls_tkhulas IS 'TARIKH ULASAN DIBUAT'
+/
+COMMENT ON COLUMN osc_mhn_ulasan.uls_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_mhn_ulasan.uls_ulasan IS 'ULASAN'
+/
+COMMENT ON COLUMN osc_mhn_ulasan.uls_ulsiri IS 'NO SIRI ULASAN'
+/
+COMMENT ON COLUMN osc_mhn_ulasan.uls_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_MHN_ULASAN
+
+-- Start of DDL Script for Table OSCL.OSC_PBH_PERMOHONAN
+-- Generated 3/12/2025 3:54:28 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_pbh_permohonan
+    (pbh_idpbt                      VARCHAR2(10 BYTE),
+    pbh_noakaun                    NUMBER(7,0),
+    pbh_idpelanggan                VARCHAR2(15 BYTE),
+    pbh_nosiri                     NUMBER(9,0),
+    pbh_tkmohon                    DATE,
+    pbh_tarikhlulus                DATE,
+    pbh_statl                      VARCHAR2(1 BYTE),
+    pbh_tkmula                     DATE,
+    pbh_tktamat                    DATE,
+    pbh_tempoh                     NUMBER(5,0),
+    pbh_msmula                     VARCHAR2(10 BYTE),
+    pbh_mstamat                    VARCHAR2(10 BYTE),
+    pbh_idate                      DATE,
+    pbh_udate                      DATE,
+    pbh_iuser                      VARCHAR2(20 BYTE),
+    pbh_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_PBH_PERMOHONAN
+
+COMMENT ON TABLE osc_pbh_permohonan IS 'MAKLUMAT PEMBAHARUAN LESEN'
+/
+COMMENT ON COLUMN osc_pbh_permohonan.pbh_idate IS 'TARIKH INPUT PERMOHONAN'
+/
+COMMENT ON COLUMN osc_pbh_permohonan.pbh_idpbt IS 'KOD ID PBT'
+/
+COMMENT ON COLUMN osc_pbh_permohonan.pbh_idpelanggan IS 'ID PELANGGAN'
+/
+COMMENT ON COLUMN osc_pbh_permohonan.pbh_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_pbh_permohonan.pbh_msmula IS 'MASA MULA MENIAGA'
+/
+COMMENT ON COLUMN osc_pbh_permohonan.pbh_mstamat IS 'MASA TAMAN MENIAGA'
+/
+COMMENT ON COLUMN osc_pbh_permohonan.pbh_noakaun IS 'NO AKAUN LESEN - BILA KELULUSAN'
+/
+COMMENT ON COLUMN osc_pbh_permohonan.pbh_nosiri IS 'NO SIRI PERMOHONAN ONLINE'
+/
+COMMENT ON COLUMN osc_pbh_permohonan.pbh_statl IS 'STATUS KELULUSAN PERMOHONAN'
+/
+COMMENT ON COLUMN osc_pbh_permohonan.pbh_tarikhlulus IS 'TARKH LULUS'
+/
+COMMENT ON COLUMN osc_pbh_permohonan.pbh_tempoh IS 'TEMPOH [12] [24] [36] BULAN'
+/
+COMMENT ON COLUMN osc_pbh_permohonan.pbh_tkmohon IS 'TARIKH MOHON'
+/
+COMMENT ON COLUMN osc_pbh_permohonan.pbh_tkmula IS 'TARIKH MULA'
+/
+COMMENT ON COLUMN osc_pbh_permohonan.pbh_tktamat IS 'TARIKH TAMAT'
+/
+COMMENT ON COLUMN osc_pbh_permohonan.pbh_udate IS 'TARIKH KEMASKINI PERMOHONAN'
+/
+COMMENT ON COLUMN osc_pbh_permohonan.pbh_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_PBH_PERMOHONAN
+
+-- Start of DDL Script for Table OSCL.OSC_PNE_PERSONELIA
+-- Generated 3/12/2025 3:54:29 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_pne_personelia
+    (pne_nopek                      VARCHAR2(14 BYTE),
+    pne_nokp                       VARCHAR2(15 BYTE),
+    pne_nama                       VARCHAR2(60 BYTE),
+    pne_kodjwtn                    VARCHAR2(5 BYTE),
+    pne_namajwtn                   VARCHAR2(2 BYTE),
+    pne_bangsa                     VARCHAR2(1 BYTE),
+    pne_agama                      VARCHAR2(1 BYTE),
+    pne_stkahwi                    VARCHAR2(1 BYTE),
+    pne_jantina                    VARCHAR2(1 BYTE),
+    pne_mulakhidmat                DATE,
+    pne_stataktif                  VARCHAR2(1 BYTE),
+    pne_rujuk                      VARCHAR2(15 BYTE),
+    pne_khimt                      VARCHAR2(1 BYTE),
+    pne_alpo1                      VARCHAR2(40 BYTE),
+    pne_alpo2                      VARCHAR2(40 BYTE),
+    pne_alpo3                      VARCHAR2(40 BYTE),
+    pne_notel                      VARCHAR2(15 BYTE),
+    pne_email                      VARCHAR2(100 BYTE),
+    pne_idate                      DATE,
+    pne_udate                      DATE,
+    pne_iuser                      VARCHAR2(20 BYTE),
+    pne_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_PNE_PERSONELIA
+
+COMMENT ON TABLE osc_pne_personelia IS 'MAKLUMAT PERSONELIA KAKITANGAN'
+/
+COMMENT ON COLUMN osc_pne_personelia.pne_agama IS 'AGAMA [AGAMA]'
+/
+COMMENT ON COLUMN osc_pne_personelia.pne_alpo1 IS 'ALAMAT SURAT MENYURAT1'
+/
+COMMENT ON COLUMN osc_pne_personelia.pne_alpo2 IS 'ALAMAT SURAT MENYURAT 2'
+/
+COMMENT ON COLUMN osc_pne_personelia.pne_alpo3 IS 'ALAMAT SURAT MENYURAT 3'
+/
+COMMENT ON COLUMN osc_pne_personelia.pne_bangsa IS 'BANGSA [BANGSA]'
+/
+COMMENT ON COLUMN osc_pne_personelia.pne_email IS 'EMEL'
+/
+COMMENT ON COLUMN osc_pne_personelia.pne_idate IS 'TARIKH KEMASUKAN'
+/
+COMMENT ON COLUMN osc_pne_personelia.pne_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_pne_personelia.pne_jantina IS 'JANTINA [JANTINA]'
+/
+COMMENT ON COLUMN osc_pne_personelia.pne_khimt IS 'STATUS JAWATAN [STATUS_KMT]'
+/
+COMMENT ON COLUMN osc_pne_personelia.pne_kodjwtn IS 'KOD JAWATAN'
+/
+COMMENT ON COLUMN osc_pne_personelia.pne_mulakhidmat IS 'MULA BERKHIDMAT'
+/
+COMMENT ON COLUMN osc_pne_personelia.pne_nama IS 'NAMA'
+/
+COMMENT ON COLUMN osc_pne_personelia.pne_namajwtn IS 'NAMA JAWATAN'
+/
+COMMENT ON COLUMN osc_pne_personelia.pne_nokp IS 'NO KP PEKERJA'
+/
+COMMENT ON COLUMN osc_pne_personelia.pne_nopek IS 'NO PEKERJA'
+/
+COMMENT ON COLUMN osc_pne_personelia.pne_notel IS 'NO TELEFON'
+/
+COMMENT ON COLUMN osc_pne_personelia.pne_rujuk IS 'NO RUJUKAN'
+/
+COMMENT ON COLUMN osc_pne_personelia.pne_stataktif IS 'STATUS PERKHIDMATAN [A]-AKTIF [T]-TIDAK AKTIF'
+/
+COMMENT ON COLUMN osc_pne_personelia.pne_stkahwi IS 'STATUS PERKAHWINAN [KAHWIN]'
+/
+COMMENT ON COLUMN osc_pne_personelia.pne_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_pne_personelia.pne_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_PNE_PERSONELIA
+
+-- Start of DDL Script for Table OSCL.OSC_PYT_PENYATA
+-- Generated 3/12/2025 3:54:30 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_pyt_penyata
+    (pyta_idpbt                     VARCHAR2(10 BYTE),
+    pyta_akaun                     NUMBER(7,0) NOT NULL,
+    pyta_transaksi                 VARCHAR2(6 BYTE),
+    pyta_noresit                   VARCHAR2(20 BYTE),
+    pyta_tkhresit                  DATE,
+    pyta_amnresit                  NUMBER(11,2),
+    pyta_statf                     VARCHAR2(1 BYTE),
+    pyta_rujukan                   VARCHAR2(7 BYTE),
+    pyta_idate                     DATE,
+    pyta_udate                     DATE,
+    pyta_iuser                     VARCHAR2(20 BYTE),
+    pyta_uuser                     VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_PYT_PENYATA
+
+COMMENT ON TABLE osc_pyt_penyata IS 'PENYATA AKAUN INDIVIDU'
+/
+COMMENT ON COLUMN osc_pyt_penyata.pyta_akaun IS 'NO AKAUN'
+/
+COMMENT ON COLUMN osc_pyt_penyata.pyta_amnresit IS 'AMAUN RESIT'
+/
+COMMENT ON COLUMN osc_pyt_penyata.pyta_idate IS 'TARIKH INPUT'
+/
+COMMENT ON COLUMN osc_pyt_penyata.pyta_idpbt IS 'KOD ID PBT'
+/
+COMMENT ON COLUMN osc_pyt_penyata.pyta_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_pyt_penyata.pyta_noresit IS 'NO RESIT'
+/
+COMMENT ON COLUMN osc_pyt_penyata.pyta_rujukan IS 'NO RUJUKAN KEWANGAN'
+/
+COMMENT ON COLUMN osc_pyt_penyata.pyta_statf IS 'STATUS FAIL'
+/
+COMMENT ON COLUMN osc_pyt_penyata.pyta_tkhresit IS 'TARIKH RESIT'
+/
+COMMENT ON COLUMN osc_pyt_penyata.pyta_transaksi IS 'KOD TRAKSAKSI/KOD HASIL'
+/
+COMMENT ON COLUMN osc_pyt_penyata.pyta_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_pyt_penyata.pyta_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_PYT_PENYATA
+
+-- Start of DDL Script for Table OSCL.OSC_SLG_LOOKUPTABLE
+-- Generated 3/12/2025 3:54:31 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_slg_lookuptable
+    (ctl_idpbt                      VARCHAR2(10 BYTE),
+    ctl_ctrlcode                   VARCHAR2(10 BYTE),
+    ctl_ctrlnama                   VARCHAR2(50 BYTE),
+    ctl_ctrlgrp                    VARCHAR2(10 BYTE),
+    ctl_ctrlstatus                 VARCHAR2(1 BYTE),
+    ctl_ctrlnoseq                  NUMBER(3,0),
+    ctl_iuser                      VARCHAR2(20 BYTE),
+    ctl_uuser                      VARCHAR2(20 BYTE),
+    ctl_idate                      DATE,
+    ctl_udate                      DATE)
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_SLG_LOOKUPTABLE
+
+COMMENT ON TABLE osc_slg_lookuptable IS 'SELENGGARA KOD SERAGAM'
+/
+COMMENT ON COLUMN osc_slg_lookuptable.ctl_ctrlcode IS 'ID'
+/
+COMMENT ON COLUMN osc_slg_lookuptable.ctl_ctrlgrp IS 'KUMPULAN ID'
+/
+COMMENT ON COLUMN osc_slg_lookuptable.ctl_ctrlnama IS 'KETERANGAN'
+/
+COMMENT ON COLUMN osc_slg_lookuptable.ctl_ctrlnoseq IS 'SUSUNAN KEUTAMAAN'
+/
+COMMENT ON COLUMN osc_slg_lookuptable.ctl_ctrlstatus IS 'STATUS'
+/
+COMMENT ON COLUMN osc_slg_lookuptable.ctl_idate IS 'TARIKH KEMASUKAN'
+/
+COMMENT ON COLUMN osc_slg_lookuptable.ctl_idpbt IS 'KOD ID PBT'
+/
+COMMENT ON COLUMN osc_slg_lookuptable.ctl_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_slg_lookuptable.ctl_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_slg_lookuptable.ctl_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_SLG_LOOKUPTABLE
+
+-- Start of DDL Script for Table OSCL.OSC_SLG_MENU
+-- Generated 3/12/2025 3:54:32 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_slg_menu
+    (menu_group_id                  VARCHAR2(10 BYTE) NOT NULL,
+    menu_desc                      VARCHAR2(50 BYTE) NOT NULL,
+    menu_appl_type                 VARCHAR2(1 BYTE) NOT NULL,
+    menu_call                      VARCHAR2(10 BYTE) NOT NULL,
+    menu_seq                       NUMBER(2,0),
+    menu_id                        NUMBER(3,0),
+    name_space                     VARCHAR2(30 BYTE),
+    action_link                    VARCHAR2(100 BYTE),
+    web_control                    VARCHAR2(1 BYTE),
+    web_seq                        NUMBER(2,0),
+    web_appl_type                  VARCHAR2(1 BYTE),
+    web_menu_call                  VARCHAR2(10 BYTE),
+    project_name                   VARCHAR2(50 BYTE),
+    menu_icon                      VARCHAR2(50 BYTE),
+    web_tab                        CHAR(1 BYTE),
+    web_iuser                      VARCHAR2(20 BYTE),
+    web_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_SLG_MENU
+
+COMMENT ON COLUMN osc_slg_menu.web_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_slg_menu.web_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_SLG_MENU
+
+-- Start of DDL Script for Table OSCL.OSC_SLG_MENUCTRL
+-- Generated 3/12/2025 3:54:33 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_slg_menuctrl
+    (user_group_id                  VARCHAR2(10 BYTE) NOT NULL,
+    menu_group_id                  VARCHAR2(10 BYTE) NOT NULL,
+    menu_id                        NUMBER(3,0),
+    menu_seq                       NUMBER(2,0),
+    user_access                    VARCHAR2(1 BYTE) NOT NULL,
+    btn01                          VARCHAR2(1 BYTE) NOT NULL,
+    btn02                          VARCHAR2(1 BYTE) NOT NULL,
+    btn03                          VARCHAR2(1 BYTE) NOT NULL,
+    btn04                          VARCHAR2(1 BYTE) NOT NULL,
+    btn05                          VARCHAR2(1 BYTE) NOT NULL,
+    btn06                          VARCHAR2(1 BYTE) NOT NULL,
+    btn07                          VARCHAR2(1 BYTE) NOT NULL,
+    btn08                          VARCHAR2(1 BYTE) NOT NULL,
+    btn09                          VARCHAR2(1 BYTE) NOT NULL,
+    btn10                          VARCHAR2(1 BYTE) NOT NULL,
+    btn11                          VARCHAR2(1 BYTE) NOT NULL,
+    btn12                          VARCHAR2(1 BYTE) NOT NULL,
+    btn13                          VARCHAR2(1 BYTE) NOT NULL,
+    btn14                          VARCHAR2(1 BYTE) NOT NULL,
+    btn15                          VARCHAR2(1 BYTE) NOT NULL,
+    btn16                          VARCHAR2(1 BYTE) NOT NULL,
+    btn17                          VARCHAR2(1 BYTE) NOT NULL,
+    iuser                          VARCHAR2(20 BYTE),
+    uuser                          VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_SLG_MENUCTRL
+
+COMMENT ON COLUMN osc_slg_menuctrl.iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_slg_menuctrl.uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_SLG_MENUCTRL
+
+-- Start of DDL Script for Table OSCL.OSC_SLG_MENUGRP
+-- Generated 3/12/2025 3:54:35 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_slg_menugrp
+    (menu_group_id                  VARCHAR2(10 BYTE) NOT NULL,
+    menu_group_desc                VARCHAR2(50 BYTE) NOT NULL,
+    menu_group_iuser               VARCHAR2(20 BYTE),
+    menu_group_uuser               VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_SLG_MENUGRP
+
+COMMENT ON COLUMN osc_slg_menugrp.menu_group_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_slg_menugrp.menu_group_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_SLG_MENUGRP
+
+-- Start of DDL Script for Table OSCL.OSC_SLG_SYSPARAM
+-- Generated 3/12/2025 3:54:36 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_slg_sysparam
+    (para_idpbt                     VARCHAR2(10 BYTE),
+    para_id                        NUMBER(3,0),
+    para_desc                      VARCHAR2(30 BYTE),
+    para_value                     VARCHAR2(500 BYTE),
+    para_iuser                     VARCHAR2(20 BYTE),
+    para_uuser                     VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_SLG_SYSPARAM
+
+COMMENT ON TABLE osc_slg_sysparam IS 'PENYELENGGARAAN PARAMETER'
+/
+COMMENT ON COLUMN osc_slg_sysparam.para_desc IS 'KETERANGAN'
+/
+COMMENT ON COLUMN osc_slg_sysparam.para_id IS 'PARAMETER ID'
+/
+COMMENT ON COLUMN osc_slg_sysparam.para_idpbt IS 'KOD ID PBT'
+/
+COMMENT ON COLUMN osc_slg_sysparam.para_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_slg_sysparam.para_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+COMMENT ON COLUMN osc_slg_sysparam.para_value IS 'CATATAN'
+/
+
+-- End of DDL Script for Table OSCL.OSC_SLG_SYSPARAM
+
+-- Start of DDL Script for Table OSCL.OSC_SLG_USER
+-- Generated 3/12/2025 3:54:37 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_slg_user
+    (user_group_id                  VARCHAR2(10 BYTE) NOT NULL,
+    user_id                        VARCHAR2(15 BYTE),
+    user_name                      VARCHAR2(50 BYTE),
+    user_password                  VARCHAR2(32 BYTE),
+    user_created                   DATE,
+    user_status                    VARCHAR2(1 BYTE),
+    user_pelangganid               VARCHAR2(15 BYTE),
+    user_iuser                     VARCHAR2(20 BYTE),
+    user_uuser                     VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_SLG_USER
+
+COMMENT ON COLUMN osc_slg_user.user_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_slg_user.user_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_SLG_USER
+
+-- Start of DDL Script for Table OSCL.OSC_SLG_USERGRP
+-- Generated 3/12/2025 3:54:38 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_slg_usergrp
+    (user_group_id                  VARCHAR2(10 BYTE) NOT NULL,
+    user_group_desc                VARCHAR2(30 BYTE) NOT NULL,
+    new_group_id                   VARCHAR2(8 BYTE),
+    user_kaunter                   VARCHAR2(1 BYTE),
+    user_iuser                     VARCHAR2(20 BYTE),
+    user_uuser                     VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_SLG_USERGRP
+
+COMMENT ON COLUMN osc_slg_usergrp.user_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_slg_usergrp.user_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_SLG_USERGRP
+
+-- Start of DDL Script for Table OSCL.OSC_SMK_ACCMESYUARAT
+-- Generated 3/12/2025 3:54:40 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_smk_accmesyuarat
+    (mja_akaun                      NUMBER(7,0) NOT NULL,
+    mja_digit                      NUMBER(1,0) NOT NULL,
+    mja_tkhtk                      DATE,
+    mja_tkhpl                      DATE NOT NULL,
+    mja_onama                      VARCHAR2(10 BYTE),
+    mja_sbkod                      VARCHAR2(3 BYTE),
+    mja_mesej                      VARCHAR2(100 BYTE),
+    mja_statf                      VARCHAR2(1 BYTE),
+    mja_hsiri                      NUMBER(6,0),
+    mja_stcbk                      VARCHAR2(1 BYTE) NOT NULL,
+    mja_sbbtl                      VARCHAR2(50 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- End of DDL Script for Table OSCL.OSC_SMK_ACCMESYUARAT
+
+-- Start of DDL Script for Table OSCL.OSC_SMK_MESYUARAT
+-- Generated 3/12/2025 3:54:41 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_smk_mesyuarat
+    (msy_bilangan                   VARCHAR2(10 BYTE),
+    msy_tarikh                     DATE,
+    msy_bulan                      VARCHAR2(2 BYTE),
+    msy_kertaskerja                VARCHAR2(20 BYTE),
+    msy_statf                      VARCHAR2(1 BYTE),
+    msy_idate                      DATE,
+    msy_udate                      DATE,
+    msy_iuser                      VARCHAR2(20 BYTE),
+    msy_uuser                      VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_SMK_MESYUARAT
+
+COMMENT ON TABLE osc_smk_mesyuarat IS 'MAKLUMAT MESYUARAT'
+/
+COMMENT ON COLUMN osc_smk_mesyuarat.msy_bilangan IS 'BILANGAN MESYUARAT'
+/
+COMMENT ON COLUMN osc_smk_mesyuarat.msy_bulan IS 'BULAN'
+/
+COMMENT ON COLUMN osc_smk_mesyuarat.msy_idate IS 'TARIKH KEMASUKAN'
+/
+COMMENT ON COLUMN osc_smk_mesyuarat.msy_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_smk_mesyuarat.msy_kertaskerja IS 'NO KERTAS KERJA'
+/
+COMMENT ON COLUMN osc_smk_mesyuarat.msy_statf IS 'STATUS MESYUARAT [B]-BELUM SELESAI [S]-SELESAI'
+/
+COMMENT ON COLUMN osc_smk_mesyuarat.msy_tarikh IS 'TARIKH MESYUARAT'
+/
+COMMENT ON COLUMN osc_smk_mesyuarat.msy_udate IS 'TARIKH KEMASKINI'
+/
+COMMENT ON COLUMN osc_smk_mesyuarat.msy_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+
+-- End of DDL Script for Table OSCL.OSC_SMK_MESYUARAT
+
+-- Start of DDL Script for Table OSCL.OSC_USR_PROFILE
+-- Generated 3/12/2025 3:54:42 PM from OSCL@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 175.140.138.11)(PORT = 1521)))(CONNECT_DATA =(SID = gwmbs)))
+
+CREATE TABLE osc_usr_profile
+    (pfile_idpbt                    VARCHAR2(10 BYTE) NOT NULL,
+    pfile_kumpulan                 VARCHAR2(2 BYTE) NOT NULL,
+    pfile_jenis                    VARCHAR2(2 BYTE) NOT NULL,
+    pfile_plgid                    VARCHAR2(20 BYTE) NOT NULL,
+    pfile_nama                     VARCHAR2(100 BYTE) NOT NULL,
+    pfile_emel                     VARCHAR2(50 BYTE),
+    pfile_kata_laluan              VARCHAR2(50 BYTE),
+    pfile_sah_ktlaluan             VARCHAR2(50 BYTE),
+    pfile_nomhp                    VARCHAR2(50 BYTE),
+    pfile_oversea                  VARCHAR2(1 BYTE) DEFAULT 'T',
+    pfile_alamat1                  VARCHAR2(100 BYTE),
+    pfile_alamat2                  VARCHAR2(100 BYTE),
+    pfile_alamat3                  VARCHAR2(100 BYTE),
+    pfile_alamat4                  VARCHAR2(100 BYTE),
+    pfile_poskod                   VARCHAR2(10 BYTE),
+    pfile_bandar                   VARCHAR2(2 BYTE),
+    pfile_negeri                   VARCHAR2(2 BYTE),
+    pfile_kaedah_sah               VARCHAR2(1 BYTE),
+    pfile_pengesahan1              VARCHAR2(2 BYTE),
+    pfile_pengesahan2              VARCHAR2(2 BYTE),
+    pfile_jwpn_pengesahan1         VARCHAR2(100 BYTE),
+    pfile_jwpn_pengesahan2         VARCHAR2(100 BYTE),
+    pfile_idate                    DATE,
+    pfile_udate                    DATE,
+    pfile_statpemohon              VARCHAR2(1 BYTE) DEFAULT 'Y',
+    pfile_warganegara              VARCHAR2(1 BYTE),
+    pfile_iuser                    VARCHAR2(20 BYTE),
+    pfile_uuser                    VARCHAR2(20 BYTE))
+  PCTFREE     10
+  INITRANS    1
+  MAXTRANS    255
+  TABLESPACE  epbtdata
+  STORAGE   (
+    INITIAL     65536
+    MINEXTENTS  1
+    MAXEXTENTS  2147483645
+  )
+  NOCACHE
+  MONITORING
+  NOPARALLEL
+  LOGGING
+/
+
+
+
+
+
+-- Comments for OSC_USR_PROFILE
+
+COMMENT ON TABLE osc_usr_profile IS 'MAKLUMAT PENGGUNA APLIKASI OSC PELESENAN'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_alamat1 IS 'ALAMAT 1'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_alamat2 IS 'ALAMAT 2'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_alamat3 IS 'ALAMAT 3'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_alamat4 IS 'ALAMAT 4'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_bandar IS 'BANDAR'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_emel IS 'EMEL'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_idate IS 'TARIKH INPUT MAKLUMAT'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_idpbt IS 'KOD ID  PBT'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_iuser IS 'NO KP PEGAWAI KEMASUKAN'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_jenis IS 'JENIS PENGGUNA : refer ctl : jenis_plg'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_jwpn_pengesahan1 IS 'JAWAPAN SOALAN KESELAMATAN 1'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_jwpn_pengesahan2 IS 'JAWAPAN SOALAN KESELAMATAN 2'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_kaedah_sah IS 'KAEDAH PENGESAHAN : refer ctl : KAEDAH_SAH'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_kata_laluan IS 'KATA LALUAN'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_kumpulan IS 'KUMPULAN PENGGUNA : refer ctl :pengguna'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_nama IS 'NAMA'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_negeri IS 'NEGERI'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_nomhp IS 'NO TELEFON BIMBIT'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_oversea IS 'STATUS OVERSEA [Y}:YA    [T]: [TIDAK]'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_pengesahan1 IS 'SOALAN KESELAMATAN 1 : refer ctl : SOALAN_SAH'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_pengesahan2 IS 'SOALAN KESELAMATAN 2: refer ctl : SOALAN_SAH'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_plgid IS 'NO IC/SSM/PASSPORT DLL'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_poskod IS 'POSKOD'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_sah_ktlaluan IS 'PENGESAHAN KATA LALUAN'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_statpemohon IS 'PENGGUNA ADALAH PEMOHON [Y]:YA [T]:TIDAK'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_udate IS 'TARIKH KEMASKINI MAKLUMAT'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_uuser IS 'NO KP PEGAWAI KEMASKINI'
+/
+COMMENT ON COLUMN osc_usr_profile.pfile_warganegara IS 'STATUS WARGANEGARA [Y]:YA [T]:TIDAK'
+/
+
+-- End of DDL Script for Table OSCL.OSC_USR_PROFILE
