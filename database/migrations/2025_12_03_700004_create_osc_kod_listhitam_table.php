@@ -9,16 +9,20 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('osc_kod_listhitam', function (Blueprint $table) {
-            $table->string('htm_kdsrpbt', 10)->comment('KOD ID PBT');
+            $table->id();
+            $table->string('htm_idpbt', 10)->comment('KOD ID PBT');
             $table->string('htm_kodkategori', 4)->comment('KOD KATEGORI SENARAI HITAM');
             $table->string('htm_keterangan', 150)->comment('KETERANGAN');
-            $table->datetime('htm_idate')->nullable()->comment('TARIKH KEMASUKAN');
-            $table->datetime('htm_udate')->nullable()->comment('TARIKH KEMASKINI');
+            $table->date('htm_idate')->nullable()->comment('TARIKH KEMASUKAN');
+            $table->date('htm_udate')->nullable()->comment('TARIKH KEMASKINI');
             $table->string('htm_iuser', 20)->nullable()->comment('NO KP PEGAWAI KEMASUKAN');
             $table->string('htm_uuser', 20)->nullable()->comment('NO KP PEGAWAI KEMASKINI');
-            
+
+            // Add Laravel timestamps
             $table->timestamps();
-            $table->primary(['htm_kdsrpbt', 'htm_kodkategori']);
+
+            // Add composite unique key
+            $table->unique(['htm_idpbt', 'htm_kodkategori'], 'kod_listhitam_uk');
         });
     }
 

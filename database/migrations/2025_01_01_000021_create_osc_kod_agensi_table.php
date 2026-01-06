@@ -12,22 +12,24 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('osc_kod_agensi', function (Blueprint $table) {
-            $table->string('agn_kodspbt', 10)->comment('KOD PBT');
-            $table->string('agn_kdagnsi', 2)->comment('KOD AGENSI');
-            $table->string('agn_nmagnsi', 100)->nullable()->comment('NAMA AGENSI');
-            $table->string('agn_namrgks', 40)->nullable()->comment('NAMA RINGKAS AGENSI');
+            $table->id();
+            $table->string('agn_idpbt', 10)->comment('KOD PBT');
+            $table->string('agn_kodagensi', 10)->comment('KOD AGENSI');
+            $table->string('agn_namaagensi', 100)->nullable()->comment('NAMA AGENSI');
+            $table->string('agn_namargks', 40)->nullable()->comment('NAMA RINGKAS AGENSI');
             $table->string('agn_areazon', 5)->nullable()->comment('KOD ZON AGENSI - yg didaftarkan di lookup table');
             $table->string('agn_katgori', 3)->nullable()->comment('[ATK] - [BTD]');
-            $table->string('agn_statusaktif', 1)->nullable();
+            $table->char('agn_statf', 1)->nullable();
+            $table->date('agn_idate')->nullable();
+            $table->date('agn_udate')->nullable();
+            $table->string('agn_iuser', 20)->nullable();
+            $table->string('agn_uuser', 20)->nullable();
 
             // Add Laravel timestamps
             $table->timestamps();
 
-            // Add composite primary key
-            $table->primary(['agn_kodspbt', 'agn_kdagnsi'], 'pk_osc_kodagensi');
-
-            // Add indexes
-            $table->index('agn_kodspbt');
+            // Add composite unique key
+            $table->unique(['agn_idpbt', 'agn_kodagensi'], 'kod_agensi_uk');
         });
     }
 

@@ -12,19 +12,21 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('osc_kod_sektor', function (Blueprint $table) {
-            $table->string('skt_kdsrpbt', 10)->comment('id pbt');
-            $table->string('skt_kodsektr', 5)->comment('kod sektor');
+            $table->id();
+            $table->string('skt_idpbt', 10)->comment('id pbt');
+            $table->string('skt_kodsektor', 5)->comment('kod sektor');
             $table->string('skt_sktrnama', 100)->nullable()->comment('keterangan');
-            $table->string('skt_kdjenis', 2)->nullable()->comment('kod jenis');
+            $table->string('skt_kodjenis', 2)->comment('kod jenis');
+            $table->date('skt_idate')->nullable();
+            $table->date('skt_udate')->nullable();
+            $table->string('skt_iuser', 20)->nullable();
+            $table->string('skt_uuser', 20)->nullable();
 
             // Add Laravel timestamps
             $table->timestamps();
 
-            // Add composite primary key
-            $table->primary(['skt_kdsrpbt', 'skt_kodsektr'], 'pk_osc_kodsektor');
-
-            // Add indexes
-            $table->index('skt_kdsrpbt');
+            // Add composite unique key
+            $table->unique(['skt_idpbt', 'skt_kodsektor', 'skt_kodjenis'], 'kod_sektor_uk');
         });
     }
 

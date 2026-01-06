@@ -12,19 +12,21 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('osc_kod_image', function (Blueprint $table) {
-            $table->string('img_kdsrpbt', 10)->comment('id pbt');
-            $table->integer('img_imgsiri')->comment('no siri image');
+            $table->id();
+            $table->string('img_idpbt', 10)->nullable()->comment('id pbt');
+            $table->smallInteger('img_imgsiri')->comment('no siri image');
             $table->string('img_imgnama', 60)->nullable()->comment('keterangan');
-            $table->binary('img_imgimge')->nullable()->comment('image');
+            $table->longText('img_imgimge')->nullable()->comment('image');
+            $table->date('img_idate')->nullable();
+            $table->date('img_udate')->nullable();
+            $table->string('img_iuser', 20)->nullable();
+            $table->string('img_uuser', 20)->nullable();
 
             // Add Laravel timestamps
             $table->timestamps();
 
-            // Add composite primary key
-            $table->primary(['img_kdsrpbt', 'img_imgsiri'], 'pk_osc_kodimage');
-
-            // Add indexes
-            $table->index('img_kdsrpbt');
+            // Add composite unique key
+            $table->unique(['img_idpbt', 'img_imgsiri'], 'kod_image_uk');
         });
     }
 
