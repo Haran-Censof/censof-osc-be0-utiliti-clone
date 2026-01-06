@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('meeting_agendas', function (Blueprint $table) {
-            $table->string('agenda_meeting_number', 20)->change();
-            $table->string('agenda_status')->default('P')->comment('Status: P=Pending, D=Discussed, C=Completed');
+            $table->string('agd_nomesy', 20)->change();
+            $table->string('agd_status')->default('P')->comment('Status: P=Pending, D=Discussed, C=Completed');
         });
     }
 
@@ -23,8 +23,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('meeting_agendas', function (Blueprint $table) {
-            $table->dropColumn('agenda_status');
-            $table->string('agenda_meeting_number', 10)->change();
+            $table->dropColumn('agd_status');
+            $table->string('agd_nomesy', 10)->change();
         });
     }
 };

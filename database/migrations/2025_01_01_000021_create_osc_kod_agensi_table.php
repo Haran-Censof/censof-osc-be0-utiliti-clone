@@ -30,6 +30,7 @@ return new class extends Migration
 
             // Add composite unique key
             $table->unique(['agn_idpbt', 'agn_kodagensi'], 'kod_agensi_uk');
+            $table->comment('KOD AGENSI TEKNIKAL DALAM DAN LUAR');
         });
     }
 

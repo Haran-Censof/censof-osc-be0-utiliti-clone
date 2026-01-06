@@ -12,7 +12,6 @@ class OscKodMajlisSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('osc_kod_majlis')->truncate();
         DB::table('osc_kod_majlis')->insert([
             [
                 'id' => 1,

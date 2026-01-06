@@ -12,7 +12,6 @@ class OscKodAgensiSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('osc_kod_agensi')->truncate();
         DB::table('osc_kod_agensi')->insert([
             [
                 'id' => 1,

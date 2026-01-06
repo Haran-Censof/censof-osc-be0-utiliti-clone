@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('doc_kddocmt', 5)->nullable()->comment('kod dokument');
             $table->string('doc_docdesc', 250)->nullable()->comment('keterangan doc');
             $table->string('doc_catatan', 500)->nullable()->comment('catatan');
-            $table->enum('doc_statusd', ['M', 'P'])->nullable()->comment('status document [M]-Mandatori [P]-Pilihan');
+            $table->string('doc_statusd', 1)->nullable()->comment('status document [M]-Mandatori [P]-Pilihan');
             $table->char('doc_jenismhn', 1)->nullable();
             $table->date('doc_idate')->nullable();
             $table->date('doc_udate')->nullable();
@@ -27,6 +27,7 @@ return new class extends Migration
 
             // Add Laravel timestamps
             $table->timestamps();
+            $table->comment('MAKLUMAT DOKUMEN');
         });
     }
 

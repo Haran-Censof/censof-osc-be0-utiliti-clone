@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('qr_verification_url', 500)->nullable();
             $table->timestamps();
 
-            $table->foreign('qr_license_id')->references('ind_id')->on('osc_ind_induklesen');
+            $table->foreign('qr_license_id')->references('id')->on('osc_ind_induklesen');
             $table->index(['qr_license_id']);
         });
     }

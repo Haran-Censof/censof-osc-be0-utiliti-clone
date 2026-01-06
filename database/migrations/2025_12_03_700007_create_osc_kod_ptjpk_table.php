@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('ptj_idpbt', 10)->comment('ID PBT');
             $table->string('ptj_ptjpkcode', 6)->comment('KOD PTJPK');
-            $table->enum('ptj_ptjpkkelas', ['A', 'B', 'C'])->nullable()->comment('KELAS PTJPK [KELAS_PTJ]');
+            $table->string('ptj_ptjpkkelas', 1)->nullable()->comment('KELAS PTJPK [KELAS_PTJ]');
             $table->string('ptj_ptjpknama', 80)->nullable()->comment('KETERANGAN PTJPK');
             $table->string('ptj_namarngks', 20)->nullable()->comment('NAMA RINGKAS');
             $table->string('ptj_nopegawai', 15)->nullable()->comment('KETUA PTJPK');
@@ -26,6 +26,7 @@ return new class extends Migration
 
             // Add composite unique key
             $table->unique(['ptj_idpbt', 'ptj_ptjpkcode'], 'kod_ptjpk_uk');
+            $table->comment('KOD PUSAT TANGGUNGJAWAB / PUSAT KOS');
         });
     }
 

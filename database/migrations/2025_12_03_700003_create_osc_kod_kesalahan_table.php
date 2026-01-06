@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('sal_transaksi', 6)->nullable()->comment('KOD TRANSAKSI / KOD HASIL');
             $table->string('sal_ptjpk', 6)->nullable()->comment('KOD PTJPK');
             $table->decimal('sal_amaun', 11, 2)->nullable()->comment('AMAUN KESALAHAN');
-            $table->enum('sal_statt', ['Y', 'T'])->nullable()->comment('STATUS AKTIF [Y]-Ya [T]-Tidak');
+            $table->string('sal_statt', 1)->nullable()->comment('STATUS AKTIF [Y]-Ya [T]-Tidak');
             $table->smallInteger('sal_tempohnotis')->nullable()->comment('TEMPOH DIKENAKAN NOTIS');
             $table->smallInteger('sal_tempohmkmh')->nullable()->comment('TEMPOH DIKENAKAN TINDAKAN MAHKAMAH');
             $table->decimal('sal_amaunnotis', 11, 2)->nullable()->comment('AMAUN NOTIS');
@@ -43,6 +43,7 @@ return new class extends Migration
 
             // Add composite unique key
             $table->unique(['sal_idpbt', 'sal_aktakod', 'sal_salahkod'], 'kod_kesalahan_uk');
+            $table->comment('MAKLUMAT KOD KESALAHAN.');
         });
     }
 

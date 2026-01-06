@@ -12,21 +12,22 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('osc_da_pelanggan', function (Blueprint $table) {
-            $table->string('pp_plg_pelangganid', 15)->primary()->comment('NO KP / NO SSM / NO PASPORT');
-            $table->string('pp_plg_pelanggannama', 100)->comment('NAMA PELANGGAN');
-            $table->enum('pp_plg_pelangganjenis', ['I', 'S'])->comment('[I]-INDIVIDU [S]-SYARIKAT');
-            $table->string('pp_plg_tinid', 15)->nullable()->comment('NO PENGENALAN CUKAI LHDN / TIN');
-            $table->string('pp_plg_sstid', 20)->nullable()->comment('NO CUKAI DAN PERKHIDMATAN LHDN');
-            $table->string('pp_plg_catat', 250)->nullable()->comment('CATATAN');
+            $table->id('id')->comment('Primary Key');
+            $table->string('plgn_idpbt', 10)->nullable()->comment('KOD ID PBT');
+            $table->string('plgn_idpelanggan', 20)->comment('NO KP / NO SSM / NO PASPORT');
+            $table->string('plgn_pelanggannama', 100)->comment('NAMA PELANGGAN');
+            $table->string('plgn_pelangganjenis', 1)->comment('[I]-INDIVIDU   [S]-SYARIKAT');
+            $table->string('plgn_tinid', 15)->nullable()->comment('NO PENGENALAN CUKAI LHDN / TIN');
+            $table->string('plgn_sstid', 20)->nullable()->comment('NO CUKAI DAN PERKHIDMATAN LHDN');
+            $table->string('plgn_catat', 250)->nullable()->comment('CATATAN');
+            $table->date('plgn_idate')->nullable()->comment('TARIKH KEMASUKAN');
+            $table->date('plgn_udate')->nullable()->comment('TARIKH KEMASKINI');
+            $table->string('plgn_iuser', 20)->nullable()->comment('NO KP PEGAWAI KEMASUKAN');
+            $table->string('plgn_uuser', 20)->nullable()->comment('NO KP PEGAWAI KEMASKINI');
 
-            // Add Laravel timestamps
             $table->timestamps();
-
-            // Add indexes
-            $table->index('pp_plg_pelangganjenis');
+            $table->comment('MAKLUMAT PELANGGAN');
         });
-
-        DB::statement("ALTER TABLE osc_da_pelanggan COMMENT='MAKLUMAT PEMOHON'");
     }
 
     /**

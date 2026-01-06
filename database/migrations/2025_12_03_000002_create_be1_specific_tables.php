@@ -8,13 +8,13 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     * 
+     *
      * Creates BE1-specific tables that are not part of legacy schema:
-     * 
+     *
      * M1 (Profile) Tables:
      * - otp_verifications: OTP verification for registration/password reset
      * - documents: Document management
-     * 
+     *
      * M11 (Admin) Tables:
      * - roles: Role definitions (11-level hierarchy)
      * - permissions: Permission definitions (module.action.scope format)
@@ -25,11 +25,11 @@ return new class extends Migration
      * - parameter_history: System parameter change history
      * - audit_logs: Audit trail for critical operations (immutable)
      * - notifications: User notifications (email, in-app)
-     * 
+     *
      * Authentication:
      * - personal_access_tokens: Laravel Sanctum tokens
-     * 
-     * NOTE: All references updated to use osc_usr_profile (external users) 
+     *
+     * NOTE: All references updated to use osc_usr_profile (external users)
      * and osc_slg_user (internal users) per 2025-12-03 schema refactoring.
      */
     public function up(): void
@@ -37,7 +37,7 @@ return new class extends Migration
         // Create otp_verifications table (M1)
         Schema::create('otp_verifications', function (Blueprint $table) {
             $table->id('otp_id');
-            $table->string('user_id', 15)->comment('REFERENCE TO user_id in osc_usr_profile');
+            $table->unsignedBigInteger('user_id')->comment('REFERENCE TO id in osc_usr_profile');
             $table->string('otp_code', 6);
             $table->string('otp_purpose', 50)->comment('registration, password_reset, contact_change');
             $table->integer('otp_attempts')->default(0);
@@ -55,15 +55,15 @@ return new class extends Migration
             $table->index('user_id');
             $table->index('otp_code');
             $table->index(['user_id', 'otp_purpose']);
-            
+
             // Foreign key
-            $table->foreign('user_id')->references('user_id')->on('osc_usr_profile')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('osc_usr_profile')->onDelete('cascade');
         });
 
         // Create documents table (M1)
         Schema::create('documents', function (Blueprint $table) {
             $table->uuid('doc_id')->primary();
-            $table->string('user_id', 15)->comment('REFERENCE TO user_id in osc_usr_profile');
+            $table->unsignedBigInteger('user_id')->comment('REFERENCE TO id in osc_usr_profile');
             $table->string('doc_type', 50)->comment('SSM_CERT, FORM_9, FORM_24, IC_COPY, etc');
             $table->string('doc_originalname', 255);
             $table->string('doc_storagepath', 500);
@@ -76,9 +76,9 @@ return new class extends Migration
             // Indexes
             $table->index('user_id');
             $table->index('doc_type');
-            
+
             // Foreign key
-            $table->foreign('user_id')->references('user_id')->on('osc_usr_profile')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('osc_usr_profile')->onDelete('cascade');
         });
 
         // Create audit_logs table (M11 - Immutable)
@@ -101,7 +101,7 @@ return new class extends Migration
             $table->index('entity_type');
             $table->index('created_at');
             $table->index('performed_by');
-            
+
             // Note: No foreign keys to allow audit logs to persist even if users are deleted
         });
 
@@ -161,7 +161,7 @@ return new class extends Migration
             $table->unique(['user_id', 'role_id']);
             $table->index('user_id');
             $table->index('assigned_by');
-            
+
             // Note: No foreign keys to osc_slg_user as it doesn't have unique constraint on user_id
             // Referential integrity maintained at application level
         });
@@ -169,7 +169,7 @@ return new class extends Migration
         // Create account_role pivot table (links external users/customers to roles)
         Schema::create('account_role', function (Blueprint $table) {
             $table->id();
-            $table->string('account_id', 15)->comment('REFERENCE TO user_id in osc_usr_profile (external users)');
+            $table->unsignedBigInteger('account_id')->comment('REFERENCE TO id in osc_usr_profile (external users)');
             $table->foreignId('role_id')->constrained('roles')->onDelete('cascade');
             $table->timestamp('assigned_at')->useCurrent();
             $table->string('assigned_by', 20)->nullable()->comment('user_id who assigned the role (from osc_slg_user)');
@@ -178,9 +178,9 @@ return new class extends Migration
             $table->unique(['account_id', 'role_id']);
             $table->index('account_id');
             $table->index('assigned_by');
-            
+
             // Foreign keys
-            $table->foreign('account_id')->references('user_id')->on('osc_usr_profile')->onDelete('cascade');
+            $table->foreign('account_id')->references('id')->on('osc_usr_profile')->onDelete('cascade');
             // Note: No FK for assigned_by as osc_slg_user doesn't have unique constraint on user_id
         });
 
@@ -190,11 +190,11 @@ return new class extends Migration
             $table->string('user_id', 20)->comment('REFERENCE TO user_id in osc_slg_user or osc_usr_profile');
             $table->string('password_hash', 255)->comment('Hashed password');
             $table->timestamp('created_at')->useCurrent();
-            
+
             // Indexes
             $table->index('user_id');
             $table->index('created_at');
-            
+
             // Note: No foreign keys to allow history to persist
         });
 
@@ -208,13 +208,13 @@ return new class extends Migration
             $table->string('changed_by', 20)->nullable()->comment('user_id who made the change');
             $table->string('change_reason', 500)->nullable()->comment('Reason for change');
             $table->timestamp('changed_at')->useCurrent();
-            
+
             // Indexes
             $table->index('parameter_id');
             $table->index('parameter_key');
             $table->index('changed_at');
             $table->index('changed_by');
-            
+
             // Note: No foreign key to osc_slg_sysparam as para_id doesn't have unique constraint
             // Referential integrity maintained at application level
         });
@@ -227,14 +227,14 @@ return new class extends Migration
             $table->text('data')->comment('Notification data (JSON)');
             $table->timestamp('read_at')->nullable()->comment('When notification was read');
             $table->timestamps();
-            
+
             // Note: morphs() already creates index on notifiable_type and notifiable_id
             $table->index('read_at');
         });
 
         // NOTE: personal_access_tokens table is now created by
         // 2025_01_01_000099_create_personal_access_tokens_table.php
-        // with string ID support for osc_usr_profile user_id
+        // with string ID support for osc_usr_profile id
     }
 
     /**

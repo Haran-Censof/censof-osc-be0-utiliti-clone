@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('osc_mhn_permohonan', function (Blueprint $table) {
-            $table->string('mhn_idpegawai', 50)->nullable()->after('mhn_idjenislesen')->comment('Assigned officer ID (FK to osc_slg_user)');
+            $table->string('mhn_idpegawai', 20)->nullable()->after('mhn_ptjpk')->comment('ID PEGAWAI YANG DIASSIGN');
             $table->index(['mhn_idpegawai']);
         });
     }

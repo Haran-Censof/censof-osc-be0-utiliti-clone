@@ -25,12 +25,12 @@ return new class extends Migration
             $table->decimal('nia_kdrbndr', 9, 2)->nullable()->comment('KADAR LESEN JIKA DIBANDAR');
             $table->decimal('nia_kdrluar', 9, 2)->nullable()->comment('KADAR LESEN JIKA LUAR BANDAR');
             $table->decimal('nia_kdrlain', 9, 2)->nullable()->comment('KADAR LESEN LAIN-LAIN');
-            $table->enum('nia_stbyrblk', ['Y', 'T'])->nullable()->comment('STATUS BAYARAN BALIK');
-            $table->enum('nia_stdiscnt', ['Y', 'T'])->nullable()->comment('STATUS DISCOUNT : REFER CTRL - DISCOUNT');
+            $table->string('nia_stbyrblk', 1)->nullable()->comment('STATUS BAYARAN BALIK');
+            $table->string('nia_stdiscnt', 1)->nullable()->comment('STATUS DISCOUNT : REFER CTRL - DISCOUNT');
             $table->string('nia_discount', 3)->nullable()->comment('KADAR DISCOUNT DEFAULT=100%');
-            $table->enum('nia_risiko', ['T', 'B', 'R'])->nullable()->comment('KATEGORI RISIKO PERNIAGAAN : REFER CTRL : RISIKO');
-            $table->enum('nia_statcgrn', ['Y', 'T'])->nullable()->comment('STATUS DIKENAKAN CAGARAN');
-            $table->enum('nia_halal', ['Y', 'T'])->nullable()->comment('STATUS HALAL [Y]-YA [T]-TIDAK');
+            $table->string('nia_risiko', 1)->nullable()->comment('KATEGORI RISIKO PERNIAGAAN : REFER CTRL : RISIKO');
+            $table->string('nia_statcgrn', 1)->nullable()->comment('STATUS DIKENAKAN CAGARAN');
+            $table->string('nia_halal', 1)->nullable()->comment('STATUS HALAL [Y]-YA [T]-TIDAK');
             $table->tinyInteger('nia_tmpoh')->nullable()->comment('TEMPOH DIAMBIL UNTUK SELESAI SATU PERMOHONAN');
             $table->string('nia_gldebit', 30)->nullable()->comment('KOD GL DEBIT');
             $table->string('nia_glkredit', 30)->nullable()->comment('KOD GL KREDIT');

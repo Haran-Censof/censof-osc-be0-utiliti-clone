@@ -20,6 +20,7 @@ return new class extends Migration
 
             // Add Laravel timestamps
             $table->timestamps();
+            $table->comment('KOD POSKOD');
         });
     }
 

@@ -12,24 +12,21 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('osc_da_kemudahan', function (Blueprint $table) {
-            $table->string('pp_kmd_idpelanggan', 15)->comment('NO KP / NO SSM / NO PASPORT');
-            $table->string('pp_kmd_kodsrpbt', 10)->comment('KOD ID PBT');
-            $table->integer('pp_kmd_alamatid')->comment('ALAMAT ID');
-            $table->enum('pp_kmd_modakaun', ['L'])->comment('MODIN [L]-LESEN');
-            $table->string('pp_kmd_noakaun', 15)->comment('NO AKAUN LESEN');
-            $table->enum('pp_kmd_stathitam', ['Y', 'T'])->nullable()->comment('STATUS DI SENARAI HITAM [Y]- YA [T]-TIDAK');
+            $table->id('id')->comment('Primary Key');
+            $table->string('kmdh_idpbt', 10)->comment('KOD ID PBT');
+            $table->string('kmdh_idpelanggan', 20)->comment('NO KP / NO SSM / NO PASPORT');
+            $table->integer('kmdh_alamatid')->comment('ALAMAT ID');
+            $table->string('kmdh_modakaun', 1)->comment('MODIN [L]-LESEN');
+            $table->string('kmdh_noakaun', 15)->comment('NO AKAUN LESEN');
+            $table->string('kmdh_stathitam', 1)->nullable()->comment('STATUS DI SENARAI HITAM [Y]- YA   [T]-TIDAK');
+            $table->date('kmdh_idate')->nullable()->comment('TARIKH KEMASUKAN');
+            $table->date('kmdh_udate')->nullable()->comment('TARIKH KEMASKINI');
+            $table->string('kmdh_iuser', 20)->nullable()->comment('NO KP PEGAWAI KEMASUKAN');
+            $table->string('kmdh_uuser', 20)->nullable()->comment('NO KP PEGAWAI KEMASKINI');
 
-            // Add Laravel timestamps
             $table->timestamps();
-
-            // Add primary key
-            $table->primary(['pp_kmd_idpelanggan', 'pp_kmd_kodsrpbt', 'pp_kmd_alamatid', 'pp_kmd_modakaun', 'pp_kmd_noakaun'], 'pk_osc_da_kemudahan');
-
-            // Add indexes
-            $table->index('pp_kmd_idpelanggan');
+            $table->comment('MAKLUMAT KEMUDAHAN PELANGGAN');
         });
-
-        DB::statement("ALTER TABLE osc_da_kemudahan COMMENT='MAKLUMAT KEMUDAHAN PELANGGAN'");
     }
 
     /**

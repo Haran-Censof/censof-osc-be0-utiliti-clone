@@ -27,6 +27,7 @@ return new class extends Migration
 
             // Add composite unique key
             $table->unique(['img_idpbt', 'img_imgsiri'], 'kod_image_uk');
+            $table->comment('KOD IMAGE');
         });
     }
 

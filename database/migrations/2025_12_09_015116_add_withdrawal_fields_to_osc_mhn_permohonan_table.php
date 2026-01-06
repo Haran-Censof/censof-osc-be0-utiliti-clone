@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('osc_mhn_permohonan', function (Blueprint $table) {
-            $table->boolean('mhn_is_withdrawn')->default(false)->after('mhn_sebabditolak')->comment('Application withdrawal status');
-            $table->text('mhn_withdrawal_reason')->nullable()->after('mhn_is_withdrawn')->comment('Reason for withdrawal');
-            $table->datetime('mhn_withdrawal_date')->nullable()->after('mhn_withdrawal_reason')->comment('Date of withdrawal');
-            $table->boolean('mhn_withdrawal_notified')->default(false)->after('mhn_withdrawal_date')->comment('Whether withdrawal notification was sent');
+            $table->string('mhn_statbatal', 1)->nullable()->default('T')->after('mhn_statl')->comment('STATUS BATAL PERMOHONAN [Y]-YA [T]-TIDAK');
+            $table->text('mhn_alasanbatal')->nullable()->after('mhn_statbatal')->comment('ALASAN BATAL PERMOHONAN');
+            $table->date('mhn_tkhbatal')->nullable()->after('mhn_alasanbatal')->comment('TARIKH BATAL PERMOHONAN');
+            $table->string('mhn_statnotif', 1)->nullable()->default('T')->after('mhn_tkhbatal')->comment('STATUS NOTIFIKASI BATAL [Y]-YA [T]-TIDAK');
         });
     }
 
@@ -26,10 +26,10 @@ return new class extends Migration
     {
         Schema::table('osc_mhn_permohonan', function (Blueprint $table) {
             $table->dropColumn([
-                'mhn_is_withdrawn',
-                'mhn_withdrawal_reason',
-                'mhn_withdrawal_date',
-                'mhn_withdrawal_notified',
+                'mhn_statbatal',
+                'mhn_alasanbatal',
+                'mhn_tkhbatal',
+                'mhn_statnotif',
             ]);
         });
     }

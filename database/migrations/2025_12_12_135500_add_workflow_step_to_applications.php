@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('osc_mhn_permohonan', function (Blueprint $table) {
-            $table->string('current_workflow_step', 50)->nullable()->after('mhn_status')
-                ->comment('Current active step code from workflow_rules');
-                
-            $table->index('current_workflow_step', 'idx_workflow_step');
+            $table->string('mhn_langkahwf', 50)->nullable()->after('mhn_statl')
+                ->comment('LANGKAH WORKFLOW SEMASA');
+
+            $table->index('mhn_langkahwf');
         });
     }
 
@@ -25,8 +25,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('osc_mhn_permohonan', function (Blueprint $table) {
-            $table->dropIndex('idx_workflow_step');
-            $table->dropColumn('current_workflow_step');
+            $table->dropIndex(['mhn_langkahwf']);
+            $table->dropColumn('mhn_langkahwf');
         });
     }
 };

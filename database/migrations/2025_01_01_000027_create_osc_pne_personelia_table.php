@@ -9,6 +9,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('osc_pne_personelia', function (Blueprint $table) {
+            $table->id('id')->comment('Primary Key');
             $table->string('pne_nopek', 14)->nullable()->comment('NO PEKERJA');
             $table->string('pne_nokp', 15)->nullable()->comment('NO KP PEKERJA');
             $table->string('pne_nama', 60)->nullable()->comment('NAMA');
@@ -18,7 +19,7 @@ return new class extends Migration
             $table->string('pne_agama', 1)->nullable()->comment('AGAMA [AGAMA]');
             $table->string('pne_stkahwi', 1)->nullable()->comment('STATUS PERKAHWINAN [KAHWIN]');
             $table->string('pne_jantina', 1)->nullable()->comment('JANTINA [JANTINA]');
-            $table->datetime('pne_mulakhidmat')->nullable()->comment('MULA BERKHIDMAT');
+            $table->date('pne_mulakhidmat')->nullable()->comment('MULA BERKHIDMAT');
             $table->string('pne_stataktif', 1)->nullable()->comment('STATUS PERKHIDMATAN [A]-AKTIF [T]-TIDAK AKTIF');
             $table->string('pne_rujuk', 15)->nullable()->comment('NO RUJUKAN');
             $table->string('pne_khimt', 1)->nullable()->comment('STATUS JAWATAN [STATUS_KMT]');
@@ -27,14 +28,13 @@ return new class extends Migration
             $table->string('pne_alpo3', 40)->nullable()->comment('ALAMAT SURAT MENYURAT 3');
             $table->string('pne_notel', 15)->nullable()->comment('NO TELEFON');
             $table->string('pne_email', 100)->nullable()->comment('EMEL');
-            $table->datetime('pne_idate')->nullable()->comment('TARIKH KEMASUKAN');
-            $table->datetime('pne_udate')->nullable()->comment('TARIKH KEMASKINI');
+            $table->date('pne_idate')->nullable()->comment('TARIKH KEMASUKAN');
+            $table->date('pne_udate')->nullable()->comment('TARIKH KEMASKINI');
             $table->string('pne_iuser', 20)->nullable()->comment('NO KP PEGAWAI KEMASUKAN');
             $table->string('pne_uuser', 20)->nullable()->comment('NO KP PEGAWAI KEMASKINI');
 
             $table->timestamps();
-            $table->index('pne_nopek');
-            $table->index('pne_nokp');
+            $table->comment('MAKLUMAT PERSONELIA KAKITANGAN');
         });
     }
 

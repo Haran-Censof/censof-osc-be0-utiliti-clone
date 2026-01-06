@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('osc_mhn_permohonan', function (Blueprint $table) {
-            // Add return-related columns after mhn_sebabditolak
-            $table->datetime('mhn_tarikhdipulang')->nullable()->after('mhn_sebabditolak')->comment('Return date');
-            $table->text('mhn_sebabdipulang')->nullable()->after('mhn_tarikhdipulang')->comment('Return reason');
+            // Add return-related columns after mhn_statl
+            $table->date('mhn_tkhdipulang')->nullable()->after('mhn_statl')->comment('TARIKH DIPULANGKAN');
+            $table->text('mhn_sebabdipulang')->nullable()->after('mhn_tkhdipulang')->comment('SEBAB DIPULANGKAN');
         });
     }
 
@@ -24,7 +24,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('osc_mhn_permohonan', function (Blueprint $table) {
-            $table->dropColumn(['mhn_tarikhdipulang', 'mhn_sebabdipulang']);
+            $table->dropColumn(['mhn_tkhdipulang', 'mhn_sebabdipulang']);
         });
     }
 };

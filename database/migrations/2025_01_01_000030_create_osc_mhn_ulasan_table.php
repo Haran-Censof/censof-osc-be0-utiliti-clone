@@ -12,50 +12,23 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('osc_mhn_ulasan', function (Blueprint $table) {
-            // Primary key
-            $table->id('uls_id');
-
-            // Core technical review fields (BE2)
-            $table->unsignedBigInteger('uls_idsemakan')->nullable()->comment('Review ID');
-            $table->string('uls_jenis', 50)->nullable()->comment('Review type (BTD/ATL)');
-            $table->string('uls_jabatan', 100)->nullable()->comment('Department/agency');
-            $table->string('uls_idpenyemak')->nullable()->comment('Reviewer ID');
-            $table->datetime('uls_tarikhujuk')->nullable()->comment('Referral date');
-            $table->datetime('uls_tarikhsiap')->nullable()->comment('Completion date');
-            $table->boolean('uls_perlulawatn')->default(false)->comment('Site visit required');
-            $table->datetime('uls_tarikhlawatn')->nullable()->comment('Site visit date');
-            $table->json('uls_penemuan')->nullable()->comment('Findings (JSON)');
-            $table->string('uls_syor', 100)->nullable()->comment('Recommendation');
-            $table->string('uls_idketuajabatan')->nullable()->comment('HOD approval');
-            $table->datetime('uls_tarikhlulusketua')->nullable()->comment('HOD approval date');
-            $table->string('uls_status', 50)->nullable()->comment('Review status');
-            $table->text('uls_catatan')->nullable()->comment('Notes');
-
-            // Audit fields
-            $table->datetime('uls_tarikhcipta')->nullable()->comment('Creation date');
-            $table->string('uls_ciptaoleh', 100)->nullable()->comment('Created by');
-            $table->datetime('uls_tarikhmaskini')->nullable()->comment('Last modified date');
-            $table->string('uls_maskiniole', 100)->nullable()->comment('Modified by');
-
-            // Legacy fields (for backward compatibility)
-            $table->string('uls_kdsrpbt', 10)->nullable()->comment('KOD SIRI PBT');
-            $table->decimal('uls_nosiri', 9, 0)->nullable()->comment('NO SIRI PERMOHONAN');
-            $table->decimal('uls_akaun', 7, 0)->nullable()->comment('NO AKAUN : LEPAS KELULUSAN');
-            $table->string('uls_ulsiri', 8)->nullable()->comment('NO SIRI ULASAN');
-            $table->string('uls_ulasan', 250)->nullable()->comment('ULASAN');
+            $table->id('id')->comment('Primary Key');
+            $table->string('uls_idpbt', 10)->nullable()->comment('KOD ID PBT');
+            $table->bigInteger('uls_nosiri')->nullable()->comment('NO SIRI PERMOHONAN');
+            $table->string('uls_kdagensi', 8)->nullable()->comment('KOD AGENSI TEKNIKAL');
+            $table->string('uls_ulsiri', 2)->nullable()->comment('NO SIRI ULASAN [ULASAN]');
+            $table->string('uls_ulasan', 500)->nullable()->comment('ULASAN');
             $table->string('uls_pegawai', 100)->nullable()->comment('PENGAWAI MENGULAS');
-            $table->dateTime('uls_tkhulas')->nullable()->comment('TARIKH ULASAN DIBUAT');
-            $table->dateTime('uls_idate')->nullable()->comment('TARIKH INPUT');
-            $table->dateTime('uls_udate')->nullable()->comment('TARIKH KEMASKINI');
+            $table->integer('uls_akaun')->nullable()->comment('NO AKAUN : LEPAS KELULUSAN');
+            $table->date('uls_tkhulas')->nullable()->comment('TARIKH ULASAN DIBUAT');
+            $table->date('uls_idate')->nullable()->comment('TARIKH INPUT');
+            $table->date('uls_udate')->nullable()->comment('TARIKH KEMASKINI');
+            $table->string('uls_iuser', 20)->nullable()->comment('NO KP PEGAWAI KEMASUKAN');
+            $table->string('uls_uuser', 20)->nullable()->comment('NO KP PEGAWAI KEMASKINI');
 
             $table->timestamps();
-
-            // Indexes
-            $table->index(['uls_idsemakan']);
-            $table->index(['uls_jenis']);
-            $table->index(['uls_idpenyemak']);
-            $table->index(['uls_status']);
-            $table->index(['uls_kdsrpbt', 'uls_nosiri']);
+            $table->unique(['uls_idpbt', 'uls_nosiri', 'uls_kdagensi', 'uls_ulsiri'], 'mhn_ulasan_uk');
+            $table->comment(' ULASAN PERMOHONAN DARI AGENSI TEKNIKAL ATL/BTD');
         });
     }
 
