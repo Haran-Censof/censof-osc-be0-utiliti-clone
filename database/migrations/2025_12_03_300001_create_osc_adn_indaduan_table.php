@@ -9,6 +9,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('osc_adn_indaduan', function (Blueprint $table) {
+            $table->id('id')->comment('Primary Key');
             $table->string('adn_idpbt', 10)->nullable()->comment('KOD ID PBT');
             $table->string('adn_noaduan', 16)->nullable()->comment('NO SIRI ADUAN/PERTANYAAN');
             $table->string('adn_idpelanggan', 15)->nullable()->comment('NO KP PENGADU');
@@ -21,20 +22,21 @@ return new class extends Migration
             $table->string('adn_email', 50)->nullable()->comment('EMAIL');
             $table->string('adn_jantina', 1)->nullable()->comment('JANTINA');
             $table->string('adn_bangsa', 1)->nullable()->comment('BANGSA');
-            $table->string('adn_jnadn', 2)->nullable()->comment('[A]-ADUAN [P]-PERTANYAAN');
+            $table->string('adn_jnadn', 2)->nullable()->comment('[A]-ADUAN  [P]-PERTANYAAN');
             $table->string('adn_kodjenisaduan', 3)->nullable()->comment('KOD JENIS ADUAN');
-            $table->string('adn_catatan', 2000)->nullable()->comment('CATATAN');
+            $table->text('adn_catatan')->nullable()->comment('CATATAN');
             $table->string('adn_lokasi', 500)->nullable()->comment('LOKASI ADUAN');
-            $table->datetime('adn_tkhterima')->nullable()->comment('TARIKH TERIMA ADUAN');
+            $table->date('adn_tkhterima')->nullable()->comment('TARIKH TERIMA ADUAN');
             $table->string('adn_stataduan', 1)->nullable()->comment('STATUS ADUAN [P]-PERMOHONAN [S]-SELESAI');
-            $table->datetime('adn_idate')->nullable()->comment('TARIKH INPUT');
-            $table->datetime('adn_udate')->nullable()->comment('TARIKH KEMASKINI');
+            $table->date('adn_idate')->nullable()->comment('TARIKH INPUT');
+            $table->date('adn_udate')->nullable()->comment('TARIKH KEMASKINI');
             $table->string('adn_iuser', 20)->nullable()->comment('NO KP PEGAWAI KEMASUKAN');
             $table->string('adn_uuser', 20)->nullable()->comment('NO KP PEGAWAI KEMASKINI');
             
             $table->timestamps();
-            $table->index(['adn_idpbt', 'adn_noaduan']);
+            $table->unique(['adn_idpbt', 'adn_noaduan'], 'adn_indaduan_uk');
             $table->index('adn_stataduan');
+            $table->comment('MAKLUMAT INDUK ADUAN');
         });
     }
 

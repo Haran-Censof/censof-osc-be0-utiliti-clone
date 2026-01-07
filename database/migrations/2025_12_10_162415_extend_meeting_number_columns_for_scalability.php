@@ -9,7 +9,7 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     * 
+     *
      * Extend meeting-related foreign key columns to support new scalable format
      * Old format: 6 digits (e.g., 000001)
      * New format: MBSJ/MSY/2025/0000000001 (26 chars)
@@ -19,11 +19,11 @@ return new class extends Migration
     {
         // Use raw SQL to avoid foreign key constraint issues
         // MySQL allows modifying referenced columns if the change is compatible
-        
+
         DB::statement('ALTER TABLE `osc_smk_mesyuarat` MODIFY COLUMN `msy_bilangan` VARCHAR(50) NULL');
-        DB::statement('ALTER TABLE `meeting_agendas` MODIFY COLUMN `agenda_meeting_number` VARCHAR(50) NOT NULL');
-        DB::statement('ALTER TABLE `meeting_attendees` MODIFY COLUMN `attendee_meeting_number` VARCHAR(50) NOT NULL');
-        DB::statement('ALTER TABLE `meeting_minutes` MODIFY COLUMN `minute_meeting_number` VARCHAR(50) NOT NULL');
+        DB::statement('ALTER TABLE `meeting_agendas` MODIFY COLUMN `agd_nomesy` VARCHAR(50) NOT NULL');
+        DB::statement('ALTER TABLE `meeting_attendees` MODIFY COLUMN `att_nomesy` VARCHAR(50) NOT NULL');
+        DB::statement('ALTER TABLE `meeting_minutes` MODIFY COLUMN `mnt_nomesy` VARCHAR(50) NOT NULL');
         DB::statement('ALTER TABLE `meeting_decisions` MODIFY COLUMN `decision_meeting_number` VARCHAR(50) NOT NULL');
     }
 
@@ -34,9 +34,9 @@ return new class extends Migration
     {
         // Revert to original lengths
         DB::statement('ALTER TABLE `osc_smk_mesyuarat` MODIFY COLUMN `msy_bilangan` VARCHAR(10) NULL');
-        DB::statement('ALTER TABLE `meeting_agendas` MODIFY COLUMN `agenda_meeting_number` VARCHAR(10) NOT NULL');
-        DB::statement('ALTER TABLE `meeting_attendees` MODIFY COLUMN `attendee_meeting_number` VARCHAR(10) NOT NULL');
-        DB::statement('ALTER TABLE `meeting_minutes` MODIFY COLUMN `minute_meeting_number` VARCHAR(10) NOT NULL');
+        DB::statement('ALTER TABLE `meeting_agendas` MODIFY COLUMN `agd_nomesy` VARCHAR(10) NOT NULL');
+        DB::statement('ALTER TABLE `meeting_attendees` MODIFY COLUMN `att_nomesy` VARCHAR(10) NOT NULL');
+        DB::statement('ALTER TABLE `meeting_minutes` MODIFY COLUMN `mnt_nomesy` VARCHAR(10) NOT NULL');
         DB::statement('ALTER TABLE `meeting_decisions` MODIFY COLUMN `decision_meeting_number` VARCHAR(20) NOT NULL');
     }
 };

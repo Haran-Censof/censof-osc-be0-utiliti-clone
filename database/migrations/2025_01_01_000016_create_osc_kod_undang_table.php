@@ -12,20 +12,22 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('osc_kod_undang', function (Blueprint $table) {
-            $table->string('und_kdsrpbt', 10)->comment('id pbt');
-            $table->string('und_kodundg', 4)->comment('kod undang2 kecil');
+            $table->id();
+            $table->string('und_idpbt', 10)->comment('id pbt');
+            $table->string('und_kodundang', 4)->comment('kod undang2 kecil');
             $table->string('und_ketrng1', 100)->nullable()->comment('keterangan1');
             $table->string('und_ketrng2', 100)->nullable()->comment('keterangan2');
             $table->string('und_ketrng3', 100)->nullable()->comment('keterangan3');
+            $table->date('und_idate')->nullable();
+            $table->date('und_udate')->nullable();
+            $table->string('und_iuser', 20)->nullable();
+            $table->string('und_uuser', 20)->nullable();
 
             // Add Laravel timestamps
             $table->timestamps();
 
-            // Add composite primary key
-            $table->primary(['und_kdsrpbt', 'und_kodundg'], 'pk_osc_kodundang');
-
-            // Add indexes
-            $table->index('und_kdsrpbt');
+            // Add composite unique key
+            $table->unique(['und_idpbt', 'und_kodundang'], 'kod_undang_uk');
         });
     }
 

@@ -9,6 +9,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('osc_slg_menu', function (Blueprint $table) {
+            $table->id();
             $table->string('menu_group_id', 10)->comment('MENU GROUP ID');
             $table->string('menu_desc', 50)->comment('MENU DESCRIPTION');
             $table->string('menu_appl_type', 1)->comment('MENU APPLICATION TYPE');

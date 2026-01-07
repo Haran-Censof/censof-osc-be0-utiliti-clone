@@ -13,18 +13,18 @@ return new class extends Migration
     {
         Schema::create('meeting_minutes', function (Blueprint $table) {
             $table->id();
-            $table->string('minute_meeting_number', 10)->comment('Meeting number reference');
-            $table->string('minute_version')->default('DRAFT')->comment('Version: DRAFT, FINAL');
-            $table->longText('minute_content')->comment('Minutes content in structured format');
-            $table->string('minute_file_path')->nullable()->comment('Path to generated PDF file');
-            $table->datetime('minute_approved_at')->nullable()->comment('When minutes were approved');
-            $table->string('minute_approved_by')->nullable()->comment('Chairperson who approved');
-            $table->json('minute_metadata')->nullable()->comment('Additional metadata');
+            $table->string('mnt_nomesy', 10)->comment('NO MESYUARAT');
+            $table->string('mnt_versi')->default('DRAF')->comment('VERSI: DRAF, AKHIR');
+            $table->longText('mnt_kandungan')->comment('KANDUNGAN MINIT DALAM FORMAT BERSTRUKTUR');
+            $table->string('mnt_laluanfail')->nullable()->comment('LALUAN KE FAIL PDF YANG DIJANA');
+            $table->date('mnt_tkhlulus')->nullable()->comment('BILA MINIT DILULUSKAN');
+            $table->unsignedBigInteger('mnt_dilulusoleh')->nullable()->comment('PENGERUSI YANG MELULUSKAN');
+            $table->json('mnt_metadata')->nullable()->comment('METADATA TAMBAHAN');
             $table->timestamps();
 
-            $table->foreign('minute_meeting_number')->references('msy_bilangan')->on('osc_smk_mesyuarat');
-            $table->foreign('minute_approved_by')->references('user_id')->on('osc_usr_profile');
-            $table->index(['minute_meeting_number', 'minute_version'], 'meeting_minute_version_idx');
+            $table->foreign('mnt_nomesy')->references('msy_bilangan')->on('osc_smk_mesyuarat');
+            $table->foreign('mnt_dilulusoleh')->references('id')->on('osc_usr_profile');
+            $table->index(['mnt_nomesy', 'mnt_versi'], 'meeting_minute_version_idx');
         });
     }
 

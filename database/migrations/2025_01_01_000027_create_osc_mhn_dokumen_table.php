@@ -12,33 +12,21 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('osc_mhn_dokumen', function (Blueprint $table) {
-            $table->id('dok_id'); // Add standard ID mapped to dok_id
-            $table->string('doc_kdsrpbt', 10)->nullable()->comment('KOD SIRI PBT');
-            $table->decimal('doc_nosiri', 9, 0)->nullable()->comment('NO SIRI PERMOHONAN');
-            $table->decimal('doc_akaun', 7, 0)->nullable()->comment('NO AKAUN : SELEPAS KELULUSAN');
-            $table->decimal('doc_dcsiri', 3, 0)->nullable()->comment('NO SIRI DOKUMEN');
-            $table->binary('doc_dokumen')->nullable()->comment('IMAGE DOKUMEN');
+            $table->id('id')->comment('Primary Key');
+            $table->string('doc_idpbt', 10)->nullable()->comment('KOD ID PBT');
+            $table->bigInteger('doc_nosiri')->nullable()->comment('NO SIRI PERMOHONAN');
+            $table->integer('doc_akaun')->nullable()->comment('NO AKAUN : SELEPAS KELULUSAN');
+            $table->integer('doc_dcsiri')->nullable()->comment('NO SIRI DOKUMEN');
+            $table->longText('doc_dokumen')->nullable()->comment('IMAGE DOKUMEN');
             $table->string('doc_catatan', 250)->nullable()->comment('CATATAN KEPADA DOKUMEN');
-            $table->dateTime('doc_idate')->nullable()->comment('TARIKH INPUT');
-            $table->dateTime('doc_udate')->nullable()->comment('TARIKH KEMASKINI');
+            $table->date('doc_idate')->nullable()->comment('TARIKH INPUT');
+            $table->date('doc_udate')->nullable()->comment('TARIKH KEMASKINI');
+            $table->string('doc_iuser', 20)->nullable()->comment('NO KP PEGAWAI KEMASUKAN');
+            $table->string('doc_uuser', 20)->nullable()->comment('NO KP PEGAWAI KEMASKINI');
 
-            // Modern Columns (BE2 support)
-            $table->unsignedBigInteger('mhn_idpermohonan')->nullable()->index();
-            $table->string('dok_jenis')->nullable();
-            $table->string('dok_nama')->nullable();
-            $table->string('dok_path')->nullable();
-            $table->integer('dok_saiz')->nullable();
-            $table->string('dok_status')->nullable();
-            $table->string('dok_catatan')->nullable();
-            $table->unsignedBigInteger('doc_query_id')->nullable();
-            $table->unsignedBigInteger('doc_technical_review_id')->nullable();
-
-            // Add Laravel timestamps
             $table->timestamps();
-
-            // Add indexes instead of Primary Key
-            $table->index(['doc_kdsrpbt', 'doc_nosiri', 'doc_dcsiri'], 'idx_legacy_pk');
-            $table->index(['doc_kdsrpbt', 'doc_nosiri']);
+            $table->unique(['doc_idpbt', 'doc_nosiri', 'doc_dcsiri'], 'mhn_dokumen_uk');
+            $table->comment('MAKLUMAT DOKUMEN PEMOHON');
         });
     }
 

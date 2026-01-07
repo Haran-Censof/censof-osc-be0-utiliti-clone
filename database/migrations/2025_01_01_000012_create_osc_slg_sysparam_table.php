@@ -9,6 +9,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('osc_slg_sysparam', function (Blueprint $table) {
+            $table->id('id')->comment('Primary Key');
             $table->string('para_idpbt', 10)->nullable()->comment('KOD ID PBT');
             $table->integer('para_id')->nullable()->comment('PARAMETER ID');
             $table->string('para_desc', 30)->nullable()->comment('KETERANGAN');
@@ -17,8 +18,7 @@ return new class extends Migration
             $table->string('para_uuser', 20)->nullable()->comment('NO KP PEGAWAI KEMASKINI');
 
             $table->timestamps();
-            $table->index('para_idpbt');
-            $table->index('para_id');
+            $table->comment('PENYELENGGARAAN PARAMETER');
         });
     }
 

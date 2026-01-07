@@ -9,6 +9,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('osc_ind_translesen', function (Blueprint $table) {
+            $table->id('id')->comment('Primary Key');
             $table->string('trn_idpbt', 10)->nullable()->comment('KOD ID PBT');
             $table->integer('trn_akaun')->nullable()->comment('NO AKAUN - LEPAS KELULUSAN');
             $table->integer('trn_sequtama')->nullable()->comment('KEUTAMAAN TRANSAKSI');
@@ -19,13 +20,14 @@ return new class extends Migration
             $table->string('trn_statcagar', 1)->nullable()->comment('STATUS DIKENAKAN CAGARAN [Y]-Ya [T]-Tidak');
             $table->string('trn_akauncagar', 10)->nullable()->comment('NO AKAUN CAGARAN');
             $table->string('trn_stattrans', 1)->nullable()->comment('STATUS TRANSAKSI');
-            $table->datetime('trn_idate')->nullable()->comment('TARIKH KEMASUKAN');
-            $table->datetime('trn_udate')->nullable()->comment('TARIKH KEMASKINI');
+            $table->date('trn_idate')->nullable()->comment('TARIKH KEMASUKAN');
+            $table->date('trn_udate')->nullable()->comment('TARIKH KEMASKINI');
             $table->string('trn_iuser', 20)->nullable()->comment('NO KP PEGAWAI KEMASUKAN');
             $table->string('trn_uuser', 20)->nullable()->comment('NO KP PEGAWAI KEMASKINI');
             
             $table->timestamps();
             $table->index(['trn_idpbt', 'trn_akaun']);
+            $table->comment('MAKLUMAT INDUK TRANSAKSI PELESEN');
         });
     }
 

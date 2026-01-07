@@ -12,12 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('osc_mhn_iklan', function (Blueprint $table) {
-            $table->string('lan_kdsrpbt', 10)->comment('KOD SIRI PBT');
-            $table->decimal('lan_nosiri', 9, 0)->comment('NO SIRI PERMOHONAN');
-            $table->decimal('lan_akaun', 7, 0)->nullable()->comment('NO AKAUN LESEN - LEPAS LULUS');
+            $table->id('id')->comment('Primary Key');
+            $table->string('lan_idpbt', 10)->nullable()->comment('KOD SIRI PBT');
+            $table->bigInteger('lan_nosiri')->nullable()->comment('NO SIRI PERMOHONAN');
+            $table->integer('lan_akaun')->nullable()->comment('NO AKAUN LESEN - LEPAS LULUS');
             $table->string('lan_rujuk', 20)->nullable()->comment('RUJUKAN');
-            $table->dateTime('lan_mulai')->nullable()->comment('TARIKH MULA');
-            $table->dateTime('lan_tamti')->nullable()->comment('TARIKH TAMAT');
+            $table->date('lan_mulai')->nullable()->comment('TARIKH MULA');
+            $table->date('lan_tamti')->nullable()->comment('TARIKH TAMAT');
             $table->decimal('lan_amaun', 11, 2)->nullable()->comment('AMAUN');
             $table->string('lan_stajn', 1)->nullable()->comment('TANAH KOSONG');
             $table->string('lan_keadn', 1)->nullable()->comment('MELINTANG');
@@ -27,20 +28,17 @@ return new class extends Migration
             $table->decimal('lan_lebar', 6, 2)->nullable()->comment('LEBAR');
             $table->string('lan_tempt', 100)->nullable()->comment('TEMPAT');
             $table->string('lan_keter', 40)->nullable()->comment('KETERANGAN');
-            $table->dateTime('lan_batal')->nullable()->comment('BATAL');
+            $table->date('lan_batal')->nullable()->comment('BATAL');
             $table->string('lan_statf', 1)->nullable()->comment('STATUS');
             $table->string('lan_onama', 10)->nullable()->comment('NAMA');
-            $table->dateTime('lan_idate')->nullable()->comment('TARIKH INPUT');
-            $table->dateTime('lan_udate')->nullable()->comment('TARIKH KEMASKINI');
+            $table->date('lan_idate')->nullable()->comment('TARIKH INPUT');
+            $table->date('lan_udate')->nullable()->comment('TARIKH KEMASKINI');
+            $table->string('lan_iuser', 20)->nullable()->comment('NO KP PEGAWAI KEMASUKAN');
+            $table->string('lan_uuser', 20)->nullable()->comment('NO KP PEGAWAI KEMASKINI');
 
-            // Add Laravel timestamps
             $table->timestamps();
-
-            // Add composite primary key
-            $table->primary(['lan_kdsrpbt', 'lan_nosiri'], 'pk_osc_mhn_iklan');
-
-            // Add indexes
-            $table->index(['lan_kdsrpbt', 'lan_nosiri']);
+            $table->unique(['lan_idpbt', 'lan_nosiri'], 'mhn_iklan_uk');
+            $table->comment('MAKLUMAT IKLAN PEMOHON');
         });
     }
 

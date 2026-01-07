@@ -28,8 +28,8 @@ return new class extends Migration
             $table->text('renewal_notes')->nullable();
             $table->timestamps();
 
-            $table->foreign('renewal_license_id')->references('ind_id')->on('osc_ind_induklesen');
-            $table->foreign('renewal_application_id')->references('mhn_id')->on('osc_mhn_permohonan');
+            $table->foreign('renewal_license_id')->references('id')->on('osc_ind_induklesen');
+            $table->foreign('renewal_application_id')->references('id')->on('osc_mhn_permohonan');
 
             $table->index(['renewal_license_id', 'renewal_status']);
             $table->index('renewal_initiated_at');

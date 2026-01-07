@@ -9,20 +9,19 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('osc_smk_accmesyuarat', function (Blueprint $table) {
-            $table->integer('mja_akaun')->comment('AKAUN');
-            $table->tinyInteger('mja_digit')->comment('DIGIT');
-            $table->datetime('mja_tkhtk')->nullable()->comment('TARIKH TERAKHIR');
-            $table->datetime('mja_tkhpl')->comment('TARIKH PELUPUSAN');
-            $table->string('mja_onama', 10)->nullable()->comment('NAMA');
-            $table->string('mja_sbkod', 3)->nullable()->comment('KOD SEBAB');
-            $table->string('mja_mesej', 100)->nullable()->comment('MESEJ');
-            $table->string('mja_statf', 1)->nullable()->comment('STATUS');
-            $table->integer('mja_hsiri')->nullable()->comment('SIRI');
-            $table->string('mja_stcbk', 1)->comment('STATUS CABIKAN');
-            $table->string('mja_sbbtl', 50)->nullable()->comment('SEBAB BATAL');
+            $table->id('id')->comment('Primary Key');
+            $table->string('ame_idpbt', 10)->comment('KOD SIRI ID PBT');
+            $table->bigInteger('ame_nosiri')->comment('NO SIRI PERMOHONAN');
+            $table->date('ame_tkhmesyuarat')->comment('TARIKH MESYUARAT OSC');
+            $table->string('ame_ulsiri', 2)->nullable()->comment('NO SIRI ULASAN [ULASAN]');
+            $table->string('ame_catatan', 250)->nullable()->comment('CATATAN');
+            $table->string('ame_statf', 1)->nullable()->comment('STATUS [P]- PERMOHONAN [G]-GANTUNG [S]-SELESAI');
+            $table->date('ame_idate')->nullable()->comment('TARIKH KEMASUKAN');
+            $table->date('ame_udate')->nullable()->comment('TARIKH KEMASKINI');
+            $table->string('ame_iuser', 20)->nullable()->comment('PEGAWAI KEMASUKAN MAKLUMAT');
+            $table->string('ame_uuser', 20)->nullable()->comment('PEGAWAI KEMASKINI MAKLUMAT');
 
             $table->timestamps();
-            $table->index('mja_akaun');
         });
     }
 

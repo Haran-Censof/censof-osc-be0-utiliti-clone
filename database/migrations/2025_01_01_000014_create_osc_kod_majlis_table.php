@@ -12,11 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('osc_kod_majlis', function (Blueprint $table) {
+            $table->id();
             $table->string('maj_kdnegri', 2)->nullable()->comment('kod negeri');
             $table->string('maj_nmnegri', 50)->nullable()->comment('nama negeri');
-            $table->string('maj_kdsrpbt', 10)->primary()->comment('id pbt');
+            $table->string('maj_idpbt', 10)->comment('id pbt');
             $table->string('maj_namapbt', 100)->nullable()->comment('nama pbt');
-            $table->string('maj_rgkspbt', 40)->nullable()->comment('keterangan ringkas');
+            $table->string('maj_kodpbt', 40)->nullable()->comment('kod pbt');
             $table->string('maj_alamat1', 100)->nullable()->comment('alamat1');
             $table->string('maj_alamat2', 100)->nullable()->comment('alamat2');
             $table->string('maj_alamat3', 100)->nullable()->comment('alamat3');
@@ -29,9 +30,16 @@ return new class extends Migration
             $table->enum('maj_stpinmlk', ['Y', 'T'])->nullable()->comment('status pindah milik [Y]-Ya [T]-Tidak');
             $table->enum('maj_dinamik', ['Y', 'T', 'A'])->nullable()->comment('status lesen dinamik [Y]-Ya [T]-Tidak [A]- Semua');
             $table->enum('maj_prorate', ['Y', 'T'])->nullable()->comment('status prorate dibenarkan [Y]-Ya [T]-Tidak');
+            $table->date('maj_idate')->nullable();
+            $table->date('maj_udate')->nullable();
+            $table->string('maj_iuser', 20)->nullable();
+            $table->string('maj_uuser', 20)->nullable();
 
             // Add Laravel timestamps
             $table->timestamps();
+
+            // Add unique key
+            $table->unique('maj_idpbt', 'kod_majlis_uk');
         });
     }
 

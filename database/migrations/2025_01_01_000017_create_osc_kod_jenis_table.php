@@ -12,21 +12,21 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('osc_kod_jenis', function (Blueprint $table) {
-            $table->string('jns_kdsrpbt', 10)->comment('id pbt');
-            $table->string('jns_kodundg', 4)->comment('kod undang-undang kecil pelesenan');
+            $table->id();
+            $table->string('jns_idpbt', 10)->comment('id pbt');
             $table->string('jns_kodjenis', 2)->comment('kod jenis');
             $table->string('jns_jnsnama', 100)->nullable()->comment('keterangan');
             $table->string('jns_jnsrgks', 40)->nullable()->comment('keterangan ringkas');
+            $table->date('jns_idate')->nullable();
+            $table->date('jns_udate')->nullable();
+            $table->string('jns_iuser', 20)->nullable();
+            $table->string('jns_uuser', 20)->nullable();
 
             // Add Laravel timestamps
             $table->timestamps();
 
-            // Add composite primary key
-            $table->primary(['jns_kdsrpbt', 'jns_kodundg', 'jns_kodjenis'], 'pk_osc_kodjenis');
-
-            // Add indexes
-            $table->index('jns_kdsrpbt');
-            $table->index(['jns_kdsrpbt', 'jns_kodundg']);
+            // Add composite unique key
+            $table->unique(['jns_idpbt', 'jns_kodjenis'], 'kod_jenis_uk');
         });
     }
 

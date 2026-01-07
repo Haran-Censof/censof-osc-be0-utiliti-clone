@@ -31,7 +31,7 @@ return new class extends Migration
             
             // Foreign key
             $table->foreign('application_id')
-                ->references('mhn_id')
+                ->references('id')
                 ->on('osc_mhn_permohonan')
                 ->onDelete('cascade');
                 

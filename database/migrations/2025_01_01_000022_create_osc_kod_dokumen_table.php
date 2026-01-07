@@ -12,21 +12,22 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('osc_kod_dokumen', function (Blueprint $table) {
-            $table->string('osc_kdsrpbt', 10)->comment('id pbt');
-            $table->enum('osc_ktegori', ['B', 'T', 'H'])->nullable()->comment('[B]-berisiko [T]-Tidak berisiko [H]-Risiko tinggi');
-            $table->string('osc_kddocmt', 5)->comment('kod dokument');
-            $table->string('osc_docdesc', 250)->nullable()->comment('keterangan doc');
-            $table->string('osc_catatan', 500)->nullable()->comment('catatan');
-            $table->enum('osc_statusd', ['M', 'P'])->nullable()->comment('status document [M]-Mandatori [P]-Pilihan');
+            $table->id();
+            $table->string('doc_idpbt', 10)->nullable()->comment('id pbt');
+            $table->char('doc_ktegori', 1)->nullable()->comment('[B]-berisiko [T]-Tidak berisiko [H]-Risiko tinggi');
+            $table->string('doc_kddocmt', 5)->nullable()->comment('kod dokument');
+            $table->string('doc_docdesc', 250)->nullable()->comment('keterangan doc');
+            $table->string('doc_catatan', 500)->nullable()->comment('catatan');
+            $table->string('doc_statusd', 1)->nullable()->comment('status document [M]-Mandatori [P]-Pilihan');
+            $table->char('doc_jenismhn', 1)->nullable();
+            $table->date('doc_idate')->nullable();
+            $table->date('doc_udate')->nullable();
+            $table->string('doc_iuser', 20)->nullable();
+            $table->string('doc_uuser', 20)->nullable();
 
             // Add Laravel timestamps
             $table->timestamps();
-
-            // Add composite primary key
-            $table->primary(['osc_kdsrpbt', 'osc_kddocmt'], 'pk_osc_koddocument');
-
-            // Add indexes
-            $table->index('osc_kdsrpbt');
+            $table->comment('MAKLUMAT DOKUMEN');
         });
     }
 
