@@ -212,9 +212,9 @@ return new class extends Migration
         });
 
         // osc_slg_lookuptable
-        Schema::table('osc_slg_lookuptable', function (Blueprint $table) {
-            $table->foreign('ctl_idpbt')->references('maj_idpbt')->on('osc_kod_majlis')->onDelete('restrict');
-        });
+        // Schema::table('osc_slg_lookuptable', function (Blueprint $table) {
+        //     $table->foreign('ctl_idpbt')->references('maj_idpbt')->on('osc_kod_majlis')->onDelete('restrict');
+        // });
 
         // osc_slg_sysparam
         Schema::table('osc_slg_sysparam', function (Blueprint $table) {

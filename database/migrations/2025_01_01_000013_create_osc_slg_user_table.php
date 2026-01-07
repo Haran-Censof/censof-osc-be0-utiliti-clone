@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id('id')->comment('Primary Key');
             $table->string('user_group_id', 10)->nullable()->comment('USER GROUP ID');
             $table->string('user_id', 15)->nullable()->comment('USER ID');
-            $table->string('user_name', 50)->nullable()->comment('USER NAME');
+            $table->string('user_name', 100)->nullable()->comment('USER NAME');
             $table->string('user_password', 32)->nullable()->comment('USER PASSWORD');
             $table->date('user_created')->nullable()->comment('USER CREATED DATE');
             $table->string('user_status', 1)->nullable()->comment('USER STATUS');

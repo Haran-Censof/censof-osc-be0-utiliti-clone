@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -33,6 +34,25 @@ class DatabaseSeeder extends Seeder
             OscKodPoskodSeeder::class,
             OscKodPtjpkSeeder::class,
             OscKodTranlesenSeeder::class,
+            SystemParameterSeeder::class,
+            MenuGroupSeeder::class,
+            UserGroupSeeder::class,
+            ControlCodeSeeder::class,
+            MenuSeeder::class,
+            UserSeeder::class,
+            MenuControlSeeder::class,
+            PersoneliaKakitanganSeeder::class,
+            IndukLPekerjaSeeder::class,
+            CompanyProfileSeeder::class,
+            IklanPelesenanSeeder::class,
+            FacilitySeeder::class,
+            IndukLNominiSeeder::class,
+            CustomerSeeder::class,
+            AddressSeeder::class,
+           IndukLesenSeeder::class,
+           LicensingTransactionSeeder::class, 
+           IndividualProfileSeeder::class,
+
         ]);
 
         // User::factory(10)->create();

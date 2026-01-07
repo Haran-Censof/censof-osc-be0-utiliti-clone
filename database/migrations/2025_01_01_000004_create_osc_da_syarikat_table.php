@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('osc_da_syarikat', function (Blueprint $table) {
             $table->id('id')->comment('Primary Key');
             $table->string('sykt_idpbt', 10)->nullable()->comment('KOD ID PBT');
-            $table->string('sykt_idpelanggan', 20)->comment('NO SSM');
+            $table->string('sykt_idpelanggan', 30)->comment('NO SSM');
             $table->string('sykt_lhdnsstid', 20)->nullable()->comment('ID SST LHDN');
             $table->string('sykt_nodaftarkew', 20)->nullable()->comment('NO DAFTAR KEMENTERIAN KEWANGAN');
             $table->string('sykt_nodaftarcidb', 20)->nullable()->comment('NO DAFTAR CIDB');

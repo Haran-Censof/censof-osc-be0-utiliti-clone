@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('osc_da_alamat', function (Blueprint $table) {
             $table->id('id')->comment('Primary Key');
             $table->string('almt_idpbt', 10)->nullable()->comment('KOD ID PBT');
-            $table->string('almt_idpelanggan', 20)->nullable()->comment('NO KP / NO SSM / NO PASPORT');
+            $table->string('almt_idpelanggan', 30)->nullable()->comment('NO KP / NO SSM / NO PASPORT');
             $table->integer('almt_alamatid')->nullable()->comment('ALAMAT ID');
             $table->string('almt_alamat01', 100)->nullable()->comment('ALAMAT 1');
             $table->string('almt_alamat02', 100)->nullable()->comment('ALAMAT 2');
@@ -22,9 +22,9 @@ return new class extends Migration
             $table->string('almt_poskod', 5)->nullable()->comment('POSKOD');
             $table->string('almt_alamat04', 100)->nullable()->comment('ALAMAT 4');
             $table->string('almt_alamat05', 100)->nullable()->comment('ALAMAT 5');
-            $table->string('almt_notelefon', 20)->nullable()->comment('NO TELEFON');
+            $table->string('almt_notelefon', 30)->nullable()->comment('NO TELEFON');
             $table->string('almt_nomborhp', 20)->nullable()->comment('NO TELEFON BIMBIT');
-            $table->string('almt_nomborfax', 20)->nullable()->comment('NO FAKS');
+            $table->string('almt_nomborfax', 30)->nullable()->comment('NO FAKS');
             $table->string('almt_email', 50)->nullable()->comment('ALAMAT EMAIL');
             $table->string('almt_stoversea', 1)->nullable()->comment('ALAMAT LUAR NEGARA [Y]-YA  [T]-TIDAK');
             $table->date('almt_idate')->nullable()->comment('TARIKH KEMASUKAN');

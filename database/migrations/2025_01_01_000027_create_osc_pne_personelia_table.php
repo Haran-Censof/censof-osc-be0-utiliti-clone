@@ -21,9 +21,9 @@ return new class extends Migration
             $table->string('pne_jantina', 1)->nullable()->comment('JANTINA [JANTINA]');
             $table->date('pne_mulakhidmat')->nullable()->comment('MULA BERKHIDMAT');
             $table->string('pne_stataktif', 1)->nullable()->comment('STATUS PERKHIDMATAN [A]-AKTIF [T]-TIDAK AKTIF');
-            $table->string('pne_rujuk', 15)->nullable()->comment('NO RUJUKAN');
+            $table->string('pne_rujuk', 30)->nullable()->comment('NO RUJUKAN');
             $table->string('pne_khimt', 1)->nullable()->comment('STATUS JAWATAN [STATUS_KMT]');
-            $table->string('pne_alpo1', 40)->nullable()->comment('ALAMAT SURAT MENYURAT1');
+            $table->string('pne_alpo1', 80)->nullable()->comment('ALAMAT SURAT MENYURAT1');
             $table->string('pne_alpo2', 40)->nullable()->comment('ALAMAT SURAT MENYURAT 2');
             $table->string('pne_alpo3', 40)->nullable()->comment('ALAMAT SURAT MENYURAT 3');
             $table->string('pne_notel', 15)->nullable()->comment('NO TELEFON');

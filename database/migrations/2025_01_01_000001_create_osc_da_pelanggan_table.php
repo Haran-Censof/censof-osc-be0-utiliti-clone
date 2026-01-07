@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('osc_da_pelanggan', function (Blueprint $table) {
             $table->id('id')->comment('Primary Key');
             $table->string('plgn_idpbt', 10)->nullable()->comment('KOD ID PBT');
-            $table->string('plgn_idpelanggan', 20)->comment('NO KP / NO SSM / NO PASPORT');
+            $table->string('plgn_idpelanggan', 30)->comment('NO KP / NO SSM / NO PASPORT');
             $table->string('plgn_pelanggannama', 100)->comment('NAMA PELANGGAN');
             $table->string('plgn_pelangganjenis', 1)->comment('[I]-INDIVIDU   [S]-SYARIKAT');
             $table->string('plgn_tinid', 15)->nullable()->comment('NO PENGENALAN CUKAI LHDN / TIN');
