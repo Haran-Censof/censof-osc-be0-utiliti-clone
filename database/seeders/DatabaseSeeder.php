@@ -52,6 +52,7 @@ class DatabaseSeeder extends Seeder
            IndukLesenSeeder::class,
            LicensingTransactionSeeder::class, 
            IndividualProfileSeeder::class,
+           SyorKeputusanSeeder::class,         // Syor Keputusan data (depends on applications)
 
         ]);
 
