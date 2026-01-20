@@ -1,0 +1,11 @@
+.git/
+.gitignore
+.docker/
+docker-compose.override.yml
+/vendor/
+/node_modules/
+/storage/logs/*
+*.md
+!README.md
+.phpunit.result.cache
+tests/
