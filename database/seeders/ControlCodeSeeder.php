@@ -1053,7 +1053,87 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UUSER' =>null,
                 'CTL_IDATE' =>null,
                 'CTL_UDATE' =>null
-            ]
+            ],
+
+            //added by izzuddin 27/1/2026
+            [
+                'ID' =>81,
+                'CTL_IDPBT' =>'OSCL',
+                'CTL_CTRLCODE' =>'07',
+                'CTL_CTRLNAMA' =>'PBT-PENYEMAK',
+                'CTL_CTRLGRP' =>'PENGGUNA',
+                'CTL_CTRLSTATUS' =>'A',
+                'CTL_CTRLNOSEQ' =>5,
+                'CTL_IUSER' =>null,
+                'CTL_UUSER' =>null,
+                'CTL_IDATE' =>null,
+                'CTL_UDATE' =>null
+            ],
+            [
+                'ID' =>82,
+                'CTL_IDPBT' =>'OSCL',
+                'CTL_CTRLCODE' =>'08',
+                'CTL_CTRLNAMA' =>'PBT-PPT',
+                'CTL_CTRLGRP' =>'PENGGUNA',
+                'CTL_CTRLSTATUS' =>'A',
+                'CTL_CTRLNOSEQ' =>6,
+                'CTL_IUSER' =>null,
+                'CTL_UUSER' =>null,
+                'CTL_IDATE' =>null,
+                'CTL_UDATE' =>null
+            ],
+            [
+                'ID' =>83,
+                'CTL_IDPBT' =>'OSCL',
+                'CTL_CTRLCODE' =>'09',
+                'CTL_CTRLNAMA' =>'ATL-PENYEMAK',
+                'CTL_CTRLGRP' =>'PENGGUNA',
+                'CTL_CTRLSTATUS' =>'A',
+                'CTL_CTRLNOSEQ' =>5,
+                'CTL_IUSER' =>null,
+                'CTL_UUSER' =>null,
+                'CTL_IDATE' =>null,
+                'CTL_UDATE' =>null
+            ],
+            [
+                'ID' =>84,
+                'CTL_IDPBT' =>'OSCL',
+                'CTL_CTRLCODE' =>'10',
+                'CTL_CTRLNAMA' =>'ATL-KETUA-JABATAN',
+                'CTL_CTRLGRP' =>'PENGGUNA',
+                'CTL_CTRLSTATUS' =>'A',
+                'CTL_CTRLNOSEQ' =>6,
+                'CTL_IUSER' =>null,
+                'CTL_UUSER' =>null,
+                'CTL_IDATE' =>null,
+                'CTL_UDATE' =>null
+            ],
+            [
+                'ID' =>85,
+                'CTL_IDPBT' =>'OSCL',
+                'CTL_CTRLCODE' =>'11',
+                'CTL_CTRLNAMA' =>'BTD-PENYEMAK',
+                'CTL_CTRLGRP' =>'PENGGUNA',
+                'CTL_CTRLSTATUS' =>'A',
+                'CTL_CTRLNOSEQ' =>5,
+                'CTL_IUSER' =>null,
+                'CTL_UUSER' =>null,
+                'CTL_IDATE' =>null,
+                'CTL_UDATE' =>null
+            ],
+            [
+                'ID' =>86,
+                'CTL_IDPBT' =>'OSCL',
+                'CTL_CTRLCODE' =>'12',
+                'CTL_CTRLNAMA' =>'BTD-KETUA-JABATAN',
+                'CTL_CTRLGRP' =>'PENGGUNA',
+                'CTL_CTRLSTATUS' =>'A',
+                'CTL_CTRLNOSEQ' =>6,
+                'CTL_IUSER' =>null,
+                'CTL_UUSER' =>null,
+                'CTL_IDATE' =>null,
+                'CTL_UDATE' =>null
+            ],
 
         ]);
     }
