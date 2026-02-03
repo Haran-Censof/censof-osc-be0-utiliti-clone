@@ -45,7 +45,7 @@ return new class extends Migration
             Schema::create('user_role', function (Blueprint $table) {
                 $table->id();
                 // User ID is likely a string from legacy system
-                $table->string('user_id', 50)->index(); 
+                $table->string('user_id', 50)->index();
                 $table->foreignId('role_id')->constrained('roles')->onDelete('cascade');
                 $table->timestamp('assigned_at')->useCurrent();
                 $table->string('assigned_by', 50)->nullable();
