@@ -12,8 +12,8 @@ class OscKodAktivitiSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('osc_kod_aktiviti')->insert(
-        [
+        $kodAktiviti =
+            [
             [
                 'ID' => 1,
                 'TVT_IDPBT' => 'PRK_MDTM',
@@ -2217,6 +2217,24 @@ class OscKodAktivitiSeeder extends Seeder
                 'TVT_IUSER' => 'CSM_ZUBAIRI',
                 'TVT_UUSER' => null
             ]
-        ]);
+            ];
+
+        $records = [];
+        foreach ($kodAktiviti as $record) {
+            $records[] = [
+                'id' => $record['ID'],
+                'tvt_idpbt' => $record['TVT_IDPBT'] ?? null,
+                'tvt_kodaktiviti' => $record['TVT_KODAKTIVITI'] ?? null,
+                'tvt_tvtnama' => $record['TVT_TVTNAMA'] ?? null,
+                'tvt_kodsektor' => $record['TVT_KODSEKTOR'] ?? null,
+                'tvt_statf' => $record['TVT_STATF'] ?? 'Y',
+                'tvt_idate' => !empty($record['TVT_IDATE']) ? date('Y-m-d H:i:s', strtotime($record['TVT_IDATE'])) : null,
+                'tvt_udate' => !empty($record['TVT_UDATE']) ? date('Y-m-d H:i:s', strtotime($record['TVT_UDATE'])) : null,
+                'tvt_iuser' => $record['TVT_IUSER'] ?? null,
+                'tvt_uuser' => $record['TVT_UUSER'] ?? null,
+            ];
+        }
+
+        DB::table('osc_kod_aktiviti')->insert($records);
     }
 }
