@@ -13,10 +13,9 @@ class ControlCodeSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('osc_slg_lookuptable')->insert([
+        $lookupTables = [
             [
-                'ID' =>1,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'01',
                 'CTL_CTRLNAMA' =>'PEMOHON',
                 'CTL_CTRLGRP' =>'PENGGUNA',
@@ -28,8 +27,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>2,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'05',
                 'CTL_CTRLNAMA' =>'ATL',
                 'CTL_CTRLGRP' =>'PENGGUNA',
@@ -41,8 +39,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>3,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'06',
                 'CTL_CTRLNAMA' =>'BTD',
                 'CTL_CTRLGRP' =>'PENGGUNA',
@@ -54,8 +51,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>4,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'B',
                 'CTL_CTRLNAMA' =>'PERMOHONAN BARU',
                 'CTL_CTRLGRP' =>'JENIS_MHN',
@@ -67,8 +63,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>5,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'R',
                 'CTL_CTRLNAMA' =>'PEMBAHARUAN LESEN',
                 'CTL_CTRLGRP' =>'JENIS_MHN',
@@ -80,8 +75,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>6,
-                'CTL_IDPBT' =>'MPKK',
+                'CTL_IDPBT' => 'MPKK',
                 'CTL_CTRLCODE' =>'01',
                 'CTL_CTRLNAMA' =>'DISCOUNT ATAS AMAUN',
                 'CTL_CTRLGRP' =>'DISCOUNT',
@@ -93,8 +87,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>7,
-                'CTL_IDPBT' =>'MPKK',
+                'CTL_IDPBT' => 'MPKK',
                 'CTL_CTRLCODE' =>'02',
                 'CTL_CTRLNAMA' =>'DISCOUNT ATAS PERATUS',
                 'CTL_CTRLGRP' =>'DISCOUNT',
@@ -106,8 +99,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>8,
-                'CTL_IDPBT' =>'MPKK',
+                'CTL_IDPBT' => 'MPKK',
                 'CTL_CTRLCODE' =>'03',
                 'CTL_CTRLNAMA' =>'TIADA DISCOUNT',
                 'CTL_CTRLGRP' =>'DISCOUNT',
@@ -119,8 +111,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>9,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'R',
                 'CTL_CTRLNAMA' =>'RISIKO RENDAH\/TIADA RISIKO',
                 'CTL_CTRLGRP' =>'RISIKO',
@@ -132,8 +123,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>10,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'T',
                 'CTL_CTRLNAMA' =>'RISIKO TINGGI',
                 'CTL_CTRLGRP' =>'RISIKO',
@@ -145,8 +135,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>11,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'K',
                 'CTL_CTRLNAMA' =>'RISIKO TINGGI\/KRITIKAL\/SENSITIF',
                 'CTL_CTRLGRP' =>'RISIKO',
@@ -158,8 +147,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>12,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'02',
                 'CTL_CTRLNAMA' =>'KPKT',
                 'CTL_CTRLGRP' =>'PENGGUNA',
@@ -171,8 +159,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>13,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'03',
                 'CTL_CTRLNAMA' =>'JKT',
                 'CTL_CTRLGRP' =>'PENGGUNA',
@@ -184,8 +171,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>14,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'04',
                 'CTL_CTRLNAMA' =>'PBT',
                 'CTL_CTRLGRP' =>'PENGGUNA',
@@ -197,8 +183,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>15,
-                'CTL_IDPBT' =>'MBI',
+                'CTL_IDPBT' => 'MBI',
                 'CTL_CTRLCODE' =>'01',
                 'CTL_CTRLNAMA' =>'ZON MERU',
                 'CTL_CTRLGRP' =>'ATL_BOMBA',
@@ -210,8 +195,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>16,
-                'CTL_IDPBT' =>'MBI',
+                'CTL_IDPBT' => 'MBI',
                 'CTL_CTRLCODE' =>'02',
                 'CTL_CTRLNAMA' =>'ZON BANDAR',
                 'CTL_CTRLGRP' =>'ATL_BOMBA',
@@ -223,8 +207,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>17,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'03',
                 'CTL_CTRLNAMA' =>'NO. SSM',
                 'CTL_CTRLGRP' =>'JENIS_PLG',
@@ -236,8 +219,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>18,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'04',
                 'CTL_CTRLNAMA' =>'NO. PASSPORT',
                 'CTL_CTRLGRP' =>'JENIS_PLG',
@@ -249,8 +231,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>19,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'01',
                 'CTL_CTRLNAMA' =>'NO.KP BARU',
                 'CTL_CTRLGRP' =>'JENIS_PLG',
@@ -262,8 +243,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>20,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'02',
                 'CTL_CTRLNAMA' =>'NO.KP LAMA',
                 'CTL_CTRLGRP' =>'JENIS_PLG',
@@ -275,8 +255,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>21,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'05',
                 'CTL_CTRLNAMA' =>'NO POLIS',
                 'CTL_CTRLGRP' =>'JENIS_PLG',
@@ -288,8 +267,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>22,
-                'CTL_IDPBT' =>'MPKK',
+                'CTL_IDPBT' => 'MPKK',
                 'CTL_CTRLCODE' =>'02',
                 'CTL_CTRLNAMA' =>'Apa Warna Kegemaran ?',
                 'CTL_CTRLGRP' =>'SOALAN_SAH',
@@ -301,8 +279,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>23,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'01',
                 'CTL_CTRLNAMA' =>'OTP',
                 'CTL_CTRLGRP' =>'KAEDAH_SAH',
@@ -314,8 +291,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>24,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'02',
                 'CTL_CTRLNAMA' =>'KYC',
                 'CTL_CTRLGRP' =>'KAEDAH_SAH',
@@ -327,8 +303,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>25,
-                'CTL_IDPBT' =>'MPKK',
+                'CTL_IDPBT' => 'MPKK',
                 'CTL_CTRLCODE' =>'01',
                 'CTL_CTRLNAMA' =>'Siapa Nama Ibu ?',
                 'CTL_CTRLGRP' =>'SOALAN_SAH',
@@ -340,8 +315,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>26,
-                'CTL_IDPBT' =>'MPKK',
+                'CTL_IDPBT' => 'MPKK',
                 'CTL_CTRLCODE' =>'03',
                 'CTL_CTRLNAMA' =>'Makanan Kegemaran ?',
                 'CTL_CTRLGRP' =>'SOALAN_SAH',
@@ -353,8 +327,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>27,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'M',
                 'CTL_CTRLNAMA' =>'MELAYU',
                 'CTL_CTRLGRP' =>'BANGSA',
@@ -366,8 +339,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>28,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'C',
                 'CTL_CTRLNAMA' =>'CHINA',
                 'CTL_CTRLGRP' =>'BANGSA',
@@ -379,8 +351,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>29,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'I',
                 'CTL_CTRLNAMA' =>'INDIA',
                 'CTL_CTRLGRP' =>'BANGSA',
@@ -392,8 +363,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>30,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'L',
                 'CTL_CTRLNAMA' =>'LAIN-LAIN',
                 'CTL_CTRLGRP' =>'BANGSA',
@@ -405,8 +375,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>31,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'I',
                 'CTL_CTRLNAMA' =>'ISLAM',
                 'CTL_CTRLGRP' =>'AGAMA',
@@ -418,8 +387,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>32,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'B',
                 'CTL_CTRLNAMA' =>'BUDDHA',
                 'CTL_CTRLGRP' =>'AGAMA',
@@ -431,8 +399,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>33,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'H',
                 'CTL_CTRLNAMA' =>'HINDU',
                 'CTL_CTRLGRP' =>'AGAMA',
@@ -444,8 +411,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>34,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'K',
                 'CTL_CTRLNAMA' =>'KRISTIAN',
                 'CTL_CTRLGRP' =>'AGAMA',
@@ -457,8 +423,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>35,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'K',
                 'CTL_CTRLNAMA' =>'BERKAHWIN',
                 'CTL_CTRLGRP' =>'KAHWIN',
@@ -470,8 +435,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>36,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'B',
                 'CTL_CTRLNAMA' =>'BUJANG',
                 'CTL_CTRLGRP' =>'KAHWIN',
@@ -483,8 +447,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>37,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'I',
                 'CTL_CTRLNAMA' =>'JANDA',
                 'CTL_CTRLGRP' =>'KAHWIN',
@@ -496,8 +459,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>38,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'K',
                 'CTL_CTRLNAMA' =>'DUDA',
                 'CTL_CTRLGRP' =>'KAHWIN',
@@ -509,8 +471,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>39,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'L',
                 'CTL_CTRLNAMA' =>'LELAKI',
                 'CTL_CTRLGRP' =>'JANTINA',
@@ -522,8 +483,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>40,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'P',
                 'CTL_CTRLNAMA' =>'PEREMPUAN',
                 'CTL_CTRLGRP' =>'JANTINA',
@@ -535,8 +495,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>41,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'T',
                 'CTL_CTRLNAMA' =>'TETAP',
                 'CTL_CTRLGRP' =>'STATUS_KMT',
@@ -548,8 +507,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>42,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'K',
                 'CTL_CTRLNAMA' =>'KONTRAK',
                 'CTL_CTRLGRP' =>'STATUS_KMT',
@@ -561,8 +519,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>43,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'S',
                 'CTL_CTRLNAMA' =>'SAMBILAN',
                 'CTL_CTRLGRP' =>'STATUS_KMT',
@@ -574,8 +531,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>44,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'J',
                 'CTL_CTRLNAMA' =>'JABATAN',
                 'CTL_CTRLGRP' =>'KELAS_PTJ',
@@ -587,8 +543,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>45,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'B',
                 'CTL_CTRLNAMA' =>'BAHAGIAN',
                 'CTL_CTRLGRP' =>'KELAS_PTJ',
@@ -600,8 +555,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>46,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'U',
                 'CTL_CTRLNAMA' =>'UNIT',
                 'CTL_CTRLGRP' =>'KELAS_PTJ',
@@ -613,8 +567,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>47,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'1',
                 'CTL_CTRLNAMA' =>'BANDAR',
                 'CTL_CTRLGRP' =>'KAT_NIAGA',
@@ -626,8 +579,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>48,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'2',
                 'CTL_CTRLNAMA' =>'LUAR BANDAR',
                 'CTL_CTRLGRP' =>'KAT_NIAGA',
@@ -639,8 +591,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>49,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'3',
                 'CTL_CTRLNAMA' =>'LAIN-LAIN',
                 'CTL_CTRLGRP' =>'KAT_NIAGA',
@@ -652,8 +603,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>50,
-                'CTL_IDPBT' =>'PRK_MDTM',
+                'CTL_IDPBT' => 'PRK_MDTM',
                 'CTL_CTRLCODE' =>'D',
                 'CTL_CTRLNAMA' =>'PERKHIDMATAN',
                 'CTL_CTRLGRP' =>'KAT_ADUAN',
@@ -665,8 +615,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>51,
-                'CTL_IDPBT' =>'PRK_MDTM',
+                'CTL_IDPBT' => 'PRK_MDTM',
                 'CTL_CTRLCODE' =>'C',
                 'CTL_CTRLNAMA' =>'PEMBANGUNAN',
                 'CTL_CTRLGRP' =>'KAT_ADUAN',
@@ -678,8 +627,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>52,
-                'CTL_IDPBT' =>'PRK_MDTM',
+                'CTL_IDPBT' => 'PRK_MDTM',
                 'CTL_CTRLCODE' =>'B',
                 'CTL_CTRLNAMA' =>'KEMUDAHAN AWAM',
                 'CTL_CTRLGRP' =>'KAT_ADUAN',
@@ -691,8 +639,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>53,
-                'CTL_IDPBT' =>'PRK_MDTM',
+                'CTL_IDPBT' => 'PRK_MDTM',
                 'CTL_CTRLCODE' =>'A',
                 'CTL_CTRLNAMA' =>'ALAM SEKITAR',
                 'CTL_CTRLGRP' =>'KAT_ADUAN',
@@ -704,8 +651,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>54,
-                'CTL_IDPBT' =>'PRK_MDTM',
+                'CTL_IDPBT' => 'PRK_MDTM',
                 'CTL_CTRLCODE' =>'E',
                 'CTL_CTRLNAMA' =>'LAIN-LAIN',
                 'CTL_CTRLGRP' =>'KAT_ADUAN',
@@ -717,8 +663,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>55,
-                'CTL_IDPBT' =>'PRK_MDTM',
+                'CTL_IDPBT' => 'PRK_MDTM',
                 'CTL_CTRLCODE' =>'F',
                 'CTL_CTRLNAMA' =>'ADUAN BERULANG',
                 'CTL_CTRLGRP' =>'KAT_ADUAN',
@@ -730,8 +675,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>56,
-                'CTL_IDPBT' =>'PRK_MDTM',
+                'CTL_IDPBT' => 'PRK_MDTM',
                 'CTL_CTRLCODE' =>'G',
                 'CTL_CTRLNAMA' =>'PENGURUSAN HARTA',
                 'CTL_CTRLGRP' =>'KAT_ADUAN',
@@ -743,8 +687,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>57,
-                'CTL_IDPBT' =>'PRK_MDTM',
+                'CTL_IDPBT' => 'PRK_MDTM',
                 'CTL_CTRLCODE' =>'P',
                 'CTL_CTRLNAMA' =>'BUKAN TEKNIKAL',
                 'CTL_CTRLGRP' =>'KAT_ADUAN',
@@ -756,8 +699,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>58,
-                'CTL_IDPBT' =>'PRK_MDTM',
+                'CTL_IDPBT' => 'PRK_MDTM',
                 'CTL_CTRLCODE' =>'1',
                 'CTL_CTRLNAMA' =>'BANKRAP',
                 'CTL_CTRLGRP' =>'LISTHITAM',
@@ -769,8 +711,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>59,
-                'CTL_IDPBT' =>'PRK_MDTM',
+                'CTL_IDPBT' => 'PRK_MDTM',
                 'CTL_CTRLCODE' =>'2',
                 'CTL_CTRLNAMA' =>'GILA',
                 'CTL_CTRLGRP' =>'LISTHITAM',
@@ -782,8 +723,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>60,
-                'CTL_IDPBT' =>'PRK_MDTM',
+                'CTL_IDPBT' => 'PRK_MDTM',
                 'CTL_CTRLCODE' =>'3',
                 'CTL_CTRLNAMA' =>'HUTANG MELEBIHI LIMIT DITETAPKAN',
                 'CTL_CTRLGRP' =>'LISTHITAM',
@@ -795,8 +735,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>61,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'01',
                 'CTL_CTRLNAMA' =>'LULUS',
                 'CTL_CTRLGRP' =>'MOHON',
@@ -808,8 +747,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>62,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'02',
                 'CTL_CTRLNAMA' =>'GAGAL',
                 'CTL_CTRLGRP' =>'MOHON',
@@ -821,8 +759,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>63,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'03',
                 'CTL_CTRLNAMA' =>'SEMAKAN',
                 'CTL_CTRLGRP' =>'MOHON',
@@ -834,8 +771,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>64,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'82',
                 'CTL_CTRLNAMA' =>'NEGERI TIDAK DIKETAHUI',
                 'CTL_CTRLGRP' =>'NEGERI',
@@ -847,8 +783,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>65,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'08',
                 'CTL_CTRLNAMA' =>'PERAK DARUL RIDZUAN',
                 'CTL_CTRLGRP' =>'NEGERI',
@@ -860,8 +795,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>66,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'10',
                 'CTL_CTRLNAMA' =>'SELANGOR DARUL EHSAN',
                 'CTL_CTRLGRP' =>'NEGERI',
@@ -873,8 +807,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>67,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'06',
                 'CTL_CTRLNAMA' =>'PAHANG DARUL MAKMUR',
                 'CTL_CTRLGRP' =>'NEGERI',
@@ -886,8 +819,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>68,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'03',
                 'CTL_CTRLNAMA' =>'KELANTAN DARUL NAIM',
                 'CTL_CTRLGRP' =>'NEGERI',
@@ -899,8 +831,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>69,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'01',
                 'CTL_CTRLNAMA' =>'JOHOR DARUL TAKZIM',
                 'CTL_CTRLGRP' =>'NEGERI',
@@ -912,8 +843,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>70,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'02',
                 'CTL_CTRLNAMA' =>'KEDAH DARUL AMAN',
                 'CTL_CTRLGRP' =>'NEGERI',
@@ -925,8 +855,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>71,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'15',
                 'CTL_CTRLNAMA' =>'WILAYAH PERSEKUTUAN (LABUAN)',
                 'CTL_CTRLGRP' =>'NEGERI',
@@ -938,8 +867,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>72,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'04',
                 'CTL_CTRLNAMA' =>'MELAKA',
                 'CTL_CTRLGRP' =>'NEGERI',
@@ -951,8 +879,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>73,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'05',
                 'CTL_CTRLNAMA' =>'NEGERI SEMBILAN DARUL KHUSUS',
                 'CTL_CTRLGRP' =>'NEGERI',
@@ -964,8 +891,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>74,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'07',
                 'CTL_CTRLNAMA' =>'PULAU PINANG',
                 'CTL_CTRLGRP' =>'NEGERI',
@@ -977,8 +903,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>75,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'13',
                 'CTL_CTRLNAMA' =>'SARAWAK',
                 'CTL_CTRLGRP' =>'NEGERI',
@@ -990,8 +915,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>76,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'09',
                 'CTL_CTRLNAMA' =>'PERLIS',
                 'CTL_CTRLGRP' =>'NEGERI',
@@ -1003,8 +927,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>77,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'12',
                 'CTL_CTRLNAMA' =>'SABAH',
                 'CTL_CTRLGRP' =>'NEGERI',
@@ -1016,8 +939,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>78,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'11',
                 'CTL_CTRLNAMA' =>'TERENGGANU DARUL IMAN',
                 'CTL_CTRLGRP' =>'NEGERI',
@@ -1029,8 +951,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>79,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'16',
                 'CTL_CTRLNAMA' =>'WILAYAH PERSEKUTUAN (PUTRAJAYA)',
                 'CTL_CTRLGRP' =>'NEGERI',
@@ -1042,8 +963,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>80,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'14',
                 'CTL_CTRLNAMA' =>'WILAYAH PERSEKUTUAN (KUALA LUMPUR)',
                 'CTL_CTRLGRP' =>'NEGERI',
@@ -1057,8 +977,7 @@ class ControlCodeSeeder extends Seeder
 
             //added by izzuddin 27/1/2026
             [
-                'ID' =>81,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'07',
                 'CTL_CTRLNAMA' =>'PBT-PENYEMAK',
                 'CTL_CTRLGRP' =>'PENGGUNA',
@@ -1070,8 +989,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>82,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'08',
                 'CTL_CTRLNAMA' =>'PBT-PPT',
                 'CTL_CTRLGRP' =>'PENGGUNA',
@@ -1083,8 +1001,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>83,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'09',
                 'CTL_CTRLNAMA' =>'ATL-PENYEMAK',
                 'CTL_CTRLGRP' =>'PENGGUNA',
@@ -1096,8 +1013,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>84,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'10',
                 'CTL_CTRLNAMA' =>'ATL-KETUA-JABATAN',
                 'CTL_CTRLGRP' =>'PENGGUNA',
@@ -1109,8 +1025,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>85,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'11',
                 'CTL_CTRLNAMA' =>'BTD-PENYEMAK',
                 'CTL_CTRLGRP' =>'PENGGUNA',
@@ -1122,8 +1037,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
             [
-                'ID' =>86,
-                'CTL_IDPBT' =>'OSCL',
+                'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' =>'12',
                 'CTL_CTRLNAMA' =>'BTD-KETUA-JABATAN',
                 'CTL_CTRLGRP' =>'PENGGUNA',
@@ -1135,6 +1049,82 @@ class ControlCodeSeeder extends Seeder
                 'CTL_UDATE' =>null
             ],
 
-        ]);
+            //for master data parameter am input field
+            [
+                'CTL_IDPBT' => 'OSCL',
+                'CTL_CTRLCODE' => '1',
+                'CTL_CTRLNAMA' => 'NAMA MAJLIS',
+                'CTL_CTRLGRP' => 'SYSPARAM',
+                'CTL_CTRLSTATUS' => 'A',
+                'CTL_CTRLNOSEQ' => 1,
+                'CTL_IUSER' => null,
+                'CTL_UUSER' => null,
+                'CTL_IDATE' => null,
+                'CTL_UDATE' => null
+            ],
+            [
+                'CTL_IDPBT' => 'OSCL',
+                'CTL_CTRLCODE' => '2',
+                'CTL_CTRLNAMA' => 'NAMA SINGKATAN MAJLIS',
+                'CTL_CTRLGRP' => 'SYSPARAM',
+                'CTL_CTRLSTATUS' => 'A',
+                'CTL_CTRLNOSEQ' => 2,
+                'CTL_IUSER' => null,
+                'CTL_UUSER' => null,
+                'CTL_IDATE' => null,
+                'CTL_UDATE' => null
+            ],
+            [
+                'CTL_IDPBT' => 'OSCL',
+                'CTL_CTRLCODE' => '3',
+                'CTL_CTRLNAMA' => 'NAMA SISTEM',
+                'CTL_CTRLGRP' => 'SYSPARAM',
+                'CTL_CTRLSTATUS' => 'A',
+                'CTL_CTRLNOSEQ' => 3,
+                'CTL_IUSER' => null,
+                'CTL_UUSER' => null,
+                'CTL_IDATE' => null,
+                'CTL_UDATE' => null
+            ],
+            [
+                'CTL_IDPBT' => 'OSCL',
+                'CTL_CTRLCODE' => '4',
+                'CTL_CTRLNAMA' => 'VERSI SISTEM',
+                'CTL_CTRLGRP' => 'SYSPARAM',
+                'CTL_CTRLSTATUS' => 'A',
+                'CTL_CTRLNOSEQ' => 4,
+                'CTL_IUSER' => null,
+                'CTL_UUSER' => null,
+                'CTL_IDATE' => null,
+                'CTL_UDATE' => null
+            ],
+            [
+                'CTL_IDPBT' => 'OSCL',
+                'CTL_CTRLCODE' => '5',
+                'CTL_CTRLNAMA' => 'FORMAT NO AKAUN LESEN',
+                'CTL_CTRLGRP' => 'SYSPARAM',
+                'CTL_CTRLSTATUS' => 'A',
+                'CTL_CTRLNOSEQ' => 5,
+                'CTL_IUSER' => null,
+                'CTL_UUSER' => null,
+                'CTL_IDATE' => null,
+                'CTL_UDATE' => null
+            ],
+            [
+                'CTL_IDPBT' => 'OSCL',
+                'CTL_CTRLCODE' => '6',
+                'CTL_CTRLNAMA' => 'WARNA TEMA',
+                'CTL_CTRLGRP' => 'SYSPARAM',
+                'CTL_CTRLSTATUS' => 'A',
+                'CTL_CTRLNOSEQ' => 5,
+                'CTL_IUSER' => null,
+                'CTL_UUSER' => null,
+                'CTL_IDATE' => null,
+                'CTL_UDATE' => null
+            ],
+        ];
+
+        DB::table('osc_slg_lookuptable')->truncate();
+        DB::table('osc_slg_lookuptable')->insert($lookupTables);
     }
 }
