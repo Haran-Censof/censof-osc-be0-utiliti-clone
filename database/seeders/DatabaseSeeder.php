@@ -38,6 +38,7 @@ class DatabaseSeeder extends Seeder
             MenuGroupSeeder::class,
             UserGroupSeeder::class,
             ControlCodeSeeder::class,
+            ApplicationStatusSeeder::class,
             MenuSeeder::class,
             UserSeeder::class,
             MenuControlSeeder::class,
