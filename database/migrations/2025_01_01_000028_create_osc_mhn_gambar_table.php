@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('osc_mhn_gambar', function (Blueprint $table) {
             $table->id('id')->comment('Primary Key');
             $table->string('gbr_idpbt', 10)->nullable()->comment('KOD ID PBT');
-            $table->bigInteger('gbr_nosiri')->nullable()->comment('NO SIRI PERMOHONAN');
+            $table->string('gbr_nosiri', 30)->nullable()->comment('NO SIRI PERMOHONAN');
             $table->integer('gbr_akaun')->nullable()->comment('NO AKAUN : LEPAS KELULUSAN');
             $table->integer('gbr_imsiri')->nullable()->comment('NO SIRI IMAGE');
             $table->string('gbr_namafail', 100)->nullable()->comment('NAMA FAIL IMAGE');
