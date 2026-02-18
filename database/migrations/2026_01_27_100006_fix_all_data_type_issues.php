@@ -21,11 +21,17 @@ return new class extends Migration
         DB::statement('UPDATE osc_mhn_permohonan SET mhn_nosiri_new = CAST(mhn_nosiri AS CHAR(20)) WHERE mhn_nosiri IS NOT NULL');
 
         Schema::table('osc_mhn_permohonan', function (Blueprint $table) {
+            // Drop foreign key first because it relies on the index
+            $table->dropForeign(['mhn_idpbt']);
+            $table->dropUnique('mhn_permohonan_uk'); // Explicitly drop index first
             $table->dropColumn('mhn_nosiri');
         });
 
         Schema::table('osc_mhn_permohonan', function (Blueprint $table) {
             $table->renameColumn('mhn_nosiri_new', 'mhn_nosiri');
+            $table->unique(['mhn_idpbt', 'mhn_nosiri'], 'mhn_permohonan_uk');
+            // Restore foreign key
+            $table->foreign('mhn_idpbt')->references('maj_idpbt')->on('osc_kod_majlis')->onDelete('restrict');
         });
 
         // Also fix integer sizes in OSC_MHN_PERMOHONAN
@@ -42,11 +48,15 @@ return new class extends Migration
         DB::statement('UPDATE osc_mhn_transaksi SET trn_nosiri_new = CAST(trn_nosiri AS CHAR(20)) WHERE trn_nosiri IS NOT NULL');
 
         Schema::table('osc_mhn_transaksi', function (Blueprint $table) {
+            $table->dropForeign(['trn_idpbt']);
+            $table->dropUnique('mhn_transaksi_uk'); // Explicitly drop index first
             $table->dropColumn('trn_nosiri');
         });
 
         Schema::table('osc_mhn_transaksi', function (Blueprint $table) {
             $table->renameColumn('trn_nosiri_new', 'trn_nosiri');
+            $table->unique(['trn_idpbt', 'trn_nosiri', 'trn_kodp1', 'trn_kodp2', 'trn_kodp3'], 'mhn_transaksi_uk');
+            $table->foreign('trn_idpbt')->references('maj_idpbt')->on('osc_kod_majlis')->onDelete('restrict');
         });
 
         // Also fix integer sizes in OSC_MHN_TRANSAKSI
@@ -107,7 +117,7 @@ return new class extends Migration
         // 9. Fix OSC_MHN_LPEKERJA - Should have nosiri field as bigInteger
         if (!Schema::hasColumn('osc_mhn_lpekerja', 'lpk_nosiri')) {
             Schema::table('osc_mhn_lpekerja', function (Blueprint $table) {
-                $table->bigInteger('lpk_nosiri')->nullable()->after('lpk_idpbt')->comment('NO SIRI PERMOHONAN');
+                $table->string('lpk_nosiri', 30)->nullable()->after('lpk_idpbt')->comment('NO SIRI PERMOHONAN');
             });
         }
 
@@ -130,6 +140,21 @@ return new class extends Migration
         Schema::table('osc_bil_pelbagai', function (Blueprint $table) {
             $table->bigInteger('pbg_pbgsiri')->nullable()->comment('NO SIRI BIL PELABAGAI')->change();
             $table->bigInteger('pbg_nosiri')->nullable()->comment('NO SIRI PERMOHONAN LESEN')->change();
+        });
+
+        // 14. Fix OSC_MHN_IKLAN - Should have nosiri field as string
+        Schema::table('osc_mhn_iklan', function (Blueprint $table) {
+            $table->string('lan_nosiri', 30)->nullable()->comment('NO SIRI PERMOHONAN')->change();
+        });
+
+        // 15. Fix OSC_MHN_DOKUMEN - Should have nosiri field as string
+        Schema::table('osc_mhn_dokumen', function (Blueprint $table) {
+            $table->string('doc_nosiri', 30)->nullable()->comment('NO SIRI PERMOHONAN')->change();
+        });
+
+        // 16. Fix OSC_MHN_GAMBAR - Should have nosiri field as string
+        Schema::table('osc_mhn_gambar', function (Blueprint $table) {
+            $table->string('gbr_nosiri', 30)->nullable()->comment('NO SIRI PERMOHONAN')->change();
         });
     }
 
