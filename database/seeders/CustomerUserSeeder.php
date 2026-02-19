@@ -18,21 +18,24 @@ class CustomerUserSeeder extends Seeder
         $users = [
             [
                 'ic_number' => '900101011234',
-                'name' => 'Ahmad Bin Abdullah',
+                'name' => 'AHMAD ENTERPRISE',
                 'email' => 'ahmad.abdullah@gmail.com',
                 'password' => 'password',
+                'jenis' => 'S', // Syarikat
             ],
             [
                 'ic_number' => '900101010001',
                 'name' => 'Siti Binti Ahmad',
                 'email' => 'siti.ahmad@yahoo.com',
                 'password' => 'password',
+                'jenis' => 'I', // Individu
             ],
             [
                 'ic_number' => '920515108899',
                 'name' => 'Lee Wei Ming',
                 'email' => 'leeweiming@hotmail.com',
                 'password' => 'password',
+                'jenis' => 'I', // Individu
             ],
         ];
 
@@ -50,7 +53,7 @@ class CustomerUserSeeder extends Seeder
             // Insert into osc_usr_profile table
             DB::table('osc_usr_profile')->insert([
                 'pfile_kumpulan' => 1,
-                'pfile_jenis' => 'I',
+                'pfile_jenis' => $userData['jenis'] ?? 'I',
                 'pfile_plgid' => $userData['ic_number'],
                 'pfile_nama' => $userData['name'],
                 'pfile_emel' => $userData['email'],
