@@ -9,43 +9,24 @@ return new class extends Migration
     /**
      * Run the migrations.
      * 
-     * Create osc_ind_translesen table for license transaction history
-     * This table tracks all transactions for approved licenses (with account numbers)
+     * Add missing columns to osc_ind_translesen table
      */
     public function up(): void
     {
-        if (!Schema::hasTable('osc_ind_translesen')) {
-            Schema::create('osc_ind_translesen', function (Blueprint $table) {
-                $table->id()->comment('Primary Key');
-                $table->string('trn_idpbt', 10)->nullable()->comment('ID PBT');
-                $table->integer('trn_akaun')->nullable()->comment('NO AKAUN LESEN');
-                $table->tinyInteger('trn_sequtama')->nullable()->comment('SEQUENCE UTAMA');
-                $table->string('trn_kodjenis', 2)->nullable()->comment('KOD JENIS');
-                $table->string('trn_kodsektor', 5)->nullable()->comment('KOD SEKTOR');
-                $table->string('trn_kodaktiviti', 5)->nullable()->comment('KOD AKTIVITI');
-                $table->string('trn_kodniaga', 12)->nullable()->comment('KOD PERNIAGAAN');
-                $table->string('trn_risiko', 1)->nullable()->comment('KATEGORI RISIKO');
-                $table->decimal('trn_tmbhkurng', 11, 2)->nullable()->comment('AMAUN TAMBAHAN/KURANGAN');
-                $table->string('trn_statcagar', 1)->nullable()->comment('STATUS CAGARAN');
-                $table->string('trn_akauncagar', 10)->nullable()->comment('NO AKAUN CAGARAN');
-                $table->date('trn_tarikhcagar')->nullable()->comment('TARIKH CAGARAN');
-                $table->string('trn_resitcagar', 20)->nullable()->comment('NO RESIT CAGARAN');
-                $table->decimal('trn_amauncagar', 11, 2)->nullable()->comment('AMAUN CAGARAN');
-                $table->string('trn_stattrans', 1)->nullable()->comment('STATUS TRANSAKSI');
-                $table->string('trn_oldcode', 20)->nullable()->comment('KOD LAMA');
-                $table->string('trn_nosiri', 20)->nullable()->comment('NO SIRI PERMOHONAN');
-                $table->date('trn_idate')->nullable()->comment('TARIKH KEMASUKAN');
-                $table->date('trn_udate')->nullable()->comment('TARIKH KEMASKINI');
-                $table->string('trn_iuser', 20)->nullable()->comment('NO KP PEGAWAI KEMASUKAN');
-                $table->string('trn_uuser', 20)->nullable()->comment('NO KP PEGAWAI KEMASKINI');
-                $table->timestamps();
-
-                // Indexes
-                $table->index(['trn_idpbt', 'trn_akaun'], 'idx_translesen_pbt_akaun');
-                $table->index('trn_kodniaga', 'idx_translesen_kodniaga');
-                $table->index('trn_nosiri', 'idx_translesen_nosiri');
-            });
-        }
+        Schema::table('osc_ind_translesen', function (Blueprint $table) {
+            $table->string('trn_kodjenis', 2)->nullable()->after('trn_sequtama')->comment('KOD JENIS');
+            $table->string('trn_kodsektor', 5)->nullable()->after('trn_kodjenis')->comment('KOD SEKTOR');
+            $table->string('trn_kodaktiviti', 5)->nullable()->after('trn_kodsektor')->comment('KOD AKTIVITI');
+            $table->string('trn_kodniaga', 12)->nullable()->after('trn_kodaktiviti')->comment('KOD PERNIAGAAN');
+            $table->string('trn_risiko', 1)->nullable()->after('trn_kodniaga')->comment('KATEGORI RISIKO');
+            $table->date('trn_tarikhcagar')->nullable()->after('trn_akauncagar')->comment('TARIKH CAGARAN');
+            $table->string('trn_resitcagar', 20)->nullable()->after('trn_tarikhcagar')->comment('NO RESIT CAGARAN');
+            $table->decimal('trn_amauncagar', 11, 2)->nullable()->after('trn_resitcagar')->comment('AMAUN CAGARAN');
+            $table->string('trn_nosiri', 20)->nullable()->after('trn_oldcode')->comment('NO SIRI PERMOHONAN');
+            
+            $table->index('trn_kodniaga', 'idx_translesen_kodniaga');
+            $table->index('trn_nosiri', 'idx_translesen_nosiri');
+        });
     }
 
     /**
@@ -53,6 +34,21 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('osc_ind_translesen');
+        Schema::table('osc_ind_translesen', function (Blueprint $table) {
+            $table->dropIndex(['trn_kodniaga']);
+            $table->dropIndex(['trn_nosiri']);
+            
+            $table->dropColumn([
+                'trn_kodjenis',
+                'trn_kodsektor',
+                'trn_kodaktiviti',
+                'trn_kodniaga',
+                'trn_risiko',
+                'trn_tarikhcagar',
+                'trn_resitcagar',
+                'trn_amauncagar',
+                'trn_nosiri'
+            ]);
+        });
     }
 };
