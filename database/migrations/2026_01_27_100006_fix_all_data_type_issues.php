@@ -12,8 +12,27 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // 1. Fix OSC_MHN_PERMOHONAN - Change mhn_nosiri from bigInteger to varchar in-place
-        DB::statement('ALTER TABLE osc_mhn_permohonan MODIFY COLUMN mhn_nosiri VARCHAR(20) NULL COMMENT \'NO SIRI PERMOHONAN ONLINE\'');
+        // 1. Fix OSC_MHN_PERMOHONAN - Change mhn_nosiri from bigInteger to string
+        Schema::table('osc_mhn_permohonan', function (Blueprint $table) {
+            $table->string('mhn_nosiri_new', 20)->nullable()->comment('NO SIRI PERMOHONAN ONLINE');
+        });
+
+        // Copy existing data
+        DB::statement('UPDATE osc_mhn_permohonan SET mhn_nosiri_new = CAST(mhn_nosiri AS CHAR(20)) WHERE mhn_nosiri IS NOT NULL');
+
+        Schema::table('osc_mhn_permohonan', function (Blueprint $table) {
+            // Drop foreign key first because it relies on the index
+            $table->dropForeign(['mhn_idpbt']);
+            $table->dropUnique('mhn_permohonan_uk'); // Explicitly drop index first
+            $table->dropColumn('mhn_nosiri');
+        });
+
+        Schema::table('osc_mhn_permohonan', function (Blueprint $table) {
+            $table->renameColumn('mhn_nosiri_new', 'mhn_nosiri');
+            $table->unique(['mhn_idpbt', 'mhn_nosiri'], 'mhn_permohonan_uk');
+            // Restore foreign key
+            $table->foreign('mhn_idpbt')->references('maj_idpbt')->on('osc_kod_majlis')->onDelete('restrict');
+        });
 
         // Also fix integer sizes in OSC_MHN_PERMOHONAN
         Schema::table('osc_mhn_permohonan', function (Blueprint $table) {
@@ -21,16 +40,44 @@ return new class extends Migration
             $table->mediumInteger('mhn_tempoh')->nullable()->comment('TEMPOH [12] [24] [36] BULAN')->change();
         });
 
-        // 2. Fix OSC_MHN_TRANSAKSI - Change trn_nosiri from bigInteger to varchar in-place
-        DB::statement('ALTER TABLE osc_mhn_transaksi MODIFY COLUMN trn_nosiri VARCHAR(20) NULL COMMENT \'NO SIRI PERMOHONAN\'');
+        // 2. Fix OSC_MHN_TRANSAKSI - Change trn_nosiri from bigInteger to string
+        Schema::table('osc_mhn_transaksi', function (Blueprint $table) {
+            $table->string('trn_nosiri_new', 20)->nullable()->comment('NO SIRI PERMOHONAN');
+        });
+
+        DB::statement('UPDATE osc_mhn_transaksi SET trn_nosiri_new = CAST(trn_nosiri AS CHAR(20)) WHERE trn_nosiri IS NOT NULL');
+
+        Schema::table('osc_mhn_transaksi', function (Blueprint $table) {
+            $table->dropForeign(['trn_idpbt']);
+            $table->dropUnique('mhn_transaksi_uk'); // Explicitly drop index first
+            $table->dropColumn('trn_nosiri');
+        });
+
+        Schema::table('osc_mhn_transaksi', function (Blueprint $table) {
+            $table->renameColumn('trn_nosiri_new', 'trn_nosiri');
+            $table->unique(['trn_idpbt', 'trn_nosiri', 'trn_kodp1', 'trn_kodp2', 'trn_kodp3'], 'mhn_transaksi_uk');
+            $table->foreign('trn_idpbt')->references('maj_idpbt')->on('osc_kod_majlis')->onDelete('restrict');
+        });
 
         // Also fix integer sizes in OSC_MHN_TRANSAKSI
         Schema::table('osc_mhn_transaksi', function (Blueprint $table) {
             $table->tinyInteger('trn_utama')->nullable()->comment('KEUTAMAAN TRANSAKSI')->change();
         });
 
-        // 3. Fix OSC_IND_INDUKLESEN - Change ind_nosiri from bigInteger to varchar in-place
-        DB::statement('ALTER TABLE osc_ind_induklesen MODIFY COLUMN ind_nosiri VARCHAR(20) NULL COMMENT \'NO SIRI PERMOHONAN\'');
+        // 3. Fix OSC_IND_INDUKLESEN - Change ind_nosiri from bigInteger to string
+        Schema::table('osc_ind_induklesen', function (Blueprint $table) {
+            $table->string('ind_nosiri_new', 20)->nullable()->comment('NO SIRI PERMOHONAN');
+        });
+
+        DB::statement('UPDATE osc_ind_induklesen SET ind_nosiri_new = CAST(ind_nosiri AS CHAR(20)) WHERE ind_nosiri IS NOT NULL');
+
+        Schema::table('osc_ind_induklesen', function (Blueprint $table) {
+            $table->dropColumn('ind_nosiri');
+        });
+
+        Schema::table('osc_ind_induklesen', function (Blueprint $table) {
+            $table->renameColumn('ind_nosiri_new', 'ind_nosiri');
+        });
 
         // Also fix integer sizes in OSC_IND_INDUKLESEN
         Schema::table('osc_ind_induklesen', function (Blueprint $table) {
@@ -70,7 +117,7 @@ return new class extends Migration
         // 9. Fix OSC_MHN_LPEKERJA - Should have nosiri field as bigInteger
         if (!Schema::hasColumn('osc_mhn_lpekerja', 'lpk_nosiri')) {
             Schema::table('osc_mhn_lpekerja', function (Blueprint $table) {
-                $table->bigInteger('lpk_nosiri')->nullable()->after('lpk_idpbt')->comment('NO SIRI PERMOHONAN');
+                $table->string('lpk_nosiri', 30)->nullable()->after('lpk_idpbt')->comment('NO SIRI PERMOHONAN');
             });
         }
 
@@ -94,6 +141,21 @@ return new class extends Migration
             $table->bigInteger('pbg_pbgsiri')->nullable()->comment('NO SIRI BIL PELABAGAI')->change();
             $table->bigInteger('pbg_nosiri')->nullable()->comment('NO SIRI PERMOHONAN LESEN')->change();
         });
+
+        // 14. Fix OSC_MHN_IKLAN - Should have nosiri field as string
+        Schema::table('osc_mhn_iklan', function (Blueprint $table) {
+            $table->string('lan_nosiri', 30)->nullable()->comment('NO SIRI PERMOHONAN')->change();
+        });
+
+        // 15. Fix OSC_MHN_DOKUMEN - Should have nosiri field as string
+        Schema::table('osc_mhn_dokumen', function (Blueprint $table) {
+            $table->string('doc_nosiri', 30)->nullable()->comment('NO SIRI PERMOHONAN')->change();
+        });
+
+        // 16. Fix OSC_MHN_GAMBAR - Should have nosiri field as string
+        Schema::table('osc_mhn_gambar', function (Blueprint $table) {
+            $table->string('gbr_nosiri', 30)->nullable()->comment('NO SIRI PERMOHONAN')->change();
+        });
     }
 
     /**
@@ -102,21 +164,51 @@ return new class extends Migration
     public function down(): void
     {
         // Revert OSC_MHN_PERMOHONAN changes
-        DB::statement('ALTER TABLE osc_mhn_permohonan MODIFY COLUMN mhn_nosiri BIGINT NULL');
         Schema::table('osc_mhn_permohonan', function (Blueprint $table) {
+            $table->bigInteger('mhn_nosiri_old')->nullable();
+        });
+
+        DB::statement('UPDATE osc_mhn_permohonan SET mhn_nosiri_old = CAST(mhn_nosiri AS UNSIGNED) WHERE mhn_nosiri IS NOT NULL AND mhn_nosiri REGEXP "^[0-9]+$"');
+
+        Schema::table('osc_mhn_permohonan', function (Blueprint $table) {
+            $table->dropColumn('mhn_nosiri');
+        });
+
+        Schema::table('osc_mhn_permohonan', function (Blueprint $table) {
+            $table->renameColumn('mhn_nosiri_old', 'mhn_nosiri');
             $table->integer('mhn_kodlokasi')->nullable()->comment('KOD LOKASI')->change();
             $table->integer('mhn_tempoh')->nullable()->comment('TEMPOH [12] [24] [36] BULAN')->change();
         });
 
         // Revert OSC_MHN_TRANSAKSI changes
-        DB::statement('ALTER TABLE osc_mhn_transaksi MODIFY COLUMN trn_nosiri BIGINT NULL');
         Schema::table('osc_mhn_transaksi', function (Blueprint $table) {
+            $table->bigInteger('trn_nosiri_old')->nullable();
+        });
+
+        DB::statement('UPDATE osc_mhn_transaksi SET trn_nosiri_old = CAST(trn_nosiri AS UNSIGNED) WHERE trn_nosiri IS NOT NULL AND trn_nosiri REGEXP "^[0-9]+$"');
+
+        Schema::table('osc_mhn_transaksi', function (Blueprint $table) {
+            $table->dropColumn('trn_nosiri');
+        });
+
+        Schema::table('osc_mhn_transaksi', function (Blueprint $table) {
+            $table->renameColumn('trn_nosiri_old', 'trn_nosiri');
             $table->integer('trn_utama')->nullable()->comment('KEUTAMAAN TRANSAKSI')->change();
         });
 
         // Revert OSC_IND_INDUKLESEN changes
-        DB::statement('ALTER TABLE osc_ind_induklesen MODIFY COLUMN ind_nosiri BIGINT NULL');
         Schema::table('osc_ind_induklesen', function (Blueprint $table) {
+            $table->bigInteger('ind_nosiri_old')->nullable();
+        });
+
+        DB::statement('UPDATE osc_ind_induklesen SET ind_nosiri_old = CAST(ind_nosiri AS UNSIGNED) WHERE ind_nosiri IS NOT NULL AND ind_nosiri REGEXP "^[0-9]+$"');
+
+        Schema::table('osc_ind_induklesen', function (Blueprint $table) {
+            $table->dropColumn('ind_nosiri');
+        });
+
+        Schema::table('osc_ind_induklesen', function (Blueprint $table) {
+            $table->renameColumn('ind_nosiri_old', 'ind_nosiri');
             $table->integer('ind_katniaga')->nullable()->comment('KATEGORI PERNIAGAAN [KAT_NiAGA]')->change();
             $table->integer('ind_kodlokasi')->nullable()->comment('KOD LOKASI')->change();
         });

@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('osc_mhn_lpekerja', function (Blueprint $table) {
             $table->id('id')->comment('Primary Key');
             $table->string('lpk_idpbt', 10)->nullable()->comment('KOD SIRI ID PBT');
-            $table->bigInteger('lpk_nosiri')->nullable()->comment('NO SIRI PERMOHONAN');
+            $table->string('lpk_nosiri', 30)->nullable()->comment('NO SIRI PERMOHONAN');
             $table->integer('lpk_melayu')->nullable()->comment('BILANGAN MELAYU');
             $table->integer('lpk_cina')->nullable()->comment('BILANGAN CINA');
             $table->integer('lpk_india')->nullable()->comment('BILANGAN INDIA');

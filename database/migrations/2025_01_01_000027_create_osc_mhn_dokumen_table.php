@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('osc_mhn_dokumen', function (Blueprint $table) {
             $table->id('id')->comment('Primary Key');
             $table->string('doc_idpbt', 10)->nullable()->comment('KOD ID PBT');
-            $table->bigInteger('doc_nosiri')->nullable()->comment('NO SIRI PERMOHONAN');
+            $table->string('doc_nosiri', 30)->nullable()->comment('NO SIRI PERMOHONAN');
             $table->integer('doc_akaun')->nullable()->comment('NO AKAUN : SELEPAS KELULUSAN');
             $table->integer('doc_dcsiri')->nullable()->comment('NO SIRI DOKUMEN');
             $table->longText('doc_dokumen')->nullable()->comment('IMAGE DOKUMEN');
