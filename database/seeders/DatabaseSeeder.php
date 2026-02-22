@@ -52,10 +52,11 @@ class DatabaseSeeder extends Seeder
             AddressSeeder::class,
             IndukLesenSeeder::class,
             LicensingTransactionSeeder::class,
-            IndTranslesenSeeder::class,         // License transaction history (NEW)
             IndividualProfileSeeder::class,
-            SyorKeputusanSeeder::class,         // Syor Keputusan data (depends on applications)
-            ApplicationSeeder::class
+            SyorKeputusanSeeder::class,
+            CustomerUserSeeder::class,
+            RealisticApplicationSeeder::class,
+            RenewalSampleDataSeeder::class,
         ]);
 
         // User::factory(10)->create();

@@ -17,9 +17,9 @@ return new class extends Migration
             $table->bigInteger('trn_nosiri')->nullable()->comment('NO SIRI PERMOHONAN');
             $table->integer('trn_akaun')->nullable()->comment('NO AKAUN - LEPAS KELULUSAN');
             $table->integer('trn_utama')->nullable()->comment('KEUTAMAAN TRANSAKSI');
-            $table->string('trn_kodp1', 2)->nullable()->comment('KOD PERNAGAAN');
-            $table->string('trn_kodp2', 3)->nullable()->comment('KOD PERNIAGAAN');
-            $table->string('trn_kodp3', 2)->nullable()->comment('KOD PERNIAGAAN');
+            $table->string('trn_kodp1', 5)->nullable()->comment('KOD SEKTOR');
+            $table->string('trn_kodp2', 5)->nullable()->comment('KOD AKTIVITI');
+            $table->string('trn_kodp3', 12)->nullable()->comment('KOD NIAGA');
             $table->decimal('trn_tmbhkurng', 11, 2)->nullable()->comment('AMAUN TAMBAHAN');
             $table->string('trn_scagr', 1)->nullable()->comment('STATUS DIKENAKAN CAGARAN');
             $table->string('trn_ckaun', 10)->nullable()->comment('NO AKAUN CAGARAN');
