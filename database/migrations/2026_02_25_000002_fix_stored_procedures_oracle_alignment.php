@@ -21,15 +21,6 @@ return new class extends Migration
         // Added manually to enforce VARCHAR collations and schema fixes:
         DB::unprepared("
             DROP FUNCTION IF EXISTS get_no_akaun;
-            CREATE FUNCTION get_no_akaun(idpbt VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci) RETURNS INT
-            READS SQL DATA
-            BEGIN
-                DECLARE v_akaun INT;
-                SELECT IFNULL(MAX(ind_akaun), 0) + 1 INTO v_akaun
-                FROM osc_ind_induklesen
-                WHERE ind_idpbt = idpbt;
-                RETURN v_akaun;
-            END;
         ");
 
         DB::unprepared("
@@ -245,7 +236,9 @@ return new class extends Migration
                          LEAVE read_loop;
                      END IF;
 
-                     SET v_akaun = get_no_akaun(p_idpbt);
+                     SELECT IFNULL(MAX(ind_akaun), 0) + 1 INTO v_akaun
+                     FROM osc_ind_induklesen
+                     WHERE ind_idpbt = p_idpbt;
 
                      INSERT INTO osc_ind_induklesen
                       (id, ind_idpbt, ind_akaun, ind_idpelanggan, ind_nosiri,
@@ -305,15 +298,6 @@ return new class extends Migration
         // Revert to original Oracle alignment or baseline states:
         DB::unprepared("
             DROP FUNCTION IF EXISTS get_no_akaun;
-            CREATE FUNCTION get_no_akaun(idpbt VARCHAR(255)) RETURNS INT
-            READS SQL DATA
-            BEGIN
-                DECLARE v_akaun INT;
-                SELECT IFNULL(MAX(ind_akaun), 0) + 1 INTO v_akaun
-                FROM osc_ind_induklesen
-                WHERE ind_idpbt = idpbt;
-                RETURN v_akaun;
-            END;
         ");
 
         DB::unprepared("
@@ -427,7 +411,9 @@ return new class extends Migration
                          LEAVE read_loop;
                      END IF;
 
-                     SET v_akaun = get_no_akaun(p_idpbt);
+                     SELECT IFNULL(MAX(ind_akaun), 0) + 1 INTO v_akaun
+                     FROM osc_ind_induklesen
+                     WHERE ind_idpbt = p_idpbt;
 
                      INSERT INTO osc_ind_induklesen
                       (id, ind_idpbt, ind_akaun, ind_idpelanggan, ind_nosiri,
