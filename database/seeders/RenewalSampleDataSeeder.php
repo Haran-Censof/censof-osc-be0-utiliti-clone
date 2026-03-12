@@ -580,12 +580,40 @@ class RenewalSampleDataSeeder extends Seeder
         $this->command->info('Created 7 renewal records.');
     }
 
+    /**
+     * Generate a seeder-specific nosiri that won't collide with real data.
+     * Uses sequence 9901-9905 which is reserved for seeder/test data.
+     */
+    private function seederNosiri(int $seq): string
+    {
+        return $this->pbtCode . 'RNW' . str_pad($seq, 4, '0', STR_PAD_LEFT);
+    }
+
+    /**
+     * Insert or get existing application ID (idempotent).
+     */
+    private function upsertApplication(string $nosiri, array $data): int
+    {
+        $existing = DB::table('osc_mhn_permohonan')
+            ->where('mhn_idpbt', $data['mhn_idpbt'])
+            ->where('mhn_nosiri', $nosiri)
+            ->first();
+
+        if ($existing) {
+            return $existing->id;
+        }
+
+        return DB::table('osc_mhn_permohonan')->insertGetId(array_merge($data, [
+            'mhn_nosiri' => $nosiri,
+        ]));
+    }
+
     private function createRenewalApplications(array $licenseIds): array
     {
         $now = Carbon::now();
 
         // Application for submitted renewal (License 7 - PUSAT TUISYEN CEMERLANG)
-        $submittedAppId = DB::table('osc_mhn_permohonan')->insertGetId([
+        $submittedAppId = $this->upsertApplication($this->seederNosiri(1), [
             'mhn_idpbt' => $this->pbtCode,
             'mhn_jenismhn' => 'P',
             'mhn_jenis' => '1',
@@ -604,7 +632,6 @@ class RenewalSampleDataSeeder extends Seeder
             'mhn_tktamat' => $now->copy()->addDays(20)->addYear()->format('Y-m-d'),
             'mhn_tempoh' => 12,
             'mhn_jenisplg' => 'I',
-            'mhn_nosiri' => $this->pbtCode . $now->copy()->subDays(5)->format('ym') . '0001',
             'mhn_norujukan' => 'REN/2026/001',
             'mhn_noakaun' => 90007,
             'mhn_idate' => $now->copy()->subDays(5)->format('Y-m-d'),
@@ -617,7 +644,7 @@ class RenewalSampleDataSeeder extends Seeder
             ->update(['renewal_application_id' => $submittedAppId]);
 
         // Application for completed renewal (License 8 - KEDAI ELEKTRIK JAYA)
-        $completedAppId = DB::table('osc_mhn_permohonan')->insertGetId([
+        $completedAppId = $this->upsertApplication($this->seederNosiri(2), [
             'mhn_idpbt' => $this->pbtCode,
             'mhn_jenismhn' => 'P',
             'mhn_jenis' => '1',
@@ -637,7 +664,6 @@ class RenewalSampleDataSeeder extends Seeder
             'mhn_tktamat' => $now->copy()->addMonths(6)->format('Y-m-d'),
             'mhn_tempoh' => 12,
             'mhn_jenisplg' => 'I',
-            'mhn_nosiri' => $this->pbtCode . $now->copy()->subMonths(7)->format('ym') . '0002',
             'mhn_norujukan' => 'REN/2025/012',
             'mhn_noakaun' => 90008,
             'mhn_idate' => $now->copy()->subMonths(7)->format('Y-m-d'),
@@ -650,7 +676,7 @@ class RenewalSampleDataSeeder extends Seeder
             ->update(['renewal_application_id' => $completedAppId]);
 
         // Application for under_review renewal (License 9 - KEDAI RUNCIT BARAKAH)
-        $underReviewAppId = DB::table('osc_mhn_permohonan')->insertGetId([
+        $underReviewAppId = $this->upsertApplication($this->seederNosiri(3), [
             'mhn_idpbt' => $this->pbtCode,
             'mhn_jenismhn' => 'P',
             'mhn_jenis' => '1',
@@ -669,7 +695,6 @@ class RenewalSampleDataSeeder extends Seeder
             'mhn_tktamat' => $now->copy()->addDays(10)->addYear()->format('Y-m-d'),
             'mhn_tempoh' => 12,
             'mhn_jenisplg' => 'I',
-            'mhn_nosiri' => $this->pbtCode . $now->copy()->subDays(7)->format('ym') . '0003',
             'mhn_norujukan' => 'REN/2026/002',
             'mhn_noakaun' => 90009,
             'mhn_idate' => $now->copy()->subDays(7)->format('Y-m-d'),
@@ -682,7 +707,7 @@ class RenewalSampleDataSeeder extends Seeder
             ->update(['renewal_application_id' => $underReviewAppId]);
 
         // Application for rejected renewal (License 10 - SALON KECANTIKAN DIVA)
-        $rejectedAppId = DB::table('osc_mhn_permohonan')->insertGetId([
+        $rejectedAppId = $this->upsertApplication($this->seederNosiri(4), [
             'mhn_idpbt' => $this->pbtCode,
             'mhn_jenismhn' => 'P',
             'mhn_jenis' => '1',
@@ -701,7 +726,6 @@ class RenewalSampleDataSeeder extends Seeder
             'mhn_tktamat' => $now->copy()->subDays(5)->addYear()->format('Y-m-d'),
             'mhn_tempoh' => 12,
             'mhn_jenisplg' => 'I',
-            'mhn_nosiri' => $this->pbtCode . $now->copy()->subDays(15)->format('ym') . '0004',
             'mhn_norujukan' => 'REN/2026/003',
             'mhn_noakaun' => 90010,
             'mhn_idate' => $now->copy()->subDays(15)->format('Y-m-d'),
@@ -715,7 +739,7 @@ class RenewalSampleDataSeeder extends Seeder
 
         // Application for approved (completed) renewal to test approved status separately
         // Using License 1 (RESTORAN NASI KANDAR PELITA) as an approved renewal from a previous cycle
-        $approvedAppId = DB::table('osc_mhn_permohonan')->insertGetId([
+        $approvedAppId = $this->upsertApplication($this->seederNosiri(5), [
             'mhn_idpbt' => $this->pbtCode,
             'mhn_jenismhn' => 'P',
             'mhn_jenis' => '1',
@@ -735,7 +759,6 @@ class RenewalSampleDataSeeder extends Seeder
             'mhn_tktamat' => $now->copy()->addDays(30)->format('Y-m-d'),
             'mhn_tempoh' => 12,
             'mhn_jenisplg' => 'I',
-            'mhn_nosiri' => $this->pbtCode . $now->copy()->subYear()->format('ym') . '0005',
             'mhn_norujukan' => 'REN/2025/001',
             'mhn_noakaun' => 90001,
             'mhn_idate' => $now->copy()->subYear()->format('Y-m-d'),
@@ -756,10 +779,10 @@ class RenewalSampleDataSeeder extends Seeder
     private function createApplicationRelatedData(array $appIds): void
     {
         $now = Carbon::now();
-        $nosiri1 = $this->pbtCode . $now->copy()->subDays(5)->format('ym') . '0001';
-        $nosiri2 = $this->pbtCode . $now->copy()->subMonths(7)->format('ym') . '0002';
-        $nosiri3 = $this->pbtCode . $now->copy()->subDays(7)->format('ym') . '0003';
-        $nosiri4 = $this->pbtCode . $now->copy()->subDays(15)->format('ym') . '0004';
+        $nosiri1 = $this->seederNosiri(1);
+        $nosiri2 = $this->seederNosiri(2);
+        $nosiri3 = $this->seederNosiri(3);
+        $nosiri4 = $this->seederNosiri(4);
 
         // Transaction records for both apps
         DB::table('osc_mhn_transaksi')->insertOrIgnore([
