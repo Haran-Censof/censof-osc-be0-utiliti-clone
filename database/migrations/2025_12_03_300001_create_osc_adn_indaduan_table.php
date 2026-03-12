@@ -27,7 +27,7 @@ return new class extends Migration
             $table->text('adn_catatan')->nullable()->comment('CATATAN');
             $table->string('adn_lokasi', 500)->nullable()->comment('LOKASI ADUAN');
             $table->date('adn_tkhterima')->nullable()->comment('TARIKH TERIMA ADUAN');
-            $table->string('adn_stataduan', 1)->nullable()->comment('STATUS ADUAN [P]-PERMOHONAN [S]-SELESAI');
+            $table->string('adn_stataduan', 1)->nullable()->comment('STATUS ADUAN [X]-Draf [P]-Baru [D]-Dalam Siasatan [S]-Selesai');
             $table->date('adn_idate')->nullable()->comment('TARIKH INPUT');
             $table->date('adn_udate')->nullable()->comment('TARIKH KEMASKINI');
             $table->string('adn_iuser', 20)->nullable()->comment('NO KP PEGAWAI KEMASUKAN');

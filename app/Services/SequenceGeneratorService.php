@@ -115,4 +115,29 @@ class SequenceGeneratorService
 
         return sprintf('%s/MSY/%s/%010d', $pbtCode, $year, $sequence);
     }
+
+    /**
+     * Generate next complaint reference number
+     *
+     * Format: MBSJ/ADN/26/0001
+     * Constraint: max 16 chars (adn_noaduan varchar(16))
+     * Capacity: 9,999 per year per PBT
+     *
+     * @param string $pbtCode PBT code (e.g., 'MBSJ', 'MBPJ')
+     * @return string Complaint reference number
+     */
+    public function generateComplaintRef(string $pbtCode): string
+    {
+        $year = now()->format('y');
+        $key = "adn_seq:{$pbtCode}:{$year}";
+
+        $sequence = Cache::increment($key);
+
+        if ($sequence == 1) {
+            Cache::put($key, 1, now()->endOfYear());
+        }
+
+        return sprintf('%s/ADN/%s/%04d', $pbtCode, $year, $sequence);
+    }
+
 }
