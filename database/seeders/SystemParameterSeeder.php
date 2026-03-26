@@ -57,6 +57,114 @@ class SystemParameterSeeder extends Seeder
                 'PARA_VALUE' =>'LXXXXXXX-XX',
                 'PARA_IUSER' =>null,
                 'PARA_UUSER' =>null
+            ],
+            [
+                'ID' =>6,
+                'PARA_IDPBT' =>'PRK_MDTM',
+                'PARA_ID' =>10,
+                'PARA_DESC' =>'NAMA YDP',
+                'PARA_VALUE' =>'(MOHD IKRAM BIN AHMAD) ',
+                'PARA_IUSER' =>'USR000000005',
+                'PARA_UUSER' =>null
+            ],
+            [
+                'ID' =>7,
+                'PARA_IDPBT' =>'PRK_MDTM',
+                'PARA_ID' =>11,
+                'PARA_DESC' =>'JAWATAN YDP',
+                'PARA_VALUE' =>'YANG DIPERTUA',
+                'PARA_IUSER' =>'USR000000005',
+                'PARA_UUSER' =>null
+            ],
+            [
+                'ID' =>8,
+                'PARA_IDPBT' =>'PRK_MDTM',
+                'PARA_ID' =>12,
+                'PARA_DESC' =>'NAMA PEG.',
+                'PARA_VALUE' =>'(HAJAH SITI AIDA BINTI RASHIDI)',
+                'PARA_IUSER' =>'USR000000005',
+                'PARA_UUSER' =>null
+            ],
+            [
+                'ID' =>9,
+                'PARA_IDPBT' =>'PRK_MDTM',
+                'PARA_ID' =>13,
+                'PARA_DESC' =>'JAWATAN PEG.',
+                'PARA_VALUE' =>'PEGAWAI KESIHATAN PERSEKITARAN',
+                'PARA_IUSER' =>'USR000000005',
+                'PARA_UUSER' =>null
+            ],
+            [
+                'ID' =>10,
+                'PARA_IDPBT' =>'PRK_MDTM',
+                'PARA_ID' =>14,
+                'PARA_DESC' =>'BP',
+                'PARA_VALUE' =>'b.p. YANG DIPERTUA',
+                'PARA_IUSER' =>'USR000000005',
+                'PARA_UUSER' =>null
+            ],
+            [
+                'ID' =>11,
+                'PARA_IDPBT' =>'PRK_MDTM',
+                'PARA_ID' =>15,
+                'PARA_DESC' =>'POSKOD',
+                'PARA_VALUE' =>'35900 TANJONG MALIM',
+                'PARA_IUSER' =>'USR000000005',
+                'PARA_UUSER' =>null
+            ],
+            [
+                'ID' =>12,
+                'PARA_IDPBT' =>'PRK_MDTM',
+                'PARA_ID' =>16,
+                'PARA_DESC' =>'NEGERI',
+                'PARA_VALUE' =>'PERAK DARUL RIDZUAN',
+                'PARA_IUSER' =>'USR000000005',
+                'PARA_UUSER' =>null
+            ],
+            [
+                'ID' =>13,
+                'PARA_IDPBT' =>'PRK_MDTM',
+                'PARA_ID' =>20,
+                'PARA_DESC' =>'MESEJ BIL',
+                'PARA_VALUE' =>'SILA PERBAHARUI LESEN PERNIAGAAN DALAM TEMPOH 7 HARI SEBELUM TARIKH TAMAT LESEN. KEGAGALAN MEMPERBAHARUI LESEN BOLEH MENYEBABKAN TINDAKAN KOMPAUN ATAU PEMBATALAN LESEN DIKENAKAN.',
+                'PARA_IUSER' =>'USR000000005',
+                'PARA_UUSER' =>null
+            ],
+            [
+                'ID' =>14,
+                'PARA_IDPBT' =>'PRK_MDTM',
+                'PARA_ID' =>21,
+                'PARA_DESC' =>'SIGN',
+                'PARA_VALUE' =>'Saya yang menjalankan amanah,',
+                'PARA_IUSER' =>'USR000000005',
+                'PARA_UUSER' =>null
+            ],
+            [
+                'ID' =>15,
+                'PARA_IDPBT' =>'PRK_MDTM',
+                'PARA_ID' =>23,
+                'PARA_DESC' =>'MOTTO 2',
+                'PARA_VALUE' =>'"BERKHIDMAT UNTUK NEGARA"',
+                'PARA_IUSER' =>'USR000000005',
+                'PARA_UUSER' =>null
+            ],
+            [
+                'ID' =>16,
+                'PARA_IDPBT' =>'PRK_MDTM',
+                'PARA_ID' =>24,
+                'PARA_DESC' =>'MOTTO 3',
+                'PARA_VALUE' =>'',
+                'PARA_IUSER' =>'USR000000005',
+                'PARA_UUSER' =>null
+            ],
+            [
+                'ID' =>17,
+                'PARA_IDPBT' =>'PRK_MDTM',
+                'PARA_ID' =>25,
+                'PARA_DESC' =>'MOTTO 4',
+                'PARA_VALUE' =>'',
+                'PARA_IUSER' =>'USR000000005',
+                'PARA_UUSER' =>null
             ]
         ]);
     }
