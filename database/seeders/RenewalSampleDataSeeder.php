@@ -92,7 +92,7 @@ class RenewalSampleDataSeeder extends Seeder
             [
                 'ind_akaun' => $this->baseAccount,
                 'ind_namaperniagaan' => 'RESTORAN NASI KANDAR PELITA',
-                'ind_almtperniagaan' => 'NO 12, JALAN SULTAN IDRIS SHAH, IPOH',
+                'ind_almtperniagaan1' => 'NO 12, JALAN SULTAN IDRIS SHAH, IPOH',
                 'ind_norujukan' => 'LIC/2024/R001',
                 'ind_kodlokasi' => 23,
                 'ind_katniaga' => 1,
@@ -102,7 +102,7 @@ class RenewalSampleDataSeeder extends Seeder
             [
                 'ind_akaun' => $this->baseAccount + 1,
                 'ind_namaperniagaan' => 'KEDAI GUNTING RAMBUT AHMAD',
-                'ind_almtperniagaan' => 'NO 45, JALAN DATO MAHARAJALELA, IPOH',
+                'ind_almtperniagaan1' => 'NO 45, JALAN DATO MAHARAJALELA, IPOH',
                 'ind_norujukan' => 'LIC/2024/R002',
                 'ind_kodlokasi' => 35,
                 'ind_katniaga' => 2,
@@ -112,7 +112,7 @@ class RenewalSampleDataSeeder extends Seeder
             [
                 'ind_akaun' => $this->baseAccount + 2,
                 'ind_namaperniagaan' => 'BENGKEL KERETA JAYA MOTOR',
-                'ind_almtperniagaan' => 'LOT 88, KAWASAN PERINDUSTRIAN, IPOH',
+                'ind_almtperniagaan1' => 'LOT 88, KAWASAN PERINDUSTRIAN, IPOH',
                 'ind_norujukan' => 'LIC/2024/R003',
                 'ind_kodlokasi' => 10,
                 'ind_katniaga' => 3,
@@ -122,7 +122,7 @@ class RenewalSampleDataSeeder extends Seeder
             [
                 'ind_akaun' => $this->baseAccount + 3,
                 'ind_namaperniagaan' => 'PASAR MINI SEJAHTERA',
-                'ind_almtperniagaan' => 'NO 99, JALAN GOPENG, IPOH',
+                'ind_almtperniagaan1' => 'NO 99, JALAN GOPENG, IPOH',
                 'ind_norujukan' => 'LIC/2024/R004',
                 'ind_kodlokasi' => 50,
                 'ind_katniaga' => 1,
@@ -132,7 +132,7 @@ class RenewalSampleDataSeeder extends Seeder
             [
                 'ind_akaun' => $this->baseAccount + 4,
                 'ind_namaperniagaan' => 'KAFE SELERA TIMUR',
-                'ind_almtperniagaan' => 'NO 7, JALAN RAJA PERMAISURI BAINUN, IPOH',
+                'ind_almtperniagaan1' => 'NO 7, JALAN RAJA PERMAISURI BAINUN, IPOH',
                 'ind_norujukan' => 'LIC/2024/R005',
                 'ind_kodlokasi' => 23,
                 'ind_katniaga' => 1,
@@ -142,7 +142,7 @@ class RenewalSampleDataSeeder extends Seeder
             [
                 'ind_akaun' => $this->baseAccount + 5,
                 'ind_namaperniagaan' => 'FARMASI AL-IMAN SDN BHD',
-                'ind_almtperniagaan' => 'NO 33, JALAN CM YUSUF, IPOH',
+                'ind_almtperniagaan1' => 'NO 33, JALAN CM YUSUF, IPOH',
                 'ind_norujukan' => 'LIC/2025/R006',
                 'ind_kodlokasi' => 15,
                 'ind_katniaga' => 4,
@@ -152,7 +152,7 @@ class RenewalSampleDataSeeder extends Seeder
             [
                 'ind_akaun' => $this->baseAccount + 6,
                 'ind_namaperniagaan' => 'PUSAT TUISYEN CEMERLANG',
-                'ind_almtperniagaan' => 'NO 55, JALAN TAMBUN, IPOH',
+                'ind_almtperniagaan1' => 'NO 55, JALAN TAMBUN, IPOH',
                 'ind_norujukan' => 'LIC/2024/R007',
                 'ind_kodlokasi' => 40,
                 'ind_katniaga' => 5,
@@ -162,7 +162,7 @@ class RenewalSampleDataSeeder extends Seeder
             [
                 'ind_akaun' => $this->baseAccount + 7,
                 'ind_namaperniagaan' => 'KEDAI ELEKTRIK JAYA',
-                'ind_almtperniagaan' => 'NO 101, JALAN PASIR PUTEH, IPOH',
+                'ind_almtperniagaan1' => 'NO 101, JALAN PASIR PUTEH, IPOH',
                 'ind_norujukan' => 'LIC/2024/R008',
                 'ind_kodlokasi' => 23,
                 'ind_katniaga' => 2,
@@ -173,7 +173,7 @@ class RenewalSampleDataSeeder extends Seeder
             [
                 'ind_akaun' => $this->baseAccount + 8,
                 'ind_namaperniagaan' => 'KEDAI RUNCIT BARAKAH',
-                'ind_almtperniagaan' => 'NO 22, JALAN DATO ONN JAAFAR, IPOH',
+                'ind_almtperniagaan1' => 'NO 22, JALAN DATO ONN JAAFAR, IPOH',
                 'ind_norujukan' => 'LIC/2024/R009',
                 'ind_kodlokasi' => 23,
                 'ind_katniaga' => 1,
@@ -184,7 +184,7 @@ class RenewalSampleDataSeeder extends Seeder
             [
                 'ind_akaun' => $this->baseAccount + 9,
                 'ind_namaperniagaan' => 'SALON KECANTIKAN DIVA',
-                'ind_almtperniagaan' => 'NO 66, JALAN SULTAN AZLAN SHAH, IPOH',
+                'ind_almtperniagaan1' => 'NO 66, JALAN SULTAN AZLAN SHAH, IPOH',
                 'ind_norujukan' => 'LIC/2024/R010',
                 'ind_kodlokasi' => 35,
                 'ind_katniaga' => 2,
@@ -195,7 +195,7 @@ class RenewalSampleDataSeeder extends Seeder
             [
                 'ind_akaun' => $this->baseAccount + 10,
                 'ind_namaperniagaan' => 'WARUNG MAKAN PAK ALI',
-                'ind_almtperniagaan' => 'NO 3, JALAN KUALA KANGSAR, IPOH',
+                'ind_almtperniagaan1' => 'NO 3, JALAN KUALA KANGSAR, IPOH',
                 'ind_norujukan' => 'LIC/2024/R011',
                 'ind_kodlokasi' => 50,
                 'ind_katniaga' => 1,
@@ -231,17 +231,17 @@ class RenewalSampleDataSeeder extends Seeder
     private function createBusinessCodes(): void
     {
         $codes = [
-            ['trn_akaun' => 90001, 'trn_kodniaga1' => '01', 'trn_kodniaga2' => '001', 'trn_kodniaga3' => '01'],
-            ['trn_akaun' => 90002, 'trn_kodniaga1' => '02', 'trn_kodniaga2' => '001', 'trn_kodniaga3' => '01'],
-            ['trn_akaun' => 90003, 'trn_kodniaga1' => '03', 'trn_kodniaga2' => '002', 'trn_kodniaga3' => '01'],
-            ['trn_akaun' => 90004, 'trn_kodniaga1' => '01', 'trn_kodniaga2' => '003', 'trn_kodniaga3' => '02'],
-            ['trn_akaun' => 90005, 'trn_kodniaga1' => '01', 'trn_kodniaga2' => '001', 'trn_kodniaga3' => '03'],
-            ['trn_akaun' => 90006, 'trn_kodniaga1' => '04', 'trn_kodniaga2' => '004', 'trn_kodniaga3' => '01'],
-            ['trn_akaun' => 90007, 'trn_kodniaga1' => '05', 'trn_kodniaga2' => '005', 'trn_kodniaga3' => '01'],
-            ['trn_akaun' => 90008, 'trn_kodniaga1' => '02', 'trn_kodniaga2' => '002', 'trn_kodniaga3' => '02'],
-            ['trn_akaun' => 90009, 'trn_kodniaga1' => '01', 'trn_kodniaga2' => '001', 'trn_kodniaga3' => '02'],
-            ['trn_akaun' => 90010, 'trn_kodniaga1' => '02', 'trn_kodniaga2' => '003', 'trn_kodniaga3' => '01'],
-            ['trn_akaun' => 90011, 'trn_kodniaga1' => '01', 'trn_kodniaga2' => '001', 'trn_kodniaga3' => '01'],
+            ['trn_akaun' => 90001, 'trn_kodniaga' => '0100101', 'trn_kodniaga1' => '01', 'trn_kodniaga2' => '001', 'trn_kodniaga3' => '01'],
+            ['trn_akaun' => 90002, 'trn_kodniaga' => '0200101', 'trn_kodniaga1' => '02', 'trn_kodniaga2' => '001', 'trn_kodniaga3' => '01'],
+            ['trn_akaun' => 90003, 'trn_kodniaga' => '0300201', 'trn_kodniaga1' => '03', 'trn_kodniaga2' => '002', 'trn_kodniaga3' => '01'],
+            ['trn_akaun' => 90004, 'trn_kodniaga' => '0100302', 'trn_kodniaga1' => '01', 'trn_kodniaga2' => '003', 'trn_kodniaga3' => '02'],
+            ['trn_akaun' => 90005, 'trn_kodniaga' => '0100103', 'trn_kodniaga1' => '01', 'trn_kodniaga2' => '001', 'trn_kodniaga3' => '03'],
+            ['trn_akaun' => 90006, 'trn_kodniaga' => '0400401', 'trn_kodniaga1' => '04', 'trn_kodniaga2' => '004', 'trn_kodniaga3' => '01'],
+            ['trn_akaun' => 90007, 'trn_kodniaga' => '0500501', 'trn_kodniaga1' => '05', 'trn_kodniaga2' => '005', 'trn_kodniaga3' => '01'],
+            ['trn_akaun' => 90008, 'trn_kodniaga' => '0200202', 'trn_kodniaga1' => '02', 'trn_kodniaga2' => '002', 'trn_kodniaga3' => '02'],
+            ['trn_akaun' => 90009, 'trn_kodniaga' => '0100102', 'trn_kodniaga1' => '01', 'trn_kodniaga2' => '001', 'trn_kodniaga3' => '02'],
+            ['trn_akaun' => 90010, 'trn_kodniaga' => '0200301', 'trn_kodniaga1' => '02', 'trn_kodniaga2' => '003', 'trn_kodniaga3' => '01'],
+            ['trn_akaun' => 90011, 'trn_kodniaga' => '0100101', 'trn_kodniaga1' => '01', 'trn_kodniaga2' => '001', 'trn_kodniaga3' => '01'],
         ];
 
         foreach ($codes as $code) {
@@ -580,12 +580,40 @@ class RenewalSampleDataSeeder extends Seeder
         $this->command->info('Created 7 renewal records.');
     }
 
+    /**
+     * Generate a seeder-specific nosiri that won't collide with real data.
+     * Uses sequence 9901-9905 which is reserved for seeder/test data.
+     */
+    private function seederNosiri(int $seq): string
+    {
+        return $this->pbtCode . 'RNW' . str_pad($seq, 4, '0', STR_PAD_LEFT);
+    }
+
+    /**
+     * Insert or get existing application ID (idempotent).
+     */
+    private function upsertApplication(string $nosiri, array $data): int
+    {
+        $existing = DB::table('osc_mhn_permohonan')
+            ->where('mhn_idpbt', $data['mhn_idpbt'])
+            ->where('mhn_nosiri', $nosiri)
+            ->first();
+
+        if ($existing) {
+            return $existing->id;
+        }
+
+        return DB::table('osc_mhn_permohonan')->insertGetId(array_merge($data, [
+            'mhn_nosiri' => $nosiri,
+        ]));
+    }
+
     private function createRenewalApplications(array $licenseIds): array
     {
         $now = Carbon::now();
 
         // Application for submitted renewal (License 7 - PUSAT TUISYEN CEMERLANG)
-        $submittedAppId = DB::table('osc_mhn_permohonan')->insertGetId([
+        $submittedAppId = $this->upsertApplication($this->seederNosiri(1), [
             'mhn_idpbt' => $this->pbtCode,
             'mhn_jenismhn' => 'P',
             'mhn_jenis' => '1',
@@ -604,7 +632,6 @@ class RenewalSampleDataSeeder extends Seeder
             'mhn_tktamat' => $now->copy()->addDays(20)->addYear()->format('Y-m-d'),
             'mhn_tempoh' => 12,
             'mhn_jenisplg' => 'I',
-            'mhn_nosiri' => 90007,
             'mhn_norujukan' => 'REN/2026/001',
             'mhn_noakaun' => 90007,
             'mhn_idate' => $now->copy()->subDays(5)->format('Y-m-d'),
@@ -617,7 +644,7 @@ class RenewalSampleDataSeeder extends Seeder
             ->update(['renewal_application_id' => $submittedAppId]);
 
         // Application for completed renewal (License 8 - KEDAI ELEKTRIK JAYA)
-        $completedAppId = DB::table('osc_mhn_permohonan')->insertGetId([
+        $completedAppId = $this->upsertApplication($this->seederNosiri(2), [
             'mhn_idpbt' => $this->pbtCode,
             'mhn_jenismhn' => 'P',
             'mhn_jenis' => '1',
@@ -637,7 +664,6 @@ class RenewalSampleDataSeeder extends Seeder
             'mhn_tktamat' => $now->copy()->addMonths(6)->format('Y-m-d'),
             'mhn_tempoh' => 12,
             'mhn_jenisplg' => 'I',
-            'mhn_nosiri' => 90008,
             'mhn_norujukan' => 'REN/2025/012',
             'mhn_noakaun' => 90008,
             'mhn_idate' => $now->copy()->subMonths(7)->format('Y-m-d'),
@@ -650,7 +676,7 @@ class RenewalSampleDataSeeder extends Seeder
             ->update(['renewal_application_id' => $completedAppId]);
 
         // Application for under_review renewal (License 9 - KEDAI RUNCIT BARAKAH)
-        $underReviewAppId = DB::table('osc_mhn_permohonan')->insertGetId([
+        $underReviewAppId = $this->upsertApplication($this->seederNosiri(3), [
             'mhn_idpbt' => $this->pbtCode,
             'mhn_jenismhn' => 'P',
             'mhn_jenis' => '1',
@@ -669,7 +695,6 @@ class RenewalSampleDataSeeder extends Seeder
             'mhn_tktamat' => $now->copy()->addDays(10)->addYear()->format('Y-m-d'),
             'mhn_tempoh' => 12,
             'mhn_jenisplg' => 'I',
-            'mhn_nosiri' => 90009,
             'mhn_norujukan' => 'REN/2026/002',
             'mhn_noakaun' => 90009,
             'mhn_idate' => $now->copy()->subDays(7)->format('Y-m-d'),
@@ -682,7 +707,7 @@ class RenewalSampleDataSeeder extends Seeder
             ->update(['renewal_application_id' => $underReviewAppId]);
 
         // Application for rejected renewal (License 10 - SALON KECANTIKAN DIVA)
-        $rejectedAppId = DB::table('osc_mhn_permohonan')->insertGetId([
+        $rejectedAppId = $this->upsertApplication($this->seederNosiri(4), [
             'mhn_idpbt' => $this->pbtCode,
             'mhn_jenismhn' => 'P',
             'mhn_jenis' => '1',
@@ -701,7 +726,6 @@ class RenewalSampleDataSeeder extends Seeder
             'mhn_tktamat' => $now->copy()->subDays(5)->addYear()->format('Y-m-d'),
             'mhn_tempoh' => 12,
             'mhn_jenisplg' => 'I',
-            'mhn_nosiri' => 90010,
             'mhn_norujukan' => 'REN/2026/003',
             'mhn_noakaun' => 90010,
             'mhn_idate' => $now->copy()->subDays(15)->format('Y-m-d'),
@@ -715,7 +739,7 @@ class RenewalSampleDataSeeder extends Seeder
 
         // Application for approved (completed) renewal to test approved status separately
         // Using License 1 (RESTORAN NASI KANDAR PELITA) as an approved renewal from a previous cycle
-        $approvedAppId = DB::table('osc_mhn_permohonan')->insertGetId([
+        $approvedAppId = $this->upsertApplication($this->seederNosiri(5), [
             'mhn_idpbt' => $this->pbtCode,
             'mhn_jenismhn' => 'P',
             'mhn_jenis' => '1',
@@ -735,7 +759,6 @@ class RenewalSampleDataSeeder extends Seeder
             'mhn_tktamat' => $now->copy()->addDays(30)->format('Y-m-d'),
             'mhn_tempoh' => 12,
             'mhn_jenisplg' => 'I',
-            'mhn_nosiri' => 90001,
             'mhn_norujukan' => 'REN/2025/001',
             'mhn_noakaun' => 90001,
             'mhn_idate' => $now->copy()->subYear()->format('Y-m-d'),
@@ -756,28 +779,32 @@ class RenewalSampleDataSeeder extends Seeder
     private function createApplicationRelatedData(array $appIds): void
     {
         $now = Carbon::now();
+        $nosiri1 = $this->seederNosiri(1);
+        $nosiri2 = $this->seederNosiri(2);
+        $nosiri3 = $this->seederNosiri(3);
+        $nosiri4 = $this->seederNosiri(4);
 
         // Transaction records for both apps
         DB::table('osc_mhn_transaksi')->insertOrIgnore([
             [
                 'trn_idpbt' => $this->pbtCode,
-                'trn_nosiri' => 90007,
+                'trn_nosiri' => $nosiri1,
                 'trn_akaun' => 90007,
                 'trn_utama' => 1,
-                'trn_kodp1' => '01',
-                'trn_kodp2' => '001',
-                'trn_kodp3' => '01',
+                'trn_kodjenis' => '01',
+                'trn_kodsektor' => '001',
+                'trn_kodaktiviti' => '01',
                 'trn_idate' => $now->copy()->subDays(5)->format('Y-m-d'),
                 'created_at' => now(),
             ],
             [
                 'trn_idpbt' => $this->pbtCode,
-                'trn_nosiri' => 90008,
+                'trn_nosiri' => $nosiri2,
                 'trn_akaun' => 90008,
                 'trn_utama' => 1,
-                'trn_kodp1' => '02',
-                'trn_kodp2' => '002',
-                'trn_kodp3' => '01',
+                'trn_kodjenis' => '02',
+                'trn_kodsektor' => '002',
+                'trn_kodaktiviti' => '01',
                 'trn_idate' => $now->copy()->subMonths(7)->format('Y-m-d'),
                 'created_at' => now(),
             ],
@@ -788,7 +815,7 @@ class RenewalSampleDataSeeder extends Seeder
             DB::table('osc_mhn_lpekerja')->insertOrIgnore([
                 [
                     'lpk_idpbt' => $this->pbtCode,
-                    'lpk_nosiri' => 90007,
+                    'lpk_nosiri' => $nosiri1,
                     'lpk_melayu' => 3,
                     'lpk_cina' => 1,
                     'lpk_india' => 0,
@@ -799,7 +826,7 @@ class RenewalSampleDataSeeder extends Seeder
                 ],
                 [
                     'lpk_idpbt' => $this->pbtCode,
-                    'lpk_nosiri' => 90008,
+                    'lpk_nosiri' => $nosiri2,
                     'lpk_melayu' => 2,
                     'lpk_cina' => 0,
                     'lpk_india' => 1,
@@ -817,7 +844,7 @@ class RenewalSampleDataSeeder extends Seeder
         if (DB::getSchemaBuilder()->hasTable('osc_mhn_lnomini')) {
             DB::table('osc_mhn_lnomini')->insertOrIgnore([
                 'nom_idpbt' => $this->pbtCode,
-                'nom_nosiri' => 90007,
+                'nom_nosiri' => $nosiri1,
                 'nom_idplgnom1' => '880202020002',
                 'nom_namanom1' => 'SITI AMINAH BINTI AHMAD',
                 'nom_trkhtmt1' => $now->copy()->addYear()->format('Y-m-d'),
@@ -832,12 +859,12 @@ class RenewalSampleDataSeeder extends Seeder
         // Transaction and worker records for under_review app (KEDAI RUNCIT BARAKAH)
         DB::table('osc_mhn_transaksi')->insertOrIgnore([
             'trn_idpbt' => $this->pbtCode,
-            'trn_nosiri' => 90009,
+            'trn_nosiri' => $nosiri3,
             'trn_akaun' => 90009,
             'trn_utama' => 1,
-            'trn_kodp1' => '01',
-            'trn_kodp2' => '001',
-            'trn_kodp3' => '02',
+            'trn_kodjenis' => '01',
+            'trn_kodsektor' => '001',
+            'trn_kodaktiviti' => '02',
             'trn_idate' => $now->copy()->subDays(7)->format('Y-m-d'),
             'created_at' => now(),
         ]);
@@ -845,7 +872,7 @@ class RenewalSampleDataSeeder extends Seeder
         if (DB::getSchemaBuilder()->hasTable('osc_mhn_lpekerja')) {
             DB::table('osc_mhn_lpekerja')->insertOrIgnore([
                 'lpk_idpbt' => $this->pbtCode,
-                'lpk_nosiri' => 90009,
+                'lpk_nosiri' => $nosiri3,
                 'lpk_melayu' => 3,
                 'lpk_cina' => 2,
                 'lpk_india' => 0,
@@ -859,12 +886,12 @@ class RenewalSampleDataSeeder extends Seeder
         // Transaction and worker records for rejected app (SALON KECANTIKAN DIVA)
         DB::table('osc_mhn_transaksi')->insertOrIgnore([
             'trn_idpbt' => $this->pbtCode,
-            'trn_nosiri' => 90010,
+            'trn_nosiri' => $nosiri4,
             'trn_akaun' => 90010,
             'trn_utama' => 1,
-            'trn_kodp1' => '02',
-            'trn_kodp2' => '003',
-            'trn_kodp3' => '01',
+            'trn_kodjenis' => '02',
+            'trn_kodsektor' => '003',
+            'trn_kodaktiviti' => '01',
             'trn_idate' => $now->copy()->subDays(15)->format('Y-m-d'),
             'created_at' => now(),
         ]);
@@ -872,7 +899,7 @@ class RenewalSampleDataSeeder extends Seeder
         if (DB::getSchemaBuilder()->hasTable('osc_mhn_lpekerja')) {
             DB::table('osc_mhn_lpekerja')->insertOrIgnore([
                 'lpk_idpbt' => $this->pbtCode,
-                'lpk_nosiri' => 90010,
+                'lpk_nosiri' => $nosiri4,
                 'lpk_melayu' => 2,
                 'lpk_cina' => 0,
                 'lpk_india' => 0,
