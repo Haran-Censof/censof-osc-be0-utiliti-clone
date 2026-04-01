@@ -12,10 +12,22 @@ return new class extends Migration
      */
     public function up(): void
     {
+        if (!Schema::hasTable('osc_bil_versi')) {
+            return;
+        }
+
         Schema::table('osc_bil_versi', function (Blueprint $table) {
-            $table->string('bl3_sebab_batal', 500)->nullable()->after('bl3_status')->comment('Sebab pembatalan sijil');
-            $table->date('bl3_tarikh_batal')->nullable()->after('bl3_sebab_batal')->comment('Tarikh pembatalan');
-            $table->string('bl3_user_batal', 50)->nullable()->after('bl3_tarikh_batal')->comment('User yang membatalkan');
+            if (!Schema::hasColumn('osc_bil_versi', 'bl3_sebab_batal')) {
+                $table->string('bl3_sebab_batal', 500)->nullable()->after('bl3_status')->comment('Sebab pembatalan sijil');
+            }
+
+            if (!Schema::hasColumn('osc_bil_versi', 'bl3_tarikh_batal')) {
+                $table->date('bl3_tarikh_batal')->nullable()->after('bl3_sebab_batal')->comment('Tarikh pembatalan');
+            }
+
+            if (!Schema::hasColumn('osc_bil_versi', 'bl3_user_batal')) {
+                $table->string('bl3_user_batal', 50)->nullable()->after('bl3_tarikh_batal')->comment('User yang membatalkan');
+            }
         });
     }
 
@@ -24,8 +36,19 @@ return new class extends Migration
      */
     public function down(): void
     {
+        if (!Schema::hasTable('osc_bil_versi')) {
+            return;
+        }
+
         Schema::table('osc_bil_versi', function (Blueprint $table) {
-            $table->dropColumn(['bl3_sebab_batal', 'bl3_tarikh_batal', 'bl3_user_batal']);
+            $columns = collect(['bl3_sebab_batal', 'bl3_tarikh_batal', 'bl3_user_batal'])
+                ->filter(fn (string $column) => Schema::hasColumn('osc_bil_versi', $column))
+                ->values()
+                ->all();
+
+            if ($columns !== []) {
+                $table->dropColumn($columns);
+            }
         });
     }
 };

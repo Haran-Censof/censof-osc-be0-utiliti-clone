@@ -8,6 +8,10 @@ return new class extends Migration
 {
     public function up(): void
     {
+        if (Schema::hasTable('osc_bil_versi')) {
+            return;
+        }
+
         Schema::create('osc_bil_versi', function (Blueprint $table) {
             $table->id('id')->comment('Primary Key');
             $table->string('bl3_idpbt', 10)->nullable()->comment('KOD ID PBT');
