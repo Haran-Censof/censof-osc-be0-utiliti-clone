@@ -1122,6 +1122,57 @@ class ControlCodeSeeder extends Seeder
                 'CTL_IDATE' => null,
                 'CTL_UDATE' => null
             ],
+<<<<<<< HEAD
+=======
+            [
+                'CTL_IDPBT' => 'OSCL',
+                'CTL_CTRLCODE' => '6',
+                'CTL_CTRLNAMA' => '6 BULAN',
+                'CTL_CTRLGRP' => 'TEMPOH',
+                'CTL_CTRLSTATUS' => 'A',
+                'CTL_CTRLNOSEQ' => null,
+                'CTL_IUSER' => null,
+                'CTL_UUSER' => null,
+                'CTL_IDATE' => null,
+                'CTL_UDATE' => null
+            ],
+            [
+                'CTL_IDPBT' => 'OSCL',
+                'CTL_CTRLCODE' => '12',
+                'CTL_CTRLNAMA' => '12 BULAN',
+                'CTL_CTRLGRP' => 'TEMPOH',
+                'CTL_CTRLSTATUS' => 'A',
+                'CTL_CTRLNOSEQ' => null,
+                'CTL_IUSER' => null,
+                'CTL_UUSER' => null,
+                'CTL_IDATE' => null,
+                'CTL_UDATE' => null
+            ],
+            [
+                'CTL_IDPBT' => 'OSCL',
+                'CTL_CTRLCODE' => '24',
+                'CTL_CTRLNAMA' => '24 BULAN',
+                'CTL_CTRLGRP' => 'TEMPOH',
+                'CTL_CTRLSTATUS' => 'A',
+                'CTL_CTRLNOSEQ' => null,
+                'CTL_IUSER' => null,
+                'CTL_UUSER' => null,
+                'CTL_IDATE' => null,
+                'CTL_UDATE' => null
+            ],
+            [
+                'CTL_IDPBT' => 'OSCL',
+                'CTL_CTRLCODE' => '36',
+                'CTL_CTRLNAMA' => '36 BULAN',
+                'CTL_CTRLGRP' => 'TEMPOH',
+                'CTL_CTRLSTATUS' => 'A',
+                'CTL_CTRLNOSEQ' => null,
+                'CTL_IUSER' => null,
+                'CTL_UUSER' => null,
+                'CTL_IDATE' => null,
+                'CTL_UDATE' => null
+            ],
+>>>>>>> upstream/main
         ];
 
         DB::table('osc_slg_lookuptable')->truncate();
