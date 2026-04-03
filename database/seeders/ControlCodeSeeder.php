@@ -1,3 +1,4 @@
+
 <?php
 
 namespace Database\Seeders;
@@ -1122,8 +1123,7 @@ class ControlCodeSeeder extends Seeder
                 'CTL_IDATE' => null,
                 'CTL_UDATE' => null
             ],
-<<<<<<< HEAD
-=======
+          
             [
                 'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' => '6',
@@ -1172,7 +1172,6 @@ class ControlCodeSeeder extends Seeder
                 'CTL_IDATE' => null,
                 'CTL_UDATE' => null
             ],
->>>>>>> upstream/main
         ];
 
         DB::table('osc_slg_lookuptable')->truncate();
