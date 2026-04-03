@@ -1,4 +1,3 @@
-
 <?php
 
 namespace Database\Seeders;
@@ -1123,7 +1122,6 @@ class ControlCodeSeeder extends Seeder
                 'CTL_IDATE' => null,
                 'CTL_UDATE' => null
             ],
-          
             [
                 'CTL_IDPBT' => 'OSCL',
                 'CTL_CTRLCODE' => '6',

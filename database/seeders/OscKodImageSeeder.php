@@ -9,11 +9,6 @@ class OscKodImageSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-<<<<<<< HEAD
-     */
-    public function run(): void
-    {
-=======
      * 
      * Siri Image untuk PRK_MDTM:
      * - 10001: Logo Majlis (PRK_MDTM_LOGO.png)
@@ -34,18 +29,13 @@ class OscKodImageSeeder extends Seeder
             10005 => $this->loadImage($imagesPath . '/PRK_MDTM_TANDATANGAN_DIGITAL.png'),
         ];
 
->>>>>>> upstream/main
         DB::table('osc_kod_image')->insert([
             [
                 'id' => 1,
                 'img_idpbt' => 'PRK_MDTM',
                 'img_imgsiri' => 10001,
                 'img_imgnama' => 'LOGO MAJLIS',
-<<<<<<< HEAD
-                'img_imgimge' => null,
-=======
                 'img_imgimge' => $images[10001],
->>>>>>> upstream/main
                 'img_statf' => 'Y',
                 'img_idate' => '2025-12-25 00:00:00',
                 'img_udate' => null,
@@ -57,11 +47,7 @@ class OscKodImageSeeder extends Seeder
                 'img_idpbt' => 'PRK_MDTM',
                 'img_imgsiri' => 10002,
                 'img_imgnama' => 'HEADER BIL LESEN',
-<<<<<<< HEAD
-                'img_imgimge' => null,
-=======
                 'img_imgimge' => $images[10002],
->>>>>>> upstream/main
                 'img_statf' => 'Y',
                 'img_idate' => '2025-12-25 00:00:00',
                 'img_udate' => null,
@@ -73,11 +59,7 @@ class OscKodImageSeeder extends Seeder
                 'img_idpbt' => 'PRK_MDTM',
                 'img_imgsiri' => 10003,
                 'img_imgnama' => 'LETTER HEAD',
-<<<<<<< HEAD
-                'img_imgimge' => null,
-=======
                 'img_imgimge' => $images[10003],
->>>>>>> upstream/main
                 'img_statf' => 'Y',
                 'img_idate' => '2025-12-25 00:00:00',
                 'img_udate' => null,
@@ -96,10 +78,6 @@ class OscKodImageSeeder extends Seeder
                 'img_iuser' => 'CSM_ZUBAIRI',
                 'img_uuser' => null,
             ],
-<<<<<<< HEAD
-        ]);
-    }
-=======
             [
                 'id' => 5,
                 'img_idpbt' => 'PRK_MDTM',
@@ -126,5 +104,4 @@ class OscKodImageSeeder extends Seeder
         
         return null;
     }
->>>>>>> upstream/main
 }

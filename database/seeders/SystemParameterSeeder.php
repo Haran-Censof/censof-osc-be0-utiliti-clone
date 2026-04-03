@@ -57,9 +57,6 @@ class SystemParameterSeeder extends Seeder
                 'PARA_VALUE' =>'LXXXXXXX-XX',
                 'PARA_IUSER' =>null,
                 'PARA_UUSER' =>null
-<<<<<<< HEAD
-            ]
-=======
             ],
             // PRK_MDTM - para_id 1 hingga 4
             [
@@ -208,7 +205,6 @@ class SystemParameterSeeder extends Seeder
                 'PARA_UUSER' => null
             ],
 
->>>>>>> upstream/main
         ]);
     }
 }
